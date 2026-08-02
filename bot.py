@@ -141,10 +141,21 @@ def source_keyboard(name, page=0):
     keys.append(nav)
     return InlineKeyboardMarkup(keys)
 
+def _tag_sort_key(tag, name):
+    """Natural sort: base name first, then costume numbers 1,2,...,10, then the rest."""
+    base = re.sub(r"\W", "", name.lower())
+    t = re.sub(r"\W", "", tag.lower())
+    m = re.search(r"(\d+)(?:st|nd|rd|th)costume", t)
+    if t == base:
+        return (0, 0, "")
+    if m:
+        return (1, int(m.group(1)), "")
+    return (2, 0, tag.lower())
+
 def member_tags(name, skey):
     report_key = next((r for k, _l, r, _c in SOURCES if k == skey), None)
     if report_key and name in TAGS and report_key in TAGS[name]:
-        return TAGS[name][report_key]
+        return sorted(TAGS[name][report_key], key=lambda t: _tag_sort_key(t, name))
     return []
 
 def tag_keyboard(name, skey, page=0):
