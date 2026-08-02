@@ -1,0 +1,598 @@
+{
+  "Tokino Sora": [
+    "Dreaming! (Tokino Sora)",
+    "Tokino Sora",
+    "Tokino Sora (1st Costume)",
+    "Tokino Sora (3rd Costume)",
+    "Tokino Sora (4th Costume)",
+    "Tokino Sora (6th Costume)",
+    "Tokino Sora (7th Costume)",
+    "Tokino Sora (8th Costume)"
+  ],
+  "Roboco": [
+    "Roboco",
+    "Roboco (10th Costume)",
+    "Roboco (12th Costume)",
+    "Roboco (2nd Costume)",
+    "Roboco (6th Costume)",
+    "Roboco (7th Costume)",
+    "Roboco (8th Costume)",
+    "Roboco Ch."
+  ],
+  "Sakura Miko": [
+    "Sakura Miko",
+    "Sakura Miko (1st Costume)",
+    "Sakura Miko (3rd Costume)",
+    "Sakura Miko (4th Costume)",
+    "Sakura Miko (6th Costume)",
+    "Sakura Miko (8th Costume)"
+  ],
+  "Hoshimachi Suisei": [
+    "Hoshimachi Suisei",
+    "Hoshimachi Suisei (1st Costume)",
+    "Hoshimachi Suisei (4th Costume)",
+    "Hoshimachi Suisei (6th Costume)",
+    "Hoshimachi Suisei (7th Costume)"
+  ],
+  "AZKi": [
+    "AZKi",
+    "AZKi (4th Costume)",
+    "AZKi (5th Costume)",
+    "AZKi Channel",
+    "Pioneer (AZKi Channel)"
+  ],
+  "Shirakami Fubuki": [
+    "Shirakami Fubuki",
+    "Shirakami Fubuki (1st Costume)",
+    "Shirakami Fubuki (4th Costume)",
+    "Shirakami Fubuki (5th Costume)",
+    "Shirakami Fubuki (6th Costume)",
+    "Shirakami Fubuki (7th Costume)",
+    "Shirakami Fubuki Channel",
+    "Shirakami Fubuki no Book"
+  ],
+  "Natsuiro Matsuri": [
+    "Natsuiro Matsuri",
+    "Natsuiro Matsuri (10th Costume)",
+    "Natsuiro Matsuri (1st Costume)",
+    "Natsuiro Matsuri (2nd Costume)",
+    "Natsuiro Matsuri (5th Costume)",
+    "Natsuiro Matsuri (7th Costume)"
+  ],
+  "Aki Rosenthal": [
+    "Aki Rosenthal",
+    "Aki Rosenthal (1st Costume)",
+    "Aki Rosenthal (4th Costume)",
+    "Aki Rosenthal (5th Costume)",
+    "Aki Rosenthal (6th Costume)"
+  ],
+  "Akai Haato": [
+    "Akai Haato",
+    "Akai Haato (1st Costume)",
+    "Akai Haato (2nd Costume)",
+    "Akai Haato (5th Costume)"
+  ],
+  "Ookami Mio": [
+    "Ookami Mio",
+    "Ookami Mio (1st Costume)",
+    "Ookami Mio (3rd Costume)",
+    "Ookami Mio (7th Costume)"
+  ],
+  "Nekomata Okayu": [
+    "Nekomata Okayu",
+    "Nekomata Okayu (1st Costume)",
+    "Nekomata Okayu (3rd Costume)",
+    "Nekomata Okayu (6th Costume)"
+  ],
+  "Inugami Korone": [
+    "Inugami Korone",
+    "Inugami Korone (1st Costume)",
+    "Inugami Korone (2nd Costume)",
+    "Inugami Korone (3rd Costume)",
+    "Inugami Korone (4th Costume)"
+  ],
+  "Nakiri Ayame": [
+    "Nakiri Ayame",
+    "Nakiri Ayame (1st Costume)",
+    "Nakiri Ayame (3rd Costume)",
+    "Nakiri Ayame (6th Costume)"
+  ],
+  "Yuzuki Choco": [
+    "Yuzuki Choco",
+    "Yuzuki Choco (1st Costume)",
+    "Yuzuki Choco (4th Costume)",
+    "Yuzuki Choco (5th Costume)",
+    "Yuzuki Choco (6th Costume)",
+    "Yuzuki Choco (7th Costume)",
+    "Yuzuki Choco (8th Costume)",
+    "Yuzuki Choco (9th Costume)"
+  ],
+  "Oozora Subaru": [
+    "Oozora Subaru",
+    "Oozora Subaru (1st Costume)",
+    "Oozora Subaru (2nd Costume)",
+    "Oozora Subaru (5th Costume)",
+    "Oozora Subaru (6th Costume)",
+    "Oozora Subaru (7th Costume)",
+    "Oozora Subaru (8th Costume)"
+  ],
+  "Usada Pekora": [
+    "Usada Pekora",
+    "Usada Pekora (1st Costume)",
+    "Usada Pekora (2nd Costume)",
+    "Usada Pekora (3rd Costume)",
+    "Usada Pekora (4th Costume)",
+    "Usada Pekora (5th Costume)",
+    "Usada Pekora (6th Costume)"
+  ],
+  "Shiranui Flare": [
+    "Shiranui Flare",
+    "Shiranui Flare (1st Costume)",
+    "Shiranui Flare (2nd Costume)",
+    "Shiranui Flare (3rd Costume)",
+    "Shiranui Flare (4th Costume)"
+  ],
+  "Shirogane Noel": [
+    "Shirogane Noel",
+    "Shirogane Noel (1st Costume)",
+    "Shirogane Noel (3rd Costume)",
+    "Shirogane Noel (4th Costume)",
+    "Shirogane Noel (5th Costume)",
+    "Shirogane Noel (Summer 2020 Swimsuit)"
+  ],
+  "Houshou Marine": [
+    "Houshou Marine",
+    "Houshou Marine (1st Costume)",
+    "Houshou Marine (3rd Costume)",
+    "Houshou Marine (4th Costume)",
+    "Houshou Marine (5th Costume)",
+    "Houshou Marine (6th Costume)",
+    "Houshou Marine (8th Costume)",
+    "Houshou Marine (Nun Outfit)"
+  ],
+  "Tsunomaki Watame": [
+    "Tsunomaki Watame",
+    "Tsunomaki Watame (1st Costume)",
+    "Tsunomaki Watame (6th Costume)",
+    "Tsunomaki Watame (9th Costume)"
+  ],
+  "Tokoyami Towa": [
+    "Tokoyami Towa",
+    "Tokoyami Towa (1st Costume)",
+    "Tokoyami Towa (3rd Costume)",
+    "Tokoyami Towa (5th Costume)",
+    "Tokoyami Towa (6th Costume)"
+  ],
+  "Himemori Luna": [
+    "Himemori Luna",
+    "Himemori Luna (1st Costume)",
+    "Himemori Luna (2nd Costume)",
+    "Himemori Luna (3rd Costume)",
+    "Himemori Luna (4th Costume)",
+    "Himemori Luna (5th Costume)",
+    "Himemori Luna (6th Costume)",
+    "Himemori Luna (7th Costume)",
+    "Himemori Luna (Mahou Shoujo holoWitch! Outfit)"
+  ],
+  "Yukihana Lamy": [
+    "Yukihana Lamy",
+    "Yukihana Lamy (1st Costume)",
+    "Yukihana Lamy (3rd Costume)",
+    "Yukihana Lamy (4th Costume)",
+    "Yukihana Lamy (6th Costume)"
+  ],
+  "Momosuzu Nene": [
+    "Momosuzu Nene",
+    "Momosuzu Nene (1st Costume)",
+    "Momosuzu Nene (1st Costume) (Original)",
+    "Momosuzu Nene (2nd Costume)",
+    "Momosuzu Nene (3rd Costume)",
+    "Momosuzu Nene (4th Costume)",
+    "Momosuzu Nene (6th Costume)"
+  ],
+  "Shishiro Botan": [
+    "Shishiro Botan",
+    "Shishiro Botan (1st Costume)",
+    "Shishiro Botan (2nd Costume)",
+    "Shishiro Botan (3rd Costume)",
+    "Shishiro Botan (4th Costume)"
+  ],
+  "Omaru Polka": [
+    "Omaru Polka",
+    "Omaru Polka (1st Costume)",
+    "Omaru Polka (3rd Costume)",
+    "Omaru Polka (4th Costume)",
+    "Omaru Polka (5th Costume)",
+    "Omaru Polka (6th Costume)"
+  ],
+  "Takane Lui": [
+    "Takane Lui",
+    "Takane Lui (1st Costume)",
+    "Takane Lui (5th Costume)"
+  ],
+  "Hakui Koyori": [
+    "Hakui Koyori",
+    "Hakui Koyori (1st Costume)",
+    "Hakui Koyori (2nd Costume)",
+    "Hakui Koyori (3rd Costume)"
+  ],
+  "Sakamata Chloe": [
+    "Sakamata Chloe",
+    "Sakamata Chloe (1st Costume)",
+    "Sakamata Chloe (2nd Costume)",
+    "Sakamata Chloe (3rd Costume)"
+  ],
+  "Kazama Iroha": [
+    "Kazama Iroha",
+    "Kazama Iroha (1st Costume)",
+    "Kazama Iroha (3rd Costume)"
+  ],
+  "Otonose Kanade": [
+    "Otonose Kanade",
+    "Otonose Kanade (1st Costume)",
+    "Otonose Kanade (2nd Costume)",
+    "Otonose Kanade (4th Costume)",
+    "Otonose Kanade (Flashpoint)"
+  ],
+  "Ichijou Ririka": [
+    "Ichijou Ririka",
+    "Ichijou Ririka (1st Costume)",
+    "Ichijou Ririka (2nd Costume)",
+    "Ichijou Ririka (Flashpoint)"
+  ],
+  "Juufuutei Raden": [
+    "Juufuutei Raden",
+    "Juufuutei Raden (1st Costume)",
+    "Juufuutei Raden (2nd Costume)"
+  ],
+  "Todoroki Hajime": [
+    "Todoroki Hajime",
+    "Todoroki Hajime (1st Costume)",
+    "Todoroki Hajime (2nd Costume)"
+  ],
+  "Isaki Riona": [
+    "Isaki Riona",
+    "Isaki Riona (1st Costume)",
+    "Isaki Riona (2nd Costume)",
+    "Isaki Riona (3rd Costume)"
+  ],
+  "Koganei Niko": [
+    "Koganei Niko",
+    "Koganei Niko (1st Costume)",
+    "Koganei Niko (2nd Costume)"
+  ],
+  "Mizumiya Su": [
+    "Mizumiya Su",
+    "Mizumiya Su (1st Costume)",
+    "Mizumiya Su (2nd Costume)",
+    "Mizumiya Su (3rd Costume)"
+  ],
+  "Kikirara Vivi": [
+    "Kikirara Vivi",
+    "Kikirara Vivi (1st Costume)",
+    "Kikirara Vivi (2nd Costume)"
+  ],
+  "Kageyama Shien": [
+    "Kageyama Shien",
+    "Kageyama Shien (1st Costume)",
+    "Kageyama Shien (2nd Costume)",
+    "Kageyama Shien (3rd Costume)",
+    "Kageyama Shien (4th Costume)",
+    "Kageyama Shien (5th Costume)",
+    "Kageyama Shien (7th Costume)"
+  ],
+  "Ayunda Risu": [
+    "Ayunda Risu",
+    "Ayunda Risu (1st Costume)",
+    "Ayunda Risu (2nd Costume)",
+    "Ayunda Risu (3rd Costume)",
+    "Ayunda Risu (4th Costume)",
+    "Ayunda Risu (5th Costume)",
+    "Ayunda Risu (6th Costume)",
+    "Ayunda Risu (7th Costume)",
+    "Ayunda Risu Ch."
+  ],
+  "Moona Hoshinova": [
+    "Moona Hoshinova",
+    "Moona Hoshinova (1st Costume)",
+    "Moona Hoshinova (2nd Costume)",
+    "Moona Hoshinova (3rd Costume)",
+    "Moona Hoshinova (4th Costume)",
+    "Moona Hoshinova (6th Costume)",
+    "Moona Hoshinova (7th Costume)",
+    "Moona Hoshinova hololive-ID"
+  ],
+  "Airani Iofifteen": [
+    "Airani Iofifteen",
+    "Airani Iofifteen (1st Costume)",
+    "Airani Iofifteen (3rd Costume)",
+    "Airani Iofifteen (4th Costume)",
+    "Airani Iofifteen (7th Costume)",
+    "Airani Iofifteen Channel"
+  ],
+  "Kureiji Ollie": [
+    "Kureiji Ollie",
+    "Kureiji Ollie (1st Costume)",
+    "Kureiji Ollie (2nd Costume)",
+    "Kureiji Ollie (3rd Costume)",
+    "Kureiji Ollie (4th Costume)",
+    "Kureiji Ollie (6th Costume)",
+    "Kureiji Ollie Ch.",
+    "Udin (Kureiji Ollie Ch.)"
+  ],
+  "Anya Melfissa": [
+    "Anya Melfissa",
+    "Anya Melfissa (1st Costume)",
+    "Anya Melfissa (2nd Costume)",
+    "Anya Melfissa (3rd Costume)",
+    "Anya Melfissa (4th Costume)",
+    "Anya Melfissa Ch."
+  ],
+  "Pavolia Reine": [
+    "Pavolia Reine",
+    "Pavolia Reine (1st Costume)",
+    "Pavolia Reine (2nd Costume)",
+    "Pavolia Reine (3rd Costume)",
+    "Pavolia Reine (5th Costume)",
+    "Pavolia Reine Ch."
+  ],
+  "Vestia Zeta": [
+    "Vestia Zeta",
+    "Vestia Zeta (1st Costume)",
+    "Vestia Zeta (2nd Costume)",
+    "Vestia Zeta (3rd Costume)",
+    "Vestia Zeta (4th Costume)",
+    "Vestia Zeta Ch. Hololive-ID"
+  ],
+  "Kaela Kovalskia": [
+    "Kaela Kovalskia",
+    "Kaela Kovalskia (1st Costume)",
+    "Kaela Kovalskia (1st Costume) (Original)",
+    "Kaela Kovalskia (2nd Costume) (Original)",
+    "Kaela Kovalskia (3rd Costume) (Original)",
+    "Kaela Kovalskia Ch. Hololive-ID"
+  ],
+  "Kobo Kanaeru": [
+    "Kobo Kanaeru",
+    "Kobo Kanaeru (1st Costume)",
+    "Kobo Kanaeru Ch. Hololive-ID"
+  ],
+  "Mori Calliope": [
+    "Mori Calliope",
+    "Mori Calliope (10th Costume)",
+    "Mori Calliope (2nd Costume)",
+    "Mori Calliope (4th Costume)",
+    "Mori Calliope Ch."
+  ],
+  "Takanashi Kiara": [
+    "Takanashi Kiara",
+    "Takanashi Kiara (1st Costume)",
+    "Takanashi Kiara (2nd Costume)",
+    "Takanashi Kiara (6th Costume)",
+    "Takanashi Kiara (7th Costume)",
+    "Takanashi Kiara (SPARKS)",
+    "Takanashi Kiara Ch."
+  ],
+  "Ninomae Ina'nis": [
+    "Ninomae Ina'nis",
+    "Ninomae Ina'nis (1st Costume)",
+    "Ninomae Ina'nis (2nd Costume)",
+    "Ninomae Ina'nis (5th Costume)",
+    "Ninomae Ina'nis (8th Costume)",
+    "Ninomae Ina'nis (Artist)",
+    "Ninomae Ina'nis Ch."
+  ],
+  "Watson Amelia": [
+    "Watson Amelia",
+    "Watson Amelia (1st Costume)",
+    "Watson Amelia (2nd Costume)",
+    "Watson Amelia Ch."
+  ],
+  "IRyS": [
+    "IRyS",
+    "IRyS (1st Costume)",
+    "IRyS (1st Costume) (Original)",
+    "IRyS (2nd Costume)",
+    "IRyS (3rd Costume)",
+    "IRyS (4th Costume)",
+    "IRyS (Race Queen)",
+    "IRyS Ch."
+  ],
+  "Ouro Kronii": [
+    "Ouro Kronii",
+    "Ouro Kronii (1st Costume)",
+    "Ouro Kronii (3rd Costume)",
+    "Ouro Kronii (4th Costume)",
+    "Ouro Kronii (5th Costume)",
+    "Ouro Kronii Ch."
+  ],
+  "Hakos Baelz": [
+    "Hakos Baelz",
+    "Hakos Baelz (1st Costume)",
+    "Hakos Baelz (3rd Costume)",
+    "Hakos Baelz (4th Costume)",
+    "Hakos Baelz Ch."
+  ],
+  "Shiori Novella": [
+    "Shiori Novella",
+    "Shiori Novella (1st Costume)",
+    "Shiori Novella (2nd Costume)",
+    "Shiori Novella (3rd Costume)",
+    "Shiori Novella Ch."
+  ],
+  "Koseki Bijou": [
+    "Koseki Bijou",
+    "Koseki Bijou (1st Costume)",
+    "Koseki Bijou (2nd Costume)",
+    "Koseki Bijou (3rd Costume)",
+    "Koseki Bijou Ch.",
+    "Pebble (Koseki Bijou Ch.)"
+  ],
+  "Fuwawa Abyssgard": [
+    "Fuwawa Abyssgard",
+    "Fuwawa Abyssgard (1st Costume)",
+    "Fuwawa Abyssgard (2nd Costume)",
+    "Fuwawa Abyssgard (3rd Costume)"
+  ],
+  "Mococo Abyssgard": [
+    "Mococo Abyssgard",
+    "Mococo Abyssgard (1st Costume)",
+    "Mococo Abyssgard (2nd Costume)",
+    "Mococo Abyssgard (3rd Costume)"
+  ],
+  "Elizabeth Rose Bloodflame": [
+    "Elizabeth Rose Bloodflame",
+    "Elizabeth Rose Bloodflame (1st Costume)",
+    "Elizabeth Rose Bloodflame (2nd Costume)",
+    "Elizabeth Rose Bloodflame Ch."
+  ],
+  "Gigi Murin": [
+    "Gigi Murin",
+    "Gigi Murin (1st Costume)",
+    "Gigi Murin (2nd Costume)",
+    "Gigi Murin Ch."
+  ],
+  "Cecilia Immergreen": [
+    "Cecilia Immergreen",
+    "Cecilia Immergreen (1st Costume)",
+    "Cecilia Immergreen (2nd Costume)",
+    "Cecilia Immergreen Ch.",
+    "Otomo (Cecilia Immergreen Ch.)"
+  ],
+  "Raora Panthera": [
+    "Raora Panthera",
+    "Raora Panthera (1st Costume)",
+    "Raora Panthera (2nd Costume)",
+    "Raora Panthera (Artist)",
+    "Raora Panthera (Goth)",
+    "Raora Panthera (Maid)",
+    "Raora Panthera (Rathalos)",
+    "Raora Panthera Ch."
+  ],
+  "Rindo Chihaya": [
+    "Rindo Chihaya",
+    "Rindo Chihaya (1st Costume)",
+    "Rindo Chihaya (2nd Costume)",
+    "Rindo Chihaya (3rd Costume)",
+    "Rindo Chihaya (HoloNatsu Paradise)"
+  ],
+  "Kanade Izuru": [
+    "Kanade Izuru",
+    "Kanade Izuru (1st Costume)"
+  ],
+  "Arurandeisu": [
+    "Arurandeisu",
+    "Arurandeisu (1st Costume) (Original)"
+  ],
+  "Yukoku Roberu": [
+    "Yukoku Roberu",
+    "Yukoku Roberu (1st Costume)",
+    "Yukoku Roberu (2nd Costume)",
+    "Yukoku Roberu (3rd Costume)",
+    "Yukoku Roberu (4th Costume)",
+    "Yukoku Roberu (5th Costume)",
+    "Yukoku Roberu (6th Costume)"
+  ],
+  "Yatogami Fuma": [
+    "Yatogami Fuma",
+    "Yatogami Fuma (1st Costume)",
+    "Yatogami Fuma (2nd Costume)"
+  ],
+  "Banzoin Hakka": [
+    "Banzoin Hakka",
+    "Banzoin Hakka (1st Costume)",
+    "Banzoin Hakka Ch."
+  ],
+  "La+ Darknesss": [
+    "La+ Darknesss",
+    "La+ Darknesss (1st Costume)",
+    "La+ Darknesss (3rd Costume)",
+    "La+ Darknesss (4th Costume)"
+  ],
+  "Hanasaki Miyabi": [
+    "Hanasaki Miyabi",
+    "Hanasaki Miyabi (1st Costume)",
+    "Hanasaki Miyabi (2nd Costume)",
+    "Hanasaki Miyabi (3rd Costume)",
+    "Hanasaki Miyabi (4th Costume)",
+    "Hanasaki Miyabi (5th Costume)",
+    "Hanasaki Miyabi (7th Costume)",
+    "Hanasaki Miyabi (8th Costume)"
+  ],
+  "Kishido Temma": [
+    "Kishido Temma",
+    "Kishido Temma (1st Costume)",
+    "Kishido Temma (2nd Costume)",
+    "Kishido Temma (3rd Costume)",
+    "Kishido Temma (4th Costume)",
+    "Kishido Temma (5th Costume)",
+    "Kishido Temma (6th Costume)",
+    "Kishido Temma (7th Costume)"
+  ],
+  "Minase Rio": [
+    "Minase Rio",
+    "Minase Rio (1st Costume)",
+    "Minase Rio (3rd Costume)"
+  ],
+  "Axel Syrios": [
+    "Axel Syrios",
+    "Axel Syrios (1st Costume)",
+    "Axel Syrios (2nd Costume)",
+    "Axel Syrios (3rd Costume)",
+    "Axel Syrios (4th Costume)",
+    "Axel Syrios Ch."
+  ],
+  "Gavis Bettel": [
+    "Gavis Bettel",
+    "Gavis Bettel (1st Costume)",
+    "Gavis Bettel (2nd Costume)",
+    "Gavis Bettel (3rd Costume)",
+    "Gavis Bettel Ch.",
+    "Phantom (Gavis Bettel Ch.)"
+  ],
+  "Machina X Flayon": [
+    "Machina X Flayon",
+    "Machina X Flayon (1st Costume)",
+    "Machina X Flayon (2nd Costume)",
+    "Machina X Flayon (3rd Costume)",
+    "Machina X Flayon Ch."
+  ],
+  "Josuiji Shinri": [
+    "Josuiji Shinri",
+    "Josuiji Shinri (1st Costume)",
+    "Josuiji Shinri (2nd Costume)",
+    "Josuiji Shinri Ch."
+  ],
+  "Jurard T Rexford": [
+    "Jurard T Rexford",
+    "Jurard T Rexford Ch."
+  ],
+  "Goldbullet": [
+    "Goldbullet",
+    "Goldbullet (1st Costume)",
+    "Goldbullet (2nd Costume)",
+    "Goldbullet Ch."
+  ],
+  "Crimzon Ruze": [
+    "Crimzon Ruze",
+    "Crimzon Ruze Ch."
+  ],
+  "Utsugi Uyu": [
+    "Utsugi Uyu",
+    "Utsugi Uyu (2nd Costume)",
+    "Utsugi Uyu (3rd Costume)"
+  ],
+  "Regis Altare": [
+    "Regis Altare",
+    "Regis Altare (1st Costume)",
+    "Regis Altare Ch."
+  ],
+  "Nerissa Ravencroft": [
+    "Nerissa Ravencroft",
+    "Nerissa Ravencroft (1st Costume)",
+    "Nerissa Ravencroft (2nd Costume)",
+    "Nerissa Ravencroft (3rd Costume)",
+    "Nerissa Ravencroft Ch.",
+    "Shadow (Nerissa Ravencroft Ch.)"
+  ]
+}
