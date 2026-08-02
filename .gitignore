@@ -1,0 +1,5 @@
+.env
+bot_users.json
+__pycache__/
+*.pyc
+Rem God/
