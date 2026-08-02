@@ -16,7 +16,7 @@ os.makedirs(os.path.join(_BOT_DIR, "database"), exist_ok=True)
 
 DEFAULT_AMOUNT = int(os.getenv("BOT_AMOUNT", "5"))
 
-LANG_EMOJI = {"JP": "🇯🇵", "ID": "🇮🇩", "EN": "🇺🇸"}
+LANG_EMOJI = {"jp": "🇯🇵", "id": "🇮🇩", "en": "🇺🇸"}
 BRANCH_LABEL = {"hololive": "hololive", "holostars": "HOLOSTARS"}
 PAGE_SIZE = 10
 
@@ -89,7 +89,7 @@ def _get(kid):
 # ── keyboard builders ──────────────────────────────────────────
 def branch_keyboard():
     rows = []
-    for lang in ("JP", "ID", "EN"):
+    for lang in ("jp", "id", "en"):
         for br in ("hololive", "holostars"):
             n = sum(1 for m in MEMBERS.values() if m["lang"] == lang and m["branch"] == br)
             if n:
@@ -200,7 +200,7 @@ async def cmd_start(update, context):
 async def cmd_members(update, context):
     args = context.args
     if args and args[0].lower() in ("jp", "id", "en"):
-        lang = args[0].upper()
+        lang = args[0].lower()
         members = [n for n, m in MEMBERS.items() if m["lang"] == lang]
     else:
         members = list(MEMBERS)
