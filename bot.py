@@ -18,22 +18,16 @@ BRANCH_LABEL = {"hololive": "hololive", "holostars": "HOLOSTARS"}
 PAGE_SIZE = 10
 
 # source key -> (label, report_key, needs_creds)
+# sources = workers with real hololive member tags in bot_data (from the report)
 SOURCES = [
     ("yande", "Yande.re", "yande.re", False),
     ("kona", "Konachan", "konachan", False),
     ("dan", "Danbooru", "danbooru", True),
     ("safe", "Safebooru", "safebooru", False),
-    ("gelbooru", "Gelbooru", None, True),
-    ("rule34", "Rule34", None, True),
     ("zero", "Zerochan", "zerochan", False),
     ("nekosia", "Nekosia", "nekosia", False),
     ("eshuushuu", "E-shuushuu", "eshuushuu", False),
     ("anime_dl", "Anime Pictures", "anime_dl", False),
-    ("sankaku", "Sankaku", None, True),
-    ("pixiv", "Pixiv", None, True),
-    ("neko", "Nekos.best", None, False),
-    ("neko_life", "Nekos.life", None, False),
-    ("waifu", "Waifu.im", None, False),
 ]
 SOURCE_BY_REPORT = {r: k for k, _l, r, _c in SOURCES if r}
 
@@ -43,17 +37,10 @@ FETCHERS = {
     "kona": ("workers.konachan", "worker_konachan", lambda t, nc: (t, DEFAULT_AMOUNT, "", [], nc)),
     "dan": ("workers.danbooru", "worker_danbooru", lambda t, nc: (t, DEFAULT_AMOUNT, "", [], nc)),
     "safe": ("workers.safebooru", "worker_safebooru", lambda t, nc: (t, DEFAULT_AMOUNT, [], nc)),
-    "gelbooru": ("workers.gelbooru", "worker_gelbooru", lambda t, nc: (t, DEFAULT_AMOUNT, "", [], nc)),
-    "rule34": ("workers.rule34", "worker_rule34", lambda t, nc: (t, DEFAULT_AMOUNT, "and", "id", "desc", [], nc)),
     "zero": ("workers.zerochan", "worker_zerochan", lambda t, nc: (t, DEFAULT_AMOUNT, nc)),
     "nekosia": ("workers.nekosia", "worker_nekosia", lambda t, nc: (t, DEFAULT_AMOUNT, nc)),
     "eshuushuu": ("workers.eshuushuu", "worker_eshuushuu", lambda t, nc: (t, DEFAULT_AMOUNT, [], "", nc)),
     "anime_dl": ("workers.anime_dl", "worker_anime_dl", lambda t, nc: (t, DEFAULT_AMOUNT, nc)),
-    "sankaku": ("workers.sankaku", "worker_sankaku", lambda t, nc: (t, DEFAULT_AMOUNT, "", [], nc)),
-    "pixiv": ("workers.pixiv", "worker_pixiv", lambda t, nc: (t, DEFAULT_AMOUNT, "", [], nc)),
-    "neko": ("workers.nekos_best", "worker_nekos_best", lambda t, nc: (t, DEFAULT_AMOUNT, "image", nc)),
-    "neko_life": ("workers.nekos_life", "worker_nekos_life", lambda t, nc: (t, DEFAULT_AMOUNT, nc, "both")),
-    "waifu": ("workers.waifu_im", "worker_waifu", lambda t, nc: (t, DEFAULT_AMOUNT, False, nc)),
 }
 
 # ── per-user credential store ──────────────────────────────────
@@ -123,14 +110,14 @@ def member_keyboard(members, page):
     keys.append(nav)
     return InlineKeyboardMarkup(keys)
 
-def source_keyboard(name, page=0):
-    sources = []
+def available_sources(name):
+    """Sources that have real tag data for this member."""
     tl = TAGS.get(name, {})
-    for skey, label, report_key, needs in SOURCES:
-        # only show a source if it has real tags for this member (or is an API-only source)
-        has_tags = any(tl[r] for r in tl if SOURCE_BY_REPORT.get(r) == skey)
-        if has_tags or report_key is None:
-            sources.append((skey, label))
+    return [(skey, label) for skey, label, report_key, _needs in SOURCES
+            if any(tl[r] for r in tl if SOURCE_BY_REPORT.get(r) == skey)]
+
+def source_keyboard(name, page=0):
+    sources = available_sources(name)
     keys = []
     for skey, label in sources[page * PAGE_SIZE:(page + 1) * PAGE_SIZE]:
         keys.append([InlineKeyboardButton(label, callback_data=f"s:{_store({'name': name, 'source': skey})}")])
@@ -149,21 +136,8 @@ def member_tags(name, skey):
         return TAGS[name][report_key]
     return []
 
-def base_tag(name):
-    for report_key in ("yande.re", "safebooru", "danbooru", "zerochan"):
-        tl = TAGS.get(name, {}).get(report_key, [])
-        for t in tl:
-            if re.sub(r"\W", "", t) in re.sub(r"\W", "", name.lower()):
-                return t
-        if tl:
-            return tl[0]
-    return re.sub(r"\W", "_", name.lower()).strip("_")
-
 def tag_keyboard(name, skey, page=0):
     tl = member_tags(name, skey)
-    if not tl:
-        t = base_tag(name)
-        return InlineKeyboardMarkup([[InlineKeyboardButton(f"Use '{t}'", callback_data=f"t:{_store({'name': name, 'source': skey, 'tag': t})}")]]), f"(no tag list for {name} on this source — using derived tag)"
     keys = []
     for t in tl[page * PAGE_SIZE:(page + 1) * PAGE_SIZE]:
         keys.append([InlineKeyboardButton(t, callback_data=f"t:{_store({'name': name, 'source': skey, 'tag': t})}")])
@@ -247,11 +221,7 @@ async def cmd_sources(update, context):
     await update.effective_chat.send_message("\n".join(lines))
 
 KEY_FIELDS = {
-    "gelbooru": ("gelbooru", ["api_key", "user_id"]),
-    "rule34": ("rule34", ["api_key", "user_id"]),
     "danbooru": ("danbooru", ["login", "api_key"]),
-    "sankaku": ("sankaku", ["login", "password"]),
-    "pixiv": ("pixiv", ["refresh_token"]),
 }
 
 async def cmd_setkey(update, context):
@@ -310,6 +280,9 @@ async def on_menu_click(update, context):
     elif kind == "m":
         st = _get(parts[1])
         name = st["name"]
+        if not available_sources(name):
+            await q.edit_message_text(f"No tag data for {name} in any source yet.")
+            return
         await q.edit_message_text(f"{name} — source:", reply_markup=source_keyboard(name, 0))
 
     elif kind == "s":

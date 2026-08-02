@@ -1,6 +1,5 @@
 requests
 urllib3
 Pillow
-rule34Py
 curl_cffi
 python-telegram-bot
