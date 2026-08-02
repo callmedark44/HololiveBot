@@ -9,7 +9,10 @@ from bot_data import MEMBERS, TAGS
 
 TOKEN = os.getenv("BOT_TOKEN", "")
 PORT = int(os.getenv("PORT", "8080"))
-DB_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "bot_users.json")
+_BOT_DIR = os.path.dirname(os.path.abspath(__file__))
+DB_FILE = os.path.join(_BOT_DIR, "bot_users.json")
+# vendored shared.py writes each download to database/gallery.json; the bot never reads it
+os.makedirs(os.path.join(_BOT_DIR, "database"), exist_ok=True)
 
 DEFAULT_AMOUNT = int(os.getenv("BOT_AMOUNT", "5"))
 
