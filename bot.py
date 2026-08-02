@@ -71,6 +71,14 @@ def set_user_creds(uid, source, fields):
     data.setdefault(str(uid), {})[source] = fields
     _save_users(data)
 
+def user_pref(uid, key, default):
+    return _load_users().get(str(uid), {}).get("_prefs", {}).get(key, default)
+
+def set_user_pref(uid, key, value):
+    data = _load_users()
+    data.setdefault(str(uid), {}).setdefault("_prefs", {})[key] = value
+    _save_users(data)
+
 # ── menu state (short ids -> full state, callback_data ≤64 bytes) ──
 _MENU = {}
 _MENU_ID = [0]
@@ -268,6 +276,22 @@ async def cmd_mykeys(update, context):
             for k, fields in creds.items()}
     await update.effective_chat.send_message("\n".join(f"{k}: {mask[k]}" for k in creds))
 
+async def cmd_mode(update, context):
+    """Toggle send-as-document (full resolution) vs compressed photo."""
+    uid = str(update.effective_user.id)
+    args = context.args
+    if args and args[0].lower() in ("photo", "hd", "0"):
+        set_user_pref(uid, "as_doc", False)
+        await update.effective_chat.send_message("Send mode: **photo (HD)** — images are shown inline.")
+    elif args and args[0].lower() in ("doc", "file", "document", "1"):
+        set_user_pref(uid, "as_doc", True)
+        await update.effective_chat.send_message("Send mode: **document** — images sent as files at full resolution.")
+    else:
+        cur = "document (full res)" if user_pref(uid, "as_doc", False) else "photo (HD)"
+        await update.effective_chat.send_message(
+            f"Current send mode: **{cur}**\n"
+            "Use /mode doc to send as files (full resolution), or /mode photo for HD inline images.")
+
 async def on_menu_click(update, context):
     q = update.callback_query
     data = q.data
@@ -383,14 +407,15 @@ async def _fetch_and_send(chat_id, uid, name, skey, tag, count):
         if not files:
             await _app.bot.send_message(chat_id, f"No images found for {name} on {label} ({tag}).")
             return
-        await _app.bot.send_message(chat_id, f"Found {len(files)} — sending…")
+        as_doc = user_pref(uid, "as_doc", False)
+        await _app.bot.send_message(chat_id, f"Found {len(files)} — sending… ({'files' if as_doc else 'photos'})")
         for fp in files[:count]:
             try:
                 with open(fp, "rb") as fh:
-                    if os.path.splitext(fp)[1].lower() in {".jpg", ".jpeg", ".png", ".webp"}:
-                        await _app.bot.send_photo(chat_id, fh, caption=f"{name} • {label} • {tag}")
-                    else:
+                    if as_doc or os.path.splitext(fp)[1].lower() not in {".jpg", ".jpeg", ".png", ".webp"}:
                         await _app.bot.send_document(chat_id, fh, caption=f"{name} • {label} • {tag}")
+                    else:
+                        await _app.bot.send_photo(chat_id, fh, caption=f"{name} • {label} • {tag}")
             except Exception as e:
                 await _app.bot.send_message(chat_id, f"Send failed for one file: {e}")
     except Exception as e:
@@ -439,6 +464,7 @@ def main():
     app.add_handler(CommandHandler("sources", cmd_sources))
     app.add_handler(CommandHandler("setkey", cmd_setkey))
     app.add_handler(CommandHandler("mykeys", cmd_mykeys))
+    app.add_handler(CommandHandler("mode", cmd_mode))
     app.add_handler(CallbackQueryHandler(on_menu_click))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, on_mention))
 

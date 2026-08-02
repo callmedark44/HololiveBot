@@ -12,9 +12,9 @@ sys_path = __import__("sys"); sys_path.path.insert(0, HERE)
 import bot_data
 
 OUT = os.path.join(HERE, "zerochan_tags.json")
-MAX_PAGES = 8
+MAX_PAGES = 30
 PAGE_SIZE = 100
-SLEEP = 2.0
+SLEEP = 1.0
 
 def session():
     s = requests.Session()
@@ -36,7 +36,7 @@ def canonical_tags(s, member):
                     time.sleep(5 + attempt * 5)
                     continue
                 r.raise_for_status()
-                items = r.json().get("items", [])
+                data = r.json()
                 break
             except Exception:
                 if attempt == 2:
@@ -45,6 +45,12 @@ def canonical_tags(s, member):
         else:
             return sorted(found)
 
+        # if the tag page returns its own full tag list at top level, grab it
+        top = data.get("tags")
+        if isinstance(top, list):
+            found.update(t for t in top if isinstance(t, str) and member.lower() in t.lower())
+
+        items = data.get("items", [])
         if not items:
             break
         new = 0
@@ -61,13 +67,14 @@ def canonical_tags(s, member):
 
 def main():
     s = session()
+    refresh = "--refresh" in __import__("sys").argv
     results = {}
-    if os.path.exists(OUT):
+    if os.path.exists(OUT) and not refresh:
         results = json.load(open(OUT, encoding="utf-8"))
-        print(f"resuming with {len(results)} members already done")
+        print(f"resuming with {len(results)} members already done (use --refresh to re-fetch all)")
     members = sorted(bot_data.MEMBERS)
     for i, name in enumerate(members, 1):
-        if name in results:
+        if name in results and not refresh:
             continue
         tags = canonical_tags(s, name)
         results[name] = tags
