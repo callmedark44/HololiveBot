@@ -1,5 +1,5 @@
-requests
-urllib3
-Pillow
-curl_cffi
-python-telegram-bot
+requests==2.34.2
+urllib3==2.7.0
+Pillow==11.3.0
+curl-cffi==0.15.0
+python-telegram-bot==22.5
