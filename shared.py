@@ -50,20 +50,10 @@ def save_gallery(data):
 def add_to_gallery(site, filename, filepath, tags_list, artists):
     with GALLERY_LOCK:
         gallery = load_gallery()
-        # ponytail: dict-by-(site,filename) avoids O(n) scan; upgrade to DB if gallery > 10k items
-        by_key = {(i.get("site", ""), i["filename"]): i for i in gallery["images"]}
-        if (site, filename) in by_key:
+        entry_id = hashlib.md5(f"{site}:{filename}".encode()).hexdigest()[:12]
+        if any(i.get("id") == entry_id for i in gallery["images"]):
             return
-        gallery["images"].insert(0, {
-            "id": hashlib.md5(f"{site}:{filename}".encode()).hexdigest()[:12],
-            "filename": filename,
-            "filepath": filepath,
-            "site": site,
-            "tags": [t.strip() for t in tags_list if t.strip()],
-            "artists": [a.strip() for a in artists if a.strip()],
-            "favourite": False,
-            "downloaded_at": time.strftime("%Y-%m-%dT%H:%M:%S")
-        })
+        gallery["images"].insert(0, {"id": entry_id, "site": site})
         save_gallery(gallery)
 
 def write_image_metadata(filepath, tags_list, artists, site):
