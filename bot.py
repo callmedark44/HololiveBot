@@ -36,14 +36,14 @@ SOURCE_BY_REPORT = {r: k for k, _l, r, _c in SOURCES if r}
 
 # worker dispatch, mirrors Rem_catcher._DISPATCH but proxy-free; tag + net_config in, full args out
 FETCHERS = {
-    "yande": ("workers.yande", "worker_yande", lambda t, nc: (t, DEFAULT_AMOUNT, "", nc)),
-    "kona": ("workers.konachan", "worker_konachan", lambda t, nc: (t, DEFAULT_AMOUNT, "", [], nc)),
-    "dan": ("workers.danbooru", "worker_danbooru", lambda t, nc: (t, DEFAULT_AMOUNT, "", [], nc)),
-    "safe": ("workers.safebooru", "worker_safebooru", lambda t, nc: (t, DEFAULT_AMOUNT, [], nc)),
-    "zero": ("workers.zerochan", "worker_zerochan", lambda t, nc: (t, DEFAULT_AMOUNT, nc)),
-    "nekosia": ("workers.nekosia", "worker_nekosia", lambda t, nc: (t, DEFAULT_AMOUNT, nc)),
-    "eshuushuu": ("workers.eshuushuu", "worker_eshuushuu", lambda t, nc: (t, DEFAULT_AMOUNT, [], "", nc)),
-    "anime_dl": ("workers.anime_dl", "worker_anime_dl", lambda t, nc: (t, DEFAULT_AMOUNT, nc)),
+    "yande": ("workers.yande", "worker_yande", lambda t, nc, n: (t, n, "", nc)),
+    "kona": ("workers.konachan", "worker_konachan", lambda t, nc, n: (t, n, "", [], nc)),
+    "dan": ("workers.danbooru", "worker_danbooru", lambda t, nc, n: (t, n, "", [], nc)),
+    "safe": ("workers.safebooru", "worker_safebooru", lambda t, nc, n: (t, n, [], nc)),
+    "zero": ("workers.zerochan", "worker_zerochan", lambda t, nc, n: (t, n, nc)),
+    "nekosia": ("workers.nekosia", "worker_nekosia", lambda t, nc, n: (t, n, nc)),
+    "eshuushuu": ("workers.eshuushuu", "worker_eshuushuu", lambda t, nc, n: (t, n, [], "", nc)),
+    "anime_dl": ("workers.anime_dl", "worker_anime_dl", lambda t, nc, n: (t, n, nc)),
 }
 
 # ── per-user credential store ──────────────────────────────────
@@ -172,10 +172,20 @@ async def prompt_creds(update, context, skey):
     except Exception:
         pass  # user hasn't started the bot — the group prompt still shows
 
-def confirm_keyboard(name, skey, tag):
+COUNT_CHOICES = [1, 2, 3, 5, 10, 20]
+
+def count_keyboard(name, skey, tag):
+    rows = []
+    for i in range(0, len(COUNT_CHOICES), 3):
+        rows.append([InlineKeyboardButton(str(n), callback_data=f"count:{_store({'name': name, 'source': skey, 'tag': tag, 'count': n})}")
+                     for n in COUNT_CHOICES[i:i+3]])
+    rows.append([InlineKeyboardButton("Cancel", callback_data=f"branch:{_store({'branch': 'home'})}")])
+    return InlineKeyboardMarkup(rows)
+
+def confirm_keyboard(name, skey, tag, count):
     label = next((l for k, l, _r, _c in SOURCES if k == skey), skey)
     return InlineKeyboardMarkup([[
-        InlineKeyboardButton(f"Fetch {DEFAULT_AMOUNT} from {label}", callback_data=f"fetch:{_store({'name': name, 'source': skey, 'tag': tag})}"),
+        InlineKeyboardButton(f"Fetch {count} from {label}", callback_data=f"fetch:{_store({'name': name, 'source': skey, 'tag': tag, 'count': count})}"),
         InlineKeyboardButton("Cancel", callback_data=f"branch:{_store({'branch': 'home'})}"),
     ]])
 
@@ -308,7 +318,7 @@ async def on_menu_click(update, context):
         if needs and skey not in user_creds(uid):
             await prompt_creds(update, context, skey)
             return
-        await q.edit_message_text(f"{name} • {tag}", reply_markup=confirm_keyboard(name, skey, tag))
+        await q.edit_message_text(f"{name} • {tag} — how many?", reply_markup=count_keyboard(name, skey, tag))
 
     elif kind == "pg":
         st = _get(parts[1])
@@ -323,25 +333,31 @@ async def on_menu_click(update, context):
             kb, _note = tag_keyboard(name, skey, page)
             await q.edit_message_text(f"{name} — tag:", reply_markup=kb)
 
+    elif kind == "count":
+        st = _get(parts[1])
+        name, skey, tag, count = st["name"], st["source"], st["tag"], st["count"]
+        await q.edit_message_text(f"Fetch {count} of {name} from {skey} ({tag})?",
+                                  reply_markup=confirm_keyboard(name, skey, tag, count))
+
     elif kind == "fetch":
         st = _get(parts[1])
-        name, skey, tag = st["name"], st["source"], st["tag"]
+        name, skey, tag, count = st["name"], st["source"], st["tag"], st.get("count", DEFAULT_AMOUNT)
         uid = str(q.from_user.id)
-        await q.edit_message_text(f"Fetching {DEFAULT_AMOUNT} for {name} from {skey}… ({tag})")
-        await context.application.create_task(_fetch_and_send(update.effective_chat.id, uid, name, skey, tag))
+        await q.edit_message_text(f"Fetching {count} for {name} from {skey}… ({tag})")
+        await context.application.create_task(_fetch_and_send(update.effective_chat.id, uid, name, skey, tag, count))
 
 # ── fetch + send ───────────────────────────────────────────────
 _FETCH_LOCK = threading.Lock()
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".tiff", ".tif"}
 
-def _run_worker(skey, tag, net_config):
+def _run_worker(skey, tag, net_config, count):
     mod_name, fn_name, extractor = FETCHERS[skey]
     mod = importlib.import_module(mod_name)
     fn = getattr(mod, fn_name)
-    args = extractor(tag, net_config)
+    args = extractor(tag, net_config, count)
     fn(*args)
 
-async def _fetch_and_send(chat_id, uid, name, skey, tag):
+async def _fetch_and_send(chat_id, uid, name, skey, tag, count):
     label = next(l for k, l, _r, _c in SOURCES if k == skey)
     try:
         with _FETCH_LOCK:
@@ -354,7 +370,7 @@ async def _fetch_and_send(chat_id, uid, name, skey, tag):
             old = shared.MASTER_FOLDER
             shared.MASTER_FOLDER = tmp
             try:
-                await asyncio.to_thread(_run_worker, skey, tag, net_config)
+                await asyncio.to_thread(_run_worker, skey, tag, net_config, count)
             finally:
                 shared.MASTER_FOLDER = old
 
@@ -368,7 +384,7 @@ async def _fetch_and_send(chat_id, uid, name, skey, tag):
             await _app.bot.send_message(chat_id, f"No images found for {name} on {label} ({tag}).")
             return
         await _app.bot.send_message(chat_id, f"Found {len(files)} — sending…")
-        for fp in files[:20]:
+        for fp in files[:count]:
             try:
                 with open(fp, "rb") as fh:
                     if os.path.splitext(fp)[1].lower() in {".jpg", ".jpeg", ".png", ".webp"}:
