@@ -193,11 +193,14 @@ async def prompt_creds(update, context, skey):
 
 COUNT_CHOICES = [1, 2, 3, 5, 10, 20]
 
-def count_keyboard(name, skey, tag):
+def count_keyboard(name, skey, tag, uid):
     rows = []
     for i in range(0, len(COUNT_CHOICES), 3):
         rows.append([InlineKeyboardButton(str(n), callback_data=f"count:{_store({'name': name, 'source': skey, 'tag': tag, 'count': n})}")
                      for n in COUNT_CHOICES[i:i+3]])
+    as_doc = user_pref(uid, "as_doc", False)
+    mode_label = "Send as file (full res)" if not as_doc else "Send as photo (HD)"
+    rows.append([InlineKeyboardButton(f"📄 {mode_label}", callback_data=f"mode:{_store({'name': name, 'source': skey, 'tag': tag, 'back': 'count'})}")])
     rows.append([InlineKeyboardButton("Cancel", callback_data=f"branch:{_store({'branch': 'home'})}")])
     return InlineKeyboardMarkup(rows)
 
@@ -353,7 +356,7 @@ async def on_menu_click(update, context):
         if needs and skey not in user_creds(uid):
             await prompt_creds(update, context, skey)
             return
-        await q.edit_message_text(f"{name} • {tag} — how many?", reply_markup=count_keyboard(name, skey, tag))
+        await q.edit_message_text(f"{name} • {tag} — how many?", reply_markup=count_keyboard(name, skey, tag, uid))
 
     elif kind == "pg":
         st = _get(parts[1])
@@ -368,9 +371,19 @@ async def on_menu_click(update, context):
             kb, _note = tag_keyboard(name, skey, page)
             await q.edit_message_text(f"{name} — tag:", reply_markup=kb)
 
+    elif kind == "mode":
+        st = _get(parts[1])
+        name, skey, tag = st["name"], st["source"], st["tag"]
+        uid = str(q.from_user.id)
+        cur = user_pref(uid, "as_doc", False)
+        set_user_pref(uid, "as_doc", not cur)
+        await q.edit_message_text(f"{name} • {tag} — how many?",
+                                  reply_markup=count_keyboard(name, skey, tag, uid))
+
     elif kind == "count":
         st = _get(parts[1])
         name, skey, tag, count = st["name"], st["source"], st["tag"], st["count"]
+        uid = str(q.from_user.id)
         await q.edit_message_text(f"Fetch {count} of {name} from {skey} ({tag})?",
                                   reply_markup=confirm_keyboard(name, skey, tag, count))
 
