@@ -24,10 +24,19 @@ class SafebooruWorker(BaseDownloader):
                 self.log(f"Scanning API... (Page {pid})")
                 limit_val = min(100, self.amount - collected_count if self.amount > 0 else 100)
 
-                resp = await asyncio.to_thread(self.session.get, "https://safebooru.org/index.php", params={
-                    "page": "dapi", "s": "post", "q": "index",
-                    "tags": self.original_tag, "pid": pid, "limit": limit_val, "json": 1
-                }, timeout=15)
+                for attempt in range(3):
+                    try:
+                        resp = await asyncio.to_thread(self.session.get, "https://safebooru.org/index.php", params={
+                            "page": "dapi", "s": "post", "q": "index",
+                            "tags": self.original_tag, "pid": pid, "limit": limit_val, "json": 1
+                        }, timeout=60)
+                        break
+                    except Exception as e:
+                        if attempt < 2:
+                            self.log(f"API timeout (attempt {attempt+1}/3), retrying...")
+                            await asyncio.sleep(5)
+                        else:
+                            raise
                 if resp.status_code in [403, 429]:
                     self.log(f"ERROR {resp.status_code}. Change proxy.")
                     break

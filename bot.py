@@ -239,11 +239,11 @@ async def cmd_sources(message: types.Message, **kw):
 SRC_LOOKUP = {k: k for k, _l, _r in SOURCES} | {l.lower(): k for k, l, _r in SOURCES}
 
 async def cmd_fetch(message: types.Message, bot: Bot):
-    """One-shot fetch: /fetch <member> <source> [count] [tag]"""
+    """One-shot fetch: /fetch <member> <source> [count] [tag] [doc|photo]"""
     args = (message.text or "").split()[1:]
     si = next((i for i, a in enumerate(args) if a.lower() in SRC_LOOKUP), None)
     if si is None or si == 0:
-        await message.answer("Usage: /fetch <member> <source> [count] [tag]\n"
+        await message.answer("Usage: /fetch <member> <source> [count] [tag] [photo|doc]\n"
                              "e.g. /fetch Houshou Marine konachan 5")
         return
     name_q = " ".join(args[:si]).strip()
@@ -251,10 +251,14 @@ async def cmd_fetch(message: types.Message, bot: Bot):
     rest = args[si + 1:]
     count = DEFAULT_AMOUNT
     tag = None
+    send_as_doc = False
     if rest:
-        if rest[0].isdigit():
+        if rest[0].split('-')[0].isdigit():
             count = int(rest[0])
             rest = rest[1:]
+        if rest and rest[-1].lower() in ("doc", "document", "file"):
+            send_as_doc = True
+            rest = rest[:-1]
         if rest:
             tag = " ".join(rest).strip()
     count = max(1, min(count, 100))
@@ -275,8 +279,8 @@ async def cmd_fetch(message: types.Message, bot: Bot):
         await message.answer(f"No tag '{tag}' for {name} on {label}.\n"
                              f"Known: {', '.join(tl[:8])}{'…' if len(tl) > 8 else ''}")
         return
-    await message.answer(f"Fetching {count} for {name} from {label} ({tag})…")
-    asyncio.create_task(_fetch_and_send(message.chat.id, uid, name, skey, tag, count, bot))
+    await message.answer(f"Fetching {count} for {name} from {label} ({tag})… {'as files' if send_as_doc else 'as HD photos'}")
+    asyncio.create_task(_fetch_and_send(message.chat.id, uid, name, skey, tag, count, bot, send_immediately=True))
 
 async def cmd_mode(message: types.Message, **kw):
     uid = str(message.from_user.id)
@@ -305,47 +309,61 @@ def _run_worker(skey, tag, net_config, count):
     args = extractor(tag, net_config, count)
     fn(*args)
 
-async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot):
+async def _send_file(bot: Bot, chat_id, name, label, tag, fp, as_doc):
+    """Send a single downloaded file."""
+    try:
+        fsize = os.path.getsize(fp)
+        use_doc = as_doc or fsize > 10*1024*1024 or os.path.splitext(fp)[1].lower() not in {".jpg", ".jpeg", ".png", ".webp"}
+        infile = FSInputFile(fp)
+        if use_doc:
+            await asyncio.wait_for(bot.send_document(chat_id, infile, caption=f"{name} • {label} • {tag}"), timeout=60)
+        else:
+            await asyncio.wait_for(bot.send_photo(chat_id, infile, caption=f"{name} • {label} • {tag}"), timeout=60)
+    except asyncio.TimeoutError:
+        await bot.send_message(chat_id, f"Send timeout for {name} • {label} • {tag} - try smaller amount")
+    except Exception as e:
+        await bot.send_message(chat_id, f"Send failed for one file: {e}")
+
+async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, send_immediately=True):
     label = next(l for k, l, _r in SOURCES if k == skey)
+    as_doc = user_pref(uid, "as_doc", False)
     try:
         with _FETCH_LOCK:
             proxy = os.getenv("https_proxy") or os.getenv("http_proxy")
             net_config = {"use_proxy": bool(proxy), "proxy_url": proxy or "",
                           "verify_tls": False, "anti_ban_pause": 1.0,
-                          "api_timeout": 10, "retry_wait": 3, "download_retries": 1}
+                          "api_timeout": 10, "retry_wait": 3, "download_retries": 3}
 
             tmp = tempfile.mkdtemp(prefix="remgod_bot_")
             old = shared.MASTER_FOLDER
             shared.MASTER_FOLDER = tmp
             try:
-                await asyncio.to_thread(_run_worker, skey, tag, net_config, count)
+                if send_immediately:
+                    # Stream files as soon as they download
+                    async def on_download(filepath, filename):
+                        try:
+                            await _send_file(bot, chat_id, name, label, tag, filepath, as_doc)
+                        finally:
+                            try: os.remove(filepath)
+                            except OSError: pass
+                    net_config["download_callback"] = on_download
+                    await asyncio.to_thread(_run_worker, skey, tag, net_config, count)
+                else:
+                    # Collect all files first, then send (original behavior)
+                    await asyncio.to_thread(_run_worker, skey, tag, net_config, count)
+                    files = []
+                    for root, _d, names in os.walk(tmp):
+                        for n in names:
+                            if os.path.splitext(n)[1].lower() in IMAGE_EXT:
+                                files.append(os.path.join(root, n))
+                    if not files:
+                        await bot.send_message(chat_id, f"No images found for {name} on {label} ({tag}).")
+                        return
+                    await bot.send_message(chat_id, f"Found {len(files)} — sending… ({'files' if as_doc else 'photos'})")
+                    for fp in files[:count]:
+                        await _send_file(bot, chat_id, name, label, tag, fp, as_doc)
             finally:
                 shared.MASTER_FOLDER = old
-
-            files = []
-            for root, _d, names in os.walk(tmp):
-                for n in names:
-                    if os.path.splitext(n)[1].lower() in IMAGE_EXT:
-                        files.append(os.path.join(root, n))
-
-        if not files:
-            await bot.send_message(chat_id, f"No images found for {name} on {label} ({tag}).")
-            return
-        as_doc = user_pref(uid, "as_doc", False)
-        await bot.send_message(chat_id, f"Found {len(files)} — sending… ({'files' if as_doc else 'photos'})")
-        for fp in files[:count]:
-            try:
-                fsize = os.path.getsize(fp)
-                use_doc = as_doc or fsize > 10*1024*1024 or os.path.splitext(fp)[1].lower() not in {".jpg", ".jpeg", ".png", ".webp"}
-                infile = FSInputFile(fp)
-                if use_doc:
-                    await asyncio.wait_for(bot.send_document(chat_id, infile, caption=f"{name} • {label} • {tag}"), timeout=30)
-                else:
-                    await asyncio.wait_for(bot.send_photo(chat_id, infile, caption=f"{name} • {label} • {tag}"), timeout=30)
-            except asyncio.TimeoutError:
-                await bot.send_message(chat_id, f"Send timeout for {name} • {label} • {tag} - try smaller amount")
-            except Exception as e:
-                await bot.send_message(chat_id, f"Send failed for one file: {e}")
     except Exception as e:
         await bot.send_message(chat_id, f"Error fetching {name} from {label}: {e}")
     finally:

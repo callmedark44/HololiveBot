@@ -110,6 +110,7 @@ class BaseDownloader:
         self.site_folder = site_folder
         self.amount = max(0, int(amount))
         self.net_config = net_config
+        self.download_callback = net_config.get("download_callback")
 
         self.stop_event = threading.Event()
         if name not in STOP_EVENTS:
@@ -201,6 +202,10 @@ class BaseDownloader:
                 rel_path = os.path.relpath(filepath, MASTER_FOLDER)
                 add_to_gallery(self.name, filename, rel_path, tags_list, artists)
                 write_image_metadata(filepath, tags_list, artists, self.name)
+
+                if self.download_callback:
+                    asyncio.create_task(self.download_callback(filepath, filename))
+
                 send_tags(self.name, filename, tags_list, artists, rel_path)
                 return True
 
