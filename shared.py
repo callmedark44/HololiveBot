@@ -204,7 +204,10 @@ class BaseDownloader:
                 write_image_metadata(filepath, tags_list, artists, self.name)
 
                 if self.download_callback:
-                    asyncio.create_task(self.download_callback(filepath, filename))
+                    try:
+                        self.download_callback(filepath, filename)
+                    except Exception as e:
+                        self.log(f"[callback] {e}")
 
                 send_tags(self.name, filename, tags_list, artists, rel_path)
                 return True

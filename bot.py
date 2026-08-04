@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Telegram bot: pick a hololive member -> source -> tag, fetch via existing workers, send, delete."""
-import asyncio, importlib, json, os, re, shutil, tempfile, threading
+import asyncio, importlib, json, os, re, shutil, tempfile, threading, concurrent.futures
 from dotenv import load_dotenv; load_dotenv()
 
 import shared
@@ -19,6 +19,10 @@ DB_FILE = os.path.join(_BOT_DIR, "bot_users.json")
 os.makedirs(os.path.join(_BOT_DIR, "database"), exist_ok=True)
 
 DEFAULT_AMOUNT = int(os.getenv("BOT_AMOUNT", "5"))
+
+# Event loop reference for scheduling downloads from worker threads
+_APP_LOOP = None
+_LOOP_LOCK = threading.Lock()
 
 LANG_EMOJI = {"jp": "🇯🇵", "id": "🇮🇩", "en": "🇺🇸"}
 BRANCH_LABEL = {"hololive": "hololive", "holostars": "HOLOSTARS"}
@@ -340,12 +344,11 @@ async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, send_i
             try:
                 if send_immediately:
                     # Stream files as soon as they download
-                    async def on_download(filepath, filename):
-                        try:
-                            await _send_file(bot, chat_id, name, label, tag, filepath, as_doc)
-                        finally:
-                            try: os.remove(filepath)
-                            except OSError: pass
+                    loop = asyncio.get_event_loop()
+                    def on_download(filepath, filename):
+                        asyncio.run_coroutine_threadsafe(
+                            _send_file(bot, chat_id, name, label, tag, filepath, as_doc), loop
+                        )
                     net_config["download_callback"] = on_download
                     await asyncio.to_thread(_run_worker, skey, tag, net_config, count)
                 else:
