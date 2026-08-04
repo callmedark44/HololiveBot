@@ -542,6 +542,61 @@ async def on_message(message: types.Message, bot: Bot):
     if _BOT_USERNAME and f"@{_BOT_USERNAME}" in text:
         await message.answer("Choose a branch:", reply_markup=branch_keyboard())
 
+# ── random art feature ────────────────────────────────────
+# Track chats we've seen so scheduler only posts where the bot is present.
+_KNOWN_CHATS: set[str] = set()
+
+async def on_chat_member(update: types.ChatMemberUpdated, bot: Bot):
+    """When a new member joins a chat, send them a random art."""
+
+    if update.new_chat_member.status in ("member", "creator", "administrator"):
+        _KNOWN_CHATS.add(str(update.chat.id))
+        if getattr(update.new_chat_member, "user", None) and getattr(update.new_chat_member.user, "is_bot", False):
+            return
+        await _send_random_art(bot, update.chat.id, uid=None)
+        await bot.send_message(update.chat.id, "🎉 Welcome! Here's some art.")
+
+
+async def _pick_random_art(bot: Bot) -> tuple | None:
+    """Pick a random member+source+tag combo that has downloadable art."""
+    import random as _random
+
+    candidates = []
+    for name, tl in TAGS.items():
+        for report_key, tags in tl.items():
+            if not tags:
+                continue
+            candidates.append((name, SOURCE_BY_REPORT.get(report_key), tags[0]))
+    if not candidates:
+        return None
+    return _random.choice(candidates)
+
+
+async def _send_random_art(bot: Bot, chat_id, uid=None):
+    """Fetch + send one random art to chat."""
+    import random as _random
+    picked = await _pick_random_art(bot)
+    if not picked:
+        return
+    name, skey, tag = picked
+    label = next(l for k, l, _r in SOURCES if k == skey)
+    as_doc = user_pref(uid or "0", "as_doc", False) if uid else False
+    await _fetch_and_send(chat_id, uid or "0", name, skey, tag, 1, bot, force_doc=as_doc)
+
+
+async def random_art_scheduler(bot: Bot):
+    """Every 4 hours, post one random art to every known chat."""
+    while True:
+        await asyncio.sleep(4 * 60 * 60)
+        if not _KNOWN_CHATS:
+            continue
+        for cid in list(_KNOWN_CHATS):
+            try:
+                await _send_random_art(bot, int(cid))
+                await asyncio.sleep(2)
+            except Exception:
+                pass
+
 # ── main ──────────────────────────────────────────────────
 def _serve_health(port):
     from http.server import BaseHTTPRequestHandler, HTTPServer
@@ -592,6 +647,16 @@ async def main():
     dp.message.register(cmd_mode, Command("mode"))
     dp.callback_query.register(on_menu_click)
     dp.message.register(on_message, F.text & ~F.text.startswith("/"))
+    dp.chat_member.register(on_chat_member)
+
+    # Background task: random art every 4 hours
+    asyncio.create_task(random_art_scheduler(bot))
+
+    print(f"Bot starting (health on :{PORT})...")
+    await dp.start_polling(bot)
+    # Background task: random art every 4 hours
+    asyncio.create_task(random_art_scheduler(bot))
+
     print(f"Bot starting (health on :{PORT})...")
     await dp.start_polling(bot)
 
