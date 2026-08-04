@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Telegram bot: pick a hololive member -> source -> tag, fetch via existing workers, send, delete."""
-import asyncio, importlib, json, os, re, shutil, tempfile, threading, concurrent.futures
+import asyncio, importlib, json, os, re, threading, concurrent.futures
 from dotenv import load_dotenv; load_dotenv()
 
 import shared
@@ -18,9 +18,7 @@ _BOT_DIR = os.path.dirname(os.path.abspath(__file__))
 DB_FILE = os.path.join(_BOT_DIR, "bot_users.json")
 os.makedirs(os.path.join(_BOT_DIR, "database"), exist_ok=True)
 
-DEFAULT_AMOUNT = int(os.getenv("BOT_AMOUNT", "5"))
-
-# Event loop reference for scheduling downloads from worker threads
+DEFAULT_AMOUNT = 5
 _APP_LOOP = None
 _LOOP_LOCK = threading.Lock()
 
@@ -42,9 +40,9 @@ SOURCES = [
 SOURCE_BY_REPORT = {r: k for k, _l, r in SOURCES}
 
 FETCHERS = {
-    "yande": ("workers.yande", "worker_yande", lambda t, nc, n: (t, n, "", nc)),
-    "kona": ("workers.konachan", "worker_konachan", lambda t, nc, n: (t, n, "", [], nc)),
-    "dan": ("workers.danbooru", "worker_danbooru", lambda t, nc, n: (t, n, "", [], nc)),
+    "yande": ("workers.yande", "worker_yande", lambda t, nc, n: (t, n, "rating:s", nc)),
+    "kona": ("workers.konachan", "worker_konachan", lambda t, nc, n: (t, n, "rating:s", [], nc)),
+    "dan": ("workers.danbooru", "worker_danbooru", lambda t, nc, n: (t, n, "rating:g", [], nc)),
     "safe": ("workers.safebooru", "worker_safebooru", lambda t, nc, n: (t, n, [], nc)),
     "zero": ("workers.zerochan", "worker_zerochan", lambda t, nc, n: (t, n, nc)),
     "nekosia": ("workers.nekosia", "worker_nekosia", lambda t, nc, n: (t, n, nc)),
@@ -253,19 +251,7 @@ async def cmd_fetch(message: types.Message, bot: Bot):
     name_q = " ".join(args[:si]).strip()
     skey = SRC_LOOKUP[args[si].lower()]
     rest = args[si + 1:]
-    count = DEFAULT_AMOUNT
-    tag = None
-    send_as_doc = False
-    if rest:
-        if rest[0].split('-')[0].isdigit():
-            count = int(rest[0])
-            rest = rest[1:]
-        if rest and rest[-1].lower() in ("doc", "document", "file"):
-            send_as_doc = True
-            rest = rest[:-1]
-        if rest:
-            tag = " ".join(rest).strip()
-    count = max(1, min(count, 100))
+
     label = next(l for k, l, _r in SOURCES if k == skey)
 
     name = next((n for n in MEMBERS if name_q.lower() in n.lower()), None)
@@ -277,12 +263,42 @@ async def cmd_fetch(message: types.Message, bot: Bot):
     if not tl:
         await message.answer(f"No tags for {name} on {label} yet.")
         return
+
+    count = None
+    tag = None
+    send_as_doc = False
+
+    # Parse arguments
+    if rest:
+        # Check if first arg is a number (count)
+        if rest[0].split('-')[0].isdigit():
+            count = int(rest[0])
+            rest = rest[1:]
+
+        # Check if last arg is doc/photo
+        if rest and rest[-1].lower() in ("doc", "document", "file"):
+            send_as_doc = True
+            rest = rest[:-1]
+
+        # Remaining is the tag
+        if rest:
+            tag = " ".join(rest).strip()
+
+    # If no tag, use first available
     if tag is None:
         tag = tl[0]
     elif tag.lower() not in (t.lower() for t in tl):
         await message.answer(f"No tag '{tag}' for {name} on {label}.\n"
                              f"Known: {', '.join(tl[:8])}{'…' if len(tl) > 8 else ''}")
         return
+
+    # If count not provided, prompt user
+    if count is None:
+        _COUNT_PENDING[uid] = {"name": name, "source": skey, "tag": tag, "send_as_doc": send_as_doc}
+        await message.answer(f"{name} • {tag} — how many? (1-100)")
+        return
+
+    count = max(1, min(count, 100))
     await message.answer(f"Fetching {count} for {name} from {label} ({tag})… {'as files' if send_as_doc else 'as HD photos'}")
     asyncio.create_task(_fetch_and_send(message.chat.id, uid, name, skey, tag, count, bot, send_immediately=True, force_doc=send_as_doc))
 
@@ -305,7 +321,6 @@ async def cmd_mode(message: types.Message, **kw):
 # ── fetch + send ──────────────────────────────────────────
 _FETCH_LOCK = threading.Lock()
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".tiff", ".tif"}
-_SEND_SEM = asyncio.Semaphore(1)  # serialize Telegram sends per aiohttp session
 
 def _run_worker(skey, tag, net_config, count):
     mod_name, fn_name, extractor = FETCHERS[skey]
@@ -314,33 +329,49 @@ def _run_worker(skey, tag, net_config, count):
     args = extractor(tag, net_config, count)
     fn(*args)
 
-async def _send_file(bot: Bot, chat_id, name, label, tag, fp, as_doc):
-    """Send a single downloaded file. Serialized via semaphore to avoid
-    concurrent Telegram uploads through one aiohttp session (ClientOSError)."""
+async def _send_file(bot, chat_id, name, label, tag, fp, as_doc):
+    """Send a single downloaded file. Sequential via the sender coroutine."""
     for attempt in range(3):
         try:
-            await _SEND_SEM.acquire()  # ponytail: single send at a time; a per-chat semaphore if ever needed
+            fsize = os.path.getsize(fp)
+            use_doc = (
+                as_doc
+                or fsize > 10 * 1024 * 1024
+                or os.path.splitext(fp)[1].lower()
+                not in {".jpg", ".jpeg", ".png", ".webp"}
+            )
+            infile = FSInputFile(fp)
+            if use_doc:
+                await bot.send_document(
+                    chat_id,
+                    infile,
+                    caption=f"{name} • {label} • {tag}",
+                )
+            else:
+                await bot.send_photo(
+                    chat_id,
+                    infile,
+                    caption=f"{name} • {label} • {tag}",
+                )
+            # File sent successfully — delete from disk to save storage
             try:
-                fsize = os.path.getsize(fp)
-                use_doc = as_doc or fsize > 10*1024*1024 or os.path.splitext(fp)[1].lower() not in {".jpg", ".jpeg", ".png", ".webp"}
-                infile = FSInputFile(fp)
-                if use_doc:
-                    await asyncio.wait_for(bot.send_document(chat_id, infile, caption=f"{name} • {label} • {tag}"), timeout=60)
-                else:
-                    await asyncio.wait_for(bot.send_photo(chat_id, infile, caption=f"{name} • {label} • {tag}"), timeout=60)
-                return  # success
-            finally:
-                _SEND_SEM.release()
-        except asyncio.TimeoutError:
-            if attempt < 2:
-                await asyncio.sleep(2)
-                continue
-            await bot.send_message(chat_id, f"Send timeout for {name} • {label} • {tag} - try smaller amount")
+                os.remove(fp)
+                # Clean up empty parent dirs left behind
+                parent = os.path.dirname(fp)
+                if parent and os.path.isdir(parent) and not os.listdir(parent):
+                    os.rmdir(parent)
+            except OSError:
+                pass
+            return
+
         except Exception as e:
             if attempt < 2:
-                await asyncio.sleep(3)
-                continue
-            await bot.send_message(chat_id, f"Send failed for one file: {e}")
+                await asyncio.sleep(2)
+            else:
+                await bot.send_message(
+                    chat_id,
+                    f"Send failed for {os.path.basename(fp)}:\n{e}",
+                )
 
 async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, send_immediately=True, force_doc=None):
     label = next(l for k, l, _r in SOURCES if k == skey)
@@ -352,30 +383,34 @@ async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, send_i
                           "verify_tls": False, "anti_ban_pause": 1.0,
                           "api_timeout": 10, "retry_wait": 3, "download_retries": 3}
 
-            tmp = tempfile.mkdtemp(prefix="remgod_bot_")
-            old = shared.MASTER_FOLDER
-            shared.MASTER_FOLDER = tmp
-            send_futures = []
-            loop = asyncio.get_event_loop()
-            try:
-                def on_download(filepath, filename):
-                    f = asyncio.run_coroutine_threadsafe(
-                        _send_file(bot, chat_id, name, label, tag, filepath, as_doc), loop
-                    )
-                    send_futures.append(f)
-                net_config["download_callback"] = on_download
-                await asyncio.to_thread(_run_worker, skey, tag, net_config, count)
-                # Wait for ALL pending sends to finish before cleanup
-                for f in send_futures:
-                    try: f.result(timeout=120)
-                    except Exception: pass
-            finally:
-                shared.MASTER_FOLDER = old
+            send_queue = asyncio.Queue()
+
+            async def sender():
+                while True:
+                    item = await send_queue.get()
+                    if item is None:
+                        send_queue.task_done()
+                        break
+                    filepath, filename = item
+                    try:
+                        await _send_file(bot, chat_id, name, label, tag, filepath, as_doc)
+                    finally:
+                        send_queue.task_done()
+
+            sender_task = asyncio.create_task(sender())
+
+            def on_download(filepath, filename):
+                _APP_LOOP.call_soon_threadsafe(
+                    send_queue.put_nowait, (filepath, filename)
+                )
+
+            net_config["download_callback"] = on_download
+            await asyncio.to_thread(_run_worker, skey, tag, net_config, count)
+            await send_queue.join()
+            _APP_LOOP.call_soon_threadsafe(send_queue.put_nowait, None)
+            await sender_task
     except Exception as e:
         await bot.send_message(chat_id, f"Error fetching {name} from {label}: {e}")
-    finally:
-        if "tmp" in dir():
-            shutil.rmtree(tmp, ignore_errors=True)
 
 # ── callback handler ──────────────────────────────────────
 async def on_menu_click(call: types.CallbackQuery, bot: Bot):
@@ -468,7 +503,7 @@ async def on_menu_click(call: types.CallbackQuery, bot: Bot):
 
     elif kind == "fetch":
         st = _get(parts[1])
-        name, skey, tag, count = st["name"], st["source"], st["tag"], st.get("count", DEFAULT_AMOUNT)
+        name, skey, tag, count = st["name"], st["source"], st["tag"], st["count"]
         _COUNT_PENDING.pop(uid, None)
         await call.message.edit_text(f"Fetching {count} for {name} from {skey}… ({tag})")
         asyncio.create_task(_fetch_and_send(call.message.chat.id, uid, name, skey, tag, count, bot))
@@ -514,7 +549,8 @@ def _serve_health(port):
     threading.Thread(target=httpd.serve_forever, daemon=True).start()
 
 async def main():
-    global _BOT_USERNAME
+    global _APP_LOOP, _BOT_USERNAME
+    _APP_LOOP = asyncio.get_running_loop()
     if not TOKEN:
         raise SystemExit("BOT_TOKEN not set")
     dp = Dispatcher()

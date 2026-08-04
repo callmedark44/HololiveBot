@@ -10,7 +10,7 @@ rejects requests (403) unless two cookies are present:
 import os, re
 import asyncio
 import shared
-from shared import BaseDownloader, add_to_gallery, send_tags
+from shared import BaseDownloader, add_to_gallery, send_tags, save_history
 from curl_cffi import requests as curl_requests
 
 API = "https://api.anime-pictures.net/api/v3"
@@ -61,10 +61,11 @@ class AnimeDlWorker(BaseDownloader):
             return
 
         dl_url = f"https://api.anime-pictures.net/pictures/download_image/{file_url}"
-        r = await asyncio.to_thread(self.session.get, dl_url, timeout=120, headers={
+        r = await asyncio.to_thread(self.session.get, dl_url, timeout=220, headers={
             "Referer": f"https://anime-pictures.net/posts/{post_id}?lang=en",
         })
         if r.status_code != 200 or len(r.content) <= 1000:
+            self.log(f"[WARN] Post {post_id}: HTTP {r.status_code}, {len(r.content)} bytes — may be throttled or blocked")
             return
 
         ext = file_url.rsplit(".", 1)[-1]
@@ -77,7 +78,14 @@ class AnimeDlWorker(BaseDownloader):
         add_to_gallery(self.name, filename, rel, [self.tag], [])
         send_tags(self.name, filename, [self.tag])
         self.downloaded_count += 1
+        self.dl_history.add(filename)
+        save_history(self.site_root, self.dl_history)
         self.log(f"[SUCCESS] Downloaded {filename}")
+        if self.download_callback:
+            try:
+                self.download_callback(fpath, filename)
+            except Exception as e:
+                self.log(f"[callback] {e}")
 
     async def scraper_task(self):
         self.log(f"Initializing worker for tag: '{self.tag}'")
@@ -106,6 +114,10 @@ class AnimeDlWorker(BaseDownloader):
             if self.stop_event.is_set():
                 break
             await self._download_one(pid)
+            if self.stop_event.is_set():
+                break
+            # small delay between posts to avoid hammering the API
+            await asyncio.sleep(0.5)
 
     def run(self):
         asyncio.run(self.run_async_loop(self.scraper_task))

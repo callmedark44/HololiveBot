@@ -123,6 +123,7 @@ class BaseDownloader:
         self.site_root = os.path.join(MASTER_FOLDER, site_folder)
         os.makedirs(self.site_root, exist_ok=True)
         self.dl_history = load_history(self.site_root)
+        self._seen_filenames = set()  # ponytail: per-session dedup for API duplicates within same scrape
 
         self.session = self._setup_session()
         self.downloaded_count = 0
@@ -150,7 +151,7 @@ class BaseDownloader:
 
     async def enqueue_download(self, url, filepath, filename, tags_list, artists=None):
         if artists is None: artists = []
-        if filename in self.dl_history or os.path.exists(filepath):
+        if filename in self.dl_history or filename in self._seen_filenames or os.path.exists(filepath):
             return False
         file_size = 0
         try:
@@ -159,6 +160,7 @@ class BaseDownloader:
         except Exception:
             pass
         self.total_bytes += file_size
+        self._seen_filenames.add(filename)
         self.download_queue.put_nowait((url, filepath, filename, tags_list, artists, file_size))
         return True
 
