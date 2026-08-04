@@ -29,7 +29,6 @@ PAGE_SIZE = 10
 # (key, label, report_key)
 SOURCES = [
     ("yande", "Yande.re", "yande.re"),
-    ("kona", "Konachan", "konachan"),
     ("dan", "Danbooru", "danbooru"),
     ("safe", "Safebooru", "safebooru"),
     ("zero", "Zerochan", "zerochan"),
@@ -41,7 +40,6 @@ SOURCE_BY_REPORT = {r: k for k, _l, r in SOURCES}
 
 FETCHERS = {
     "yande": ("workers.yande", "worker_yande", lambda t, nc, n: (t, n, "rating:s", nc)),
-    "kona": ("workers.konachan", "worker_konachan", lambda t, nc, n: (t, n, "rating:s", [], nc)),
     "dan": ("workers.danbooru", "worker_danbooru", lambda t, nc, n: (t, n, "rating:g", [], nc)),
     "safe": ("workers.safebooru", "worker_safebooru", lambda t, nc, n: (t, n, [], nc)),
     "zero": ("workers.zerochan", "worker_zerochan", lambda t, nc, n: (t, n, nc)),
@@ -246,7 +244,7 @@ async def cmd_fetch(message: types.Message, bot: Bot):
     si = next((i for i, a in enumerate(args) if a.lower() in SRC_LOOKUP), None)
     if si is None or si == 0:
         await message.answer("Usage: /fetch <member> <source> [count] [tag] [photo|doc]\n"
-                             "e.g. /fetch Houshou Marine konachan 5")
+                             "e.g. /fetch Houshou Marine danbooru 5")
         return
     name_q = " ".join(args[:si]).strip()
     skey = SRC_LOOKUP[args[si].lower()]

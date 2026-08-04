@@ -92,7 +92,6 @@ MEMBERS = {
 TAGS = {
     'Tokino Sora': {
         'yande.re': ['tokino_sora', 'tokino_sora_virtual_idol_dakedo_ouenshite_kuremasu_ka?'],
-        'konachan': ['tokino_sora'],
         'safebooru': ['ankimo_(tokino_sora)', 'ankimo_(tokino_sora_channel)', 'nun_nun_(tokino_sora)', 'sora-saurus_(tokino_sora)', 'tokino_sora', 'tokino_sora_(1st_costume)', 'tokino_sora_(2nd_costume)', 'tokino_sora_(3rd_costume)', 'tokino_sora_(4th_costume)', 'tokino_sora_(5th_costume)', 'tokino_sora_(6th_costume)', 'tokino_sora_(7th_costume)', 'tokino_sora_(8th_costume)', 'tokino_sora_(birthday_2022)', 'tokino_sora_(birthday_2024)', 'tokino_sora_(birthday_2025)', 'tokino_sora_(casual)', 'tokino_sora_(cosplay)', 'tokino_sora_(dj_hoodie)', 'tokino_sora_(holonatsu_paradise)', 'tokino_sora_(hoodie)', 'tokino_sora_(new_year)', 'tokino_sora_(old_design)', 'tokino_sora_(pulse)', 'tokino_sora_(streetwear)', 'tokinosora'],
         'eshuushuu': ['Tokino Sora'],
         'anime_dl': ['tokino sora', 'tokino sora (birthday 2022)', 'tokino sora (streetwear)'],
@@ -101,7 +100,6 @@ TAGS = {
     },
     'Roboco': {
         'yande.re': ['roboco', 'roboco-san'],
-        'konachan': ['roboco'],
         'safebooru': ['boku_to_roboco', 'roboco', 'roboco-san_(13th_costume)', 'roboco-san_(2nd_costume)', 'roboco-san_(high-spec_t-shirt)', 'roboco-san_(hoodie)', 'roboco-san_(sweater_dress)', 'roboco_(10th_costume)', 'roboco_(11th_costume)', 'roboco_(12th_costume)', 'roboco_(1st_costume)', 'roboco_(2nd_costume)', 'roboco_(3rd_costume)', 'roboco_(4th_costume)', 'roboco_(5th_costume)', 'roboco_(6th_costume)', 'roboco_(7th_costume)', 'roboco_(8th_costume)', 'roboco_(9th_costume)', 'roboco_(boku_to_roboco)', 'robocop_3'],
         'eshuushuu': ['Roboco', 'roboco_(10th_costume)', 'roboco_(11th_costume)', 'roboco_(12th_costume)', 'roboco_(1st_costume)', 'roboco_(2nd_costume)', 'roboco_(3rd_costume)', 'roboco_(4th_costume)', 'roboco_(5th_costume)', 'roboco_(6th_costume)', 'roboco_(7th_costume)', 'roboco_(8th_costume)', 'roboco_(9th_costume)'],
         'zerochan': ['Roboco', 'Roboco (10th Costume)', 'Roboco (11th Costume)', 'Roboco (12th Costume)', 'Roboco (1st Costume)', 'Roboco (2nd Costume)', 'Roboco (3rd Costume)', 'Roboco (4th Costume)', 'Roboco (5th Costume)', 'Roboco (6th Costume)', 'Roboco (7th Costume)', 'Roboco (8th Costume)', 'Roboco (9th Costume)', 'Roboco Ch.'],
@@ -109,7 +107,6 @@ TAGS = {
     },
     'Sakura Miko': {
         'yande.re': ['sakura_miko'],
-        'konachan': ['sakura_miko'],
         'safebooru': ['35p_(sakura_miko)', '35p_(sakura_miko)_(cosplay)', 'inuchi_(sakura_miko)', 'jitochi_(sakura_miko)', 'kintoki_(sakura_miko)', 'maguchi_(sakura_miko)', 'sakura_miko', 'sakura_miko_(10th_costume)', 'sakura_miko_(11th_costume)', 'sakura_miko_(12th_costume)', 'sakura_miko_(1st_costume)', 'sakura_miko_(2nd_costume)', 'sakura_miko_(3rd_costume)', 'sakura_miko_(4th_costume)', 'sakura_miko_(5th_costume)', 'sakura_miko_(6th_costume)', 'sakura_miko_(7th_costume)', 'sakura_miko_(8th_costume)', 'sakura_miko_(9th_costume)', 'sakura_miko_(casual)', 'sakura_miko_(cosplay)', 'sakura_miko_(flower_fantasista!)', 'sakura_miko_(holonatsu_paradise)', 'sakura_miko_(loungewear)', 'sakura_miko_(micomet)', 'sakura_miko_(new_year)', 'sakura_miko_(old_design)', 'sakura_miko_(school_uniform)', 'sakura_miko_(street)', 'sakura_miko_(work)'],
         'nekosia': ['sakura-miko'],
         'eshuushuu': ['Sakura Miko'],
@@ -119,7 +116,6 @@ TAGS = {
     },
     'Hoshimachi Suisei': {
         'yande.re': ['hoshimachi_suisei', 'hoshimachi_suisei_(artist)'],
-        'konachan': ['hoshimachi_suisei'],
         'danbooru': ['allegro_(hoshimachi_suisei)', 'awake_(hoshimachi_suisei)', 'caramel_pain_(hoshimachi_suisei)', 'ghost_(hoshimachi_suisei)', 'hoshimachi_suisei_(10th_costume)', 'hoshimachi_suisei_(11th_costume)', 'hoshimachi_suisei_(12th_costume)', 'hoshimachi_suisei_(13th_costume)', 'hoshimachi_suisei_(1st_costume)', 'hoshimachi_suisei_(2nd_costume)', 'hoshimachi_suisei_(3rd_costume)', 'hoshimachi_suisei_(4th_costume)', 'hoshimachi_suisei_(5th_costume)', 'hoshimachi_suisei_(6th_costume)', 'hoshimachi_suisei_(7th_costume)', 'hoshimachi_suisei_(8th_costume)', 'hoshimachi_suisei_(9th_costume)', 'hoshimachi_suisei_(casual)', 'hoshimachi_suisei_(holonatsu_paradise)', 'hoshimachi_suisei_(micomet)', 'hoshimachi_suisei_(old_design)_(dress-up_ver.)', 'hoshimachi_suisei_(oriental_suit)', 'hoshimachi_suisei_(sailor)', 'hoshimachi_suisei_(spectra_of_nova)', 'hoshimachi_suisei_(supernova)', 'kireigoto_(hoshimachi_suisei)', 'primadonna_(hoshimachi_suisei)'],
         'safebooru': ['awake_(hoshimachi_suisei)', 'caramel_pain_(hoshimachi_suisei)', 'hoshimachi_suisei', 'hoshimachi_suisei_(10th_costume)', 'hoshimachi_suisei_(11th_costume)', 'hoshimachi_suisei_(12th_costume)', 'hoshimachi_suisei_(13th_costume)', 'hoshimachi_suisei_(1st_costume)', 'hoshimachi_suisei_(2nd_costume)', 'hoshimachi_suisei_(2nd_outfit)', 'hoshimachi_suisei_(3rd_costume)', 'hoshimachi_suisei_(4th_costume)', 'hoshimachi_suisei_(5th_costume)', 'hoshimachi_suisei_(6th_costume)', 'hoshimachi_suisei_(7th_costume)', 'hoshimachi_suisei_(8th_costume)', 'hoshimachi_suisei_(9th_costume)', 'hoshimachi_suisei_(artist)', 'hoshimachi_suisei_(casual)', 'hoshimachi_suisei_(cosplay)', 'hoshimachi_suisei_(holonatsu_paradise)', 'hoshimachi_suisei_(maid)', 'hoshimachi_suisei_(micomet)', 'hoshimachi_suisei_(new_year)', 'hoshimachi_suisei_(old_design)', 'hoshimachi_suisei_(old_design)_(dress-up_ver.)', 'hoshimachi_suisei_(oriental_suit)', 'hoshimachi_suisei_(sailor)', 'hoshimachi_suisei_(school_uniform)', 'hoshimachi_suisei_(shout_in_crisis)', 'hoshimachi_suisei_(spectra_of_nova)', 'hoshimachi_suisei_(stellar_into_the_galaxy)', 'hoshimachi_suisei_(streetwear)', 'hoshimachi_suisei_(supernova)'],
         'eshuushuu': ['Hoshimachi Suisei'],
@@ -128,7 +124,6 @@ TAGS = {
     },
     'AZKi': {
         'yande.re': ['azki_(hololive)', 'kazki444'],
-        'konachan': ['azki_(hololive)'],
         'danbooru': ['az_(azkin_g)', 'azki_(1st_costume)_(hololive)', 'azki_(1st_costume)_(hololive)_(cosplay)', 'azki_(2nd_costume)_(hololive)', 'azki_(2nd_costume)_(hololive)_(cosplay)', 'azki_(3rd_costume)_(hololive)', 'azki_(4th_costume)_(hololive)', 'azki_(5th_costume)_(hololive)', 'azki_(6th_costume)_(hololive)', 'azki_(7th_costume)_(hololive)', 'azki_(departure)_(hololive)', 'azki_(dress)_(hololive)', 'azki_(gyaru)_(hololive)', 'azki_(hololive)1girl', 'azki_(hololive)_(cosplay)', 'azki_(hololive)_(holonatsu_paradise)', 'azki_(holonatsu_paradise)_(hololive)', 'azki_(hyde696)', 'azki_(litle_devil)_(hololive)', 'azki_(little_devil)_(hololive)', 'azki_(new_year)_(hololive)', 'azki_(prima_diva)_(hololive)', 'azki_(yurufuwa_casual)_(hololive)', 'azkiberry', 'ciyan_skazki_teni', 'kazki444', 'kazki73', 'kazkitashima', 'novazki', 'pioneer_(azki)'],
         'safebooru': ['azki', 'azki_(1st_costume)_(hololive)', 'azki_(2nd_costume)_(hololive)', 'azki_(3rd_costume)_(hololive)', 'azki_(4th_costume)_(hololive)', 'azki_(5th_costume)_(hololive)', 'azki_(6th_costume)', 'azki_(7th_costume)_(hololive)', 'azki_(departure)_(hololive)', 'azki_(dress)_(hololive)', 'azki_(gyaru)_(hololive)', 'azki_(hololive)', 'azki_(hololive)_(cosplay)', 'azki_(hololive)azki_(yurufuwa_casual)_(hololive)', 'azki_(holonatsu_paradise)_(hololive)', 'azki_(little_devil)_(hololive)', 'azki_(new_year)_(hololive)', 'azki_(prima_diva)_(hololive)', 'azki_(vsinger)', 'azki_(yurufuwa_casual)_(hololive)', 'hazki'],
         'nekosia': ['azki', 'azki_(1st_costume)', 'azki_(2nd_costume)', 'azki_(3rd_costume)', 'azki_(4th_costume)', 'azki_(5th_costume)', 'azki_(6th_costume)', 'azki_(7th_costume)'],
@@ -138,7 +133,6 @@ TAGS = {
     },
     'Shirakami Fubuki': {
         'yande.re': ['fubuzilla_(shirakami_fubuki)', 'shirakami_fubuki', "shirakami_fubuki's_mother"],
-        'konachan': ['shirakami_fubuki'],
         'safebooru': ['azu_(shirakami_fubuki)', 'fubuzilla_(shirakami_fubuki)', 'leo_(shirakami_fubuki)', 'naila_(shirakami_fubuki)', 'nejima_kitsune_(shirakami_fubuki)', 'oruyanke_(shirakami_fubuki)', 'shirakami_fubuki', 'shirakami_fubuki_(10th_costume)', 'shirakami_fubuki_(11th_costume)', 'shirakami_fubuki_(1st_costume)', 'shirakami_fubuki_(2nd_costume)', 'shirakami_fubuki_(3rd_costume)', 'shirakami_fubuki_(4th_costume)', 'shirakami_fubuki_(5th_costume)', 'shirakami_fubuki_(6th_costume)', 'shirakami_fubuki_(7th_costume)', 'shirakami_fubuki_(8th_costume)', 'shirakami_fubuki_(9th_costume)', 'shirakami_fubuki_(aristocrat_kei)', 'shirakami_fubuki_(artist)', 'shirakami_fubuki_(azur_lane)', 'shirakami_fubuki_(cosplay)', 'shirakami_fubuki_(fbkingdom)', 'shirakami_fubuki_(fox)', 'shirakami_fubuki_(fubukitek)', 'shirakami_fubuki_(fubumio)', 'shirakami_fubuki_(ho/laurent)', 'shirakami_fubuki_(hololive_summer_2019)', 'shirakami_fubuki_(holonatsu_paradise)', 'shirakami_fubuki_(loungewear)', 'shirakami_fubuki_(new_year)', 'shirakami_fubuki_(parade_dress)', 'shirakami_fubuki_(saint)', 'shirakami_fubuki_(street)', 'shirakami_fubuki_(waitress)'],
         'eshuushuu': ['Shirakami Fubuki'],
         'anime_dl': ['shirakami fubuki', 'shirakami fubuki (1st costume)', 'shirakami fubuki (2nd costume)', 'shirakami fubuki (4th costume)', 'shirakami fubuki (6th costume)', 'shirakami fubuki (cosplay)', 'shirakami fubuki (fubukitek)', 'shirakami fubuki (loungewear)', 'shirakami fubuki (street)'],
@@ -147,7 +141,6 @@ TAGS = {
     },
     'Natsuiro Matsuri': {
         'yande.re': ['natsuiro_matsuri'],
-        'konachan': ['natsuiro_matsuri'],
         'danbooru': ['ebi_frion_(natsuiro_matsuri)', 'fuyuiro_(natsuiro_matsuri)', 'natsuiro_matsuri', 'natsuiro_matsuri_(10th_costume)', 'natsuiro_matsuri_(11th_costume)', 'natsuiro_matsuri_(1st_costume)', 'natsuiro_matsuri_(2nd_costume)', 'natsuiro_matsuri_(3rd_costume)', 'natsuiro_matsuri_(3rd_outfit)', 'natsuiro_matsuri_(4th_costume)', 'natsuiro_matsuri_(5th_costume)', 'natsuiro_matsuri_(6th_costume)', 'natsuiro_matsuri_(7th_costume)', 'natsuiro_matsuri_(8th_costume)', 'natsuiro_matsuri_(9th_costume)', 'natsuiro_matsuri_(artist)', 'natsuiro_matsuri_(azur_lane)', 'natsuiro_matsuri_(azur_lane_design)', 'natsuiro_matsuri_(casual)', 'natsuiro_matsuri_(cosplay)', 'natsuiro_matsuri_(gaming_casual)', 'natsuiro_matsuri_(hololive_summer_2019)', 'natsuiro_matsuri_(holonatsu_paradise)', 'natsuiro_matsuri_(jersey_maid)', 'natsuiro_matsuri_(loungewear)', 'natsuiro_matsuri_(magical_girl)', "natsuiro_matsuri_(matsuri's_day_off)", 'natsuiro_matsuri_(new_year)', 'natsuiro_matsuri_(re:start)', 'natsuiro_matsuri_(street_casual)', 'natsuiro_matsuri_(subculture_jersey)', 'natsuiro_matsuri_(summer_2020)', 'natsuiro_matsuri_(swimsuit_ver._2020)'],
         'safebooru': ['ebi_frion_(natsuiro_matsuri)', 'fuyuiro_(natsuiro_matsuri)', 'natsuiro_matsuri', 'natsuiro_matsuri_(10th_costume)', 'natsuiro_matsuri_(11th_costume)', 'natsuiro_matsuri_(1st_costume)', 'natsuiro_matsuri_(2nd_costume)', 'natsuiro_matsuri_(3rd_costume)', 'natsuiro_matsuri_(4th_costume)', 'natsuiro_matsuri_(5th_costume)', 'natsuiro_matsuri_(6th_costume)', 'natsuiro_matsuri_(7th_costume)', 'natsuiro_matsuri_(8th_costume)', 'natsuiro_matsuri_(9th_costume)', 'natsuiro_matsuri_(artist)', 'natsuiro_matsuri_(casual)', 'natsuiro_matsuri_(cosplay)', 'natsuiro_matsuri_(gaming_casual)', 'natsuiro_matsuri_(holonatsu_paradise)', 'natsuiro_matsuri_(jersey_maid)', 'natsuiro_matsuri_(magical_girl)', "natsuiro_matsuri_(matsuri's_day_off)", 'natsuiro_matsuri_(new_year)', 'natsuiro_matsuri_(street_casual)'],
         'eshuushuu': ['Natsuiro Matsuri'],
@@ -156,7 +149,6 @@ TAGS = {
     },
     'Aki Rosenthal': {
         'yande.re': ['aki_rosenthal'],
-        'konachan': ['aki_rosenthal'],
         'danbooru': ['aki_rosenthal_(1st_costume)', 'aki_rosenthal_(2nd_costume)', 'aki_rosenthal_(3rd_costume)', 'aki_rosenthal_(4th_costume)', 'aki_rosenthal_(5th_costume)', 'aki_rosenthal_(6th_costume)', 'aki_rosenthal_(7th_costume)', 'aki_rosenthal_(gaming_casual)', 'aki_rosenthal_(gothic_lolita)', 'aki_rosenthal_(hololive_summer_2019)', 'aki_rosenthal_(holonatsu_paradise)', 'aki_rosenthal_(new_year)', 'aki_rosenthal_(sleepwear)'],
         'safebooru': ['aki_rosenthal', 'aki_rosenthal_(1st_costume)', 'aki_rosenthal_(2nd_costume)', 'aki_rosenthal_(3rd_costume)', 'aki_rosenthal_(4th_costume)', 'aki_rosenthal_(5th_costume)', 'aki_rosenthal_(6th_costume)', 'aki_rosenthal_(7th_costume)', 'aki_rosenthal_(character)', 'aki_rosenthal_(cosplay)', 'aki_rosenthal_(gaming_casual)', 'aki_rosenthal_(gothic_lolita)', 'aki_rosenthal_(new_year)', 'aki_rosenthal_(sleepwear)'],
         'eshuushuu': ['Aki Rosenthal'],
@@ -165,7 +157,6 @@ TAGS = {
     },
     'Akai Haato': {
         'yande.re': ['akai_haato'],
-        'konachan': ['akai_haato'],
         'danbooru': ['akai_haato_(10th_costume)', 'akai_haato_(1st_costume)', 'akai_haato_(2nd_costume)', 'akai_haato_(3rd_costume)', 'akai_haato_(4th_costume)', 'akai_haato_(5th_costume)', 'akai_haato_(5th_costume)kureiji_ollie_(1st_costume)', 'akai_haato_(6th_costume)', 'akai_haato_(7th_costume)', 'akai_haato_(8th_costume)', 'akai_haato_(9th_costume)', 'akai_haato_(artist)', 'akai_haato_(bathtime)', 'akai_haato_(casual)', 'akai_haato_(cyberpunk)', 'akai_haato_(gothic_lolita)', 'akai_haato_(hololive_summer_2019)', 'akai_haato_(holonatsu_paradise)', 'akai_haato_(loungewear)', 'akai_haato_(new_year)', 'akai_haato_(princess)', 'akai_haato_(roomwear)', 'akai_haato_(spider_gothic)', 'akai_haato_(taranchama_dress)', 'akai_haato_(waitress)', 'akaihaato'],
         'safebooru': ['akai_haato', 'akai_haato_(10th_costume)', 'akai_haato_(1st_costume)', 'akai_haato_(2nd_costume)', 'akai_haato_(3rd_costume)', 'akai_haato_(4th_costume)', 'akai_haato_(5th_costume)', 'akai_haato_(6th_costume)', 'akai_haato_(7th_costume)', 'akai_haato_(8th_costume)', 'akai_haato_(9th_costume)', 'akai_haato_(casual)', 'akai_haato_(cosplay)', 'akai_haato_(gothic_lolita)', 'akai_haato_(loungewear)', 'akai_haato_(waitress)'],
         'eshuushuu': ['Akai Haato'],
@@ -174,7 +165,6 @@ TAGS = {
     },
     'Ookami Mio': {
         'yande.re': ['ookami_mio'],
-        'konachan': ['ookami_mio'],
         'danbooru': ['miofa_(ookami_mio)', 'miofa_(ookami_mio)_(cosplay)', 'ookami_mio', 'ookami_mio_(10th_costume)', 'ookami_mio_(11st_costume)', 'ookami_mio_(1st_costume)', 'ookami_mio_(2nd_costume)', 'ookami_mio_(2nd_outfif)', 'ookami_mio_(2nd_outfit)', 'ookami_mio_(3rd_costume)', 'ookami_mio_(4th_costume)', 'ookami_mio_(4th_costume)bibi_(tokoyami_towa)', 'ookami_mio_(4th_costume)boros_(ouro_kronii)', 'ookami_mio_(5th_costume)', 'ookami_mio_(5th_costume)-alternate_costume', 'ookami_mio_(6th_costume)', 'ookami_mio_(7th_costume)', 'ookami_mio_(8th_costume)', 'ookami_mio_(9th_costume)', 'ookami_mio_(another_ookami_mio)', 'ookami_mio_(azur_lane)', 'ookami_mio_(azur_lane_design)', 'ookami_mio_(cameo)', 'ookami_mio_(casual)', 'ookami_mio_(cosplay)', 'ookami_mio_(fubumio)', 'ookami_mio_(hololive_summer_2019)', 'ookami_mio_(holonatsu_paradise)', 'ookami_mio_(hoodie)', 'ookami_mio_(jirai_kei)', 'ookami_mio_(new_year)', 'ookami_mio_(our_sparkle)', 'ookami_mio_(queen_of_hearts)', 'ookami_mio_(school_uniform)', 'ookami_mio_(second_outfit)', 'ookami_mio_(street)', 'ookami_mio_(summer_vacation)', 'ookami_mio_(wolf)', 'ookami_mio_(wonderland)'],
         'safebooru': ['hatotaurus_(ookami_mio)', 'miofa_(ookami_mio)', 'miofa_(ookami_mio)_(cosplay)', 'ookami_mio', 'ookami_mio_(10th_costume)', 'ookami_mio_(11th_costume)', 'ookami_mio_(1st_costume)', 'ookami_mio_(2nd_costume)', 'ookami_mio_(3rd_costume)', 'ookami_mio_(4th_costume)', 'ookami_mio_(5th_costume)', 'ookami_mio_(6th_costume)', 'ookami_mio_(7th_costume)', 'ookami_mio_(8th_costume)', 'ookami_mio_(9th_costume)', 'ookami_mio_(another_ookami_mio)', 'ookami_mio_(casual)', 'ookami_mio_(cosplay)', 'ookami_mio_(fubumio)', 'ookami_mio_(hololive_summer_2019)', 'ookami_mio_(holonatsu_paradise)', 'ookami_mio_(hoodie)', 'ookami_mio_(new_year)', 'ookami_mio_(our_sparkle)', 'ookami_mio_(street)', 'ookami_mio_(wolf)', 'ookami_mio_(wonderland)'],
         'nekosia': ['ookami-mio'],
@@ -184,7 +174,6 @@ TAGS = {
     },
     'Nekomata Okayu': {
         'yande.re': ['nekomata_okayu'],
-        'konachan': ['nekomata_okayu'],
         'danbooru': ['neko_kaburi-na_(nekomata_okayu)', 'nekomata_okayu', 'nekomata_okayu_(1st_costume)', 'nekomata_okayu_(2nd_costume)', 'nekomata_okayu_(3d_idol_outfit)', 'nekomata_okayu_(3rd_costume)', 'nekomata_okayu_(3rd_outfit)', 'nekomata_okayu_(4th_costume)', 'nekomata_okayu_(5th_costume)', 'nekomata_okayu_(6th_costume)', 'nekomata_okayu_(7th_costume)', 'nekomata_okayu_(8th_costume)', 'nekomata_okayu_(9th_costume)', 'nekomata_okayu_(artist)', 'nekomata_okayu_(casual)', 'nekomata_okayu_(cat)', 'nekomata_okayu_(cheshire_cat)', 'nekomata_okayu_(cosplay)', 'nekomata_okayu_(gyaru)', 'nekomata_okayu_(holonatsu_paradise)', 'nekomata_okayu_(loungewear)', 'nekomata_okayu_(membership)', 'nekomata_okayu_(new_year)', 'nekomata_okayu_(oversized_shirt)', 'nekomata_okayu_(personya_respect)', 'nekomata_okayu_(poisonya_syndrome)', 'nekomata_okayu_(school_uniform)', 'nekomata_okayu_(serafuku)', 'nekomata_okayu_(street)', 'nekomata_okayu_(street_casual)', 'nekomata_okayu_(streetwear)', 'nekomata_okayu_(wonderland)', 'nekomata_okayu_(wonderland)official_alternate_costume', 'nekomata_okayu_(work)', 'non_delicious_(nekomata_okayu)', 'ogyayu_(nekomata_okayu)', 'okanyan_(nekomata_okayu)', 'onigirya_(nekomata_okayu)', 'onigirya_(nekomata_okayu)_(cosplay)'],
         'safebooru': ['neko_kaburi-na_(nekomata_okayu)', 'nekomata_okayu', 'nekomata_okayu_(1st_costume)', 'nekomata_okayu_(2nd_costume)', 'nekomata_okayu_(3rd_costume)', 'nekomata_okayu_(4th_costume)', 'nekomata_okayu_(5th_costume)', 'nekomata_okayu_(6th_costume)', 'nekomata_okayu_(7th_costume)', 'nekomata_okayu_(8th_costume)', 'nekomata_okayu_(9th_costume)', 'nekomata_okayu_(artist)', 'nekomata_okayu_(casual)', 'nekomata_okayu_(cat)', 'nekomata_okayu_(cosplay)', 'nekomata_okayu_(gyaru)', 'nekomata_okayu_(holonatsu_paradise)', 'nekomata_okayu_(membership)', 'nekomata_okayu_(new_year)', 'nekomata_okayu_(oversized_shirt)', 'nekomata_okayu_(personya_respect)', 'nekomata_okayu_(poisonya_syndrome)', 'nekomata_okayu_(school_uniform)', 'nekomata_okayu_(wonderland)', 'onigirya_(nekomata_okayu)'],
         'nekosia': ['nekomata-okayu'],
@@ -194,7 +183,6 @@ TAGS = {
     },
     'Inugami Korone': {
         'yande.re': ['inugami_korone', 'inugami_korone_(artist)', 'listener_(inugami_korone)'],
-        'konachan': ['inugami_korone'],
         'danbooru': ['inugami_korone_(1st_costume)', 'inugami_korone_(2nd_costume)', 'inugami_korone_(3rd_costume)', 'inugami_korone_(4th_costume)', 'inugami_korone_(5th_costume)', 'inugami_korone_(6th_costume)', 'inugami_korone_(7th_costume)', 'inugami_korone_(8th_costume)', 'inugami_korone_(9th_costume)', 'inugami_korone_(holonatsu_paradise)', 'inugami_korone_(loungewear)', 'inugami_korone_(roomwear)', 'inugami_korone_(shadow_the_hedgehog)', 'inugami_korone_(viking)', 'inugami_korone_(wonderland)', 'inugami_korone_(yb-2_overalls)', 'listener_(inugami_korone)', 'neroko_(inugami_korone)', 'pikipiki_piiman_(inugami_korone)'],
         'safebooru': ['inugami_korone', 'inugami_korone_(1st_costume)', 'inugami_korone_(2nd_costume)', 'inugami_korone_(3rd_costume)', 'inugami_korone_(4th_costume)', 'inugami_korone_(5th_costume)', 'inugami_korone_(6th_costume)', 'inugami_korone_(7th_costume)', 'inugami_korone_(8th_costume)', 'inugami_korone_(9th_costume)', 'inugami_korone_(cosplay)', 'inugami_korone_(dog)', 'inugami_korone_(holonatsu_paradise)', 'inugami_korone_(loungewear)', 'inugami_korone_(new_year)', 'inugami_korone_(roomwear)', 'inugami_korone_(saikyo_tensai_wonderful_world_of_korone)', 'inugami_korone_(shadow_the_hedgehog)', 'inugami_korone_(sonikoro)', 'inugami_korone_(street)', 'inugami_korone_(viking)', 'inugami_korone_(wonderland)', 'inugami_korone_(yb-2_overalls)'],
         'nekosia': ['inugami-korone'],
@@ -204,7 +192,6 @@ TAGS = {
     },
     'Nakiri Ayame': {
         'yande.re': ['nakiri_ayame'],
-        'konachan': ['nakiri_ayame'],
         'danbooru': ['karma_(nakiri_ayame)', 'nakiri_ayame', 'nakiri_ayame_(10th_costume)', 'nakiri_ayame_(1st_costume)', 'nakiri_ayame_(2nd_costume)', 'nakiri_ayame_(3rd_costume)', 'nakiri_ayame_(4th_costume)', 'nakiri_ayame_(4th_costume)bibi_(tokoyami_towa)', 'nakiri_ayame_(5th_costume)', 'nakiri_ayame_(6th_costume)', 'nakiri_ayame_(7th_costume)', 'nakiri_ayame_(8th_costume)', 'nakiri_ayame_(9th_costume)', 'nakiri_ayame_(azur_lane)', 'nakiri_ayame_(azur_lane_design)', 'nakiri_ayame_(cosplay)', 'nakiri_ayame_(cutie_jersey)', 'nakiri_ayame_(girly)', 'nakiri_ayame_(hololive_summer_2019)', 'nakiri_ayame_(holonatsu_paradise)', 'nakiri_ayame_(military)', 'nakiri_ayame_(new_year)', 'nakiri_ayame_(off-work)', 'nakiri_ayame_(shrine_maiden)', 'nakiri_ayame_(streetwear)', 'nakiri_ayame_(streetwear)_(cosplay)', 'nakiri_ayame_(summertime_nakiri)', 'nakiri_ayame_(wa_maid)'],
         'safebooru': ['jiru_(nakiri_ayame)', 'karma_(nakiri_ayame)', 'nakiri_ayame', 'nakiri_ayame_(10th_costume)', 'nakiri_ayame_(1st_costume)', 'nakiri_ayame_(2nd_costume)', 'nakiri_ayame_(3rd_costume)', 'nakiri_ayame_(4th_costume)', 'nakiri_ayame_(5th_costume)', 'nakiri_ayame_(6th_costume)', 'nakiri_ayame_(7th_costume)', 'nakiri_ayame_(8th_costume)', 'nakiri_ayame_(9th_costume)', 'nakiri_ayame_(cosplay)', 'nakiri_ayame_(cutie_jersey)', 'nakiri_ayame_(girly)', 'nakiri_ayame_(new_year)', 'nakiri_ayame_(off-work)', 'nakiri_ayame_(shrine_maiden)', 'nakiri_ayame_(streetwear)', 'nakiri_ayame_(streetwear)_(cosplay)'],
         'eshuushuu': ['Nakiri Ayame'],
@@ -213,7 +200,6 @@ TAGS = {
     },
     'Yuzuki Choco': {
         'yande.re': ['yuzuki_choco'],
-        'konachan': ['yuzuki_choco'],
         'safebooru': ['yuzuki_choco', 'yuzuki_choco_(1st_costume)', 'yuzuki_choco_(2nd_costume)', 'yuzuki_choco_(3rd_costume)', 'yuzuki_choco_(4th_costume)', 'yuzuki_choco_(5th_costume)', 'yuzuki_choco_(6th_costume)', 'yuzuki_choco_(7th_costume)', 'yuzuki_choco_(8th_costume)', 'yuzuki_choco_(9th_costume)', 'yuzuki_choco_(cosplay)', 'yuzuki_choco_(maid)', 'yuzuki_choco_(nurse)', 'yuzuki_choco_(police)', 'yuzuki_choco_(streetwear)'],
         'eshuushuu': ['Yuzuki Choco'],
         'anime_dl': ['yuzuki choco', 'yuzuki choco (1st costume)', 'yuzuki choco (2nd costume)', 'yuzuki choco (3rd costume)', 'yuzuki choco (4th costume)', 'yuzuki choco (5th costume)', 'yuzuki choco (streetwear)'],
@@ -222,7 +208,6 @@ TAGS = {
     },
     'Oozora Subaru': {
         'yande.re': ['oozora_subaru'],
-        'konachan': ['oozora_subaru'],
         'danbooru': ['oozora_subaru', 'oozora_subaru_(1st_costume)', 'oozora_subaru_(2nd_costume)', 'oozora_subaru_(2nd_costume)oozora_subaru_(5th_costume)', 'oozora_subaru_(3d_idol_outfit)', 'oozora_subaru_(3rd_costume)', 'oozora_subaru_(4th_costume)', 'oozora_subaru_(5th_costume)', 'oozora_subaru_(6th_costume)', 'oozora_subaru_(7th_costume)', 'oozora_subaru_(8th_costume)', 'oozora_subaru_(9th_costume)', 'oozora_subaru_(casual)', 'oozora_subaru_(cosplay)', 'oozora_subaru_(duck)', 'oozora_subaru_(hololive_summer_2019)', 'oozora_subaru_(holonatsu_paradise)', 'oozora_subaru_(loungewear)', 'oozora_subaru_(new_year)', 'oozora_subaru_(police)', 'oozora_subaru_(sailor_uniform)', 'oozora_subaru_(school_uniform)', 'oozora_subaru_(starlight)', 'oozora_subaru_(suspenders)', 'oozora_subaru_(work)'],
         'safebooru': ['oozora_subaru', 'oozora_subaru_(1st_costume)', 'oozora_subaru_(2nd_costume)', 'oozora_subaru_(3rd_costume)', 'oozora_subaru_(4th_costume)', 'oozora_subaru_(5th_costume)', 'oozora_subaru_(6th_costume)', 'oozora_subaru_(7th_costume)', 'oozora_subaru_(8th_costume)', 'oozora_subaru_(9th_costume)', 'oozora_subaru_(casual)', 'oozora_subaru_(cosplay)', 'oozora_subaru_(duck)', 'oozora_subaru_(hololive_summer_2019)', 'oozora_subaru_(holonatsu_paradise)', 'oozora_subaru_(loungewear)', 'oozora_subaru_(new_year)', 'oozora_subaru_(police)', 'oozora_subaru_(school_uniform)', 'oozora_subaru_(starlight)', 'oozora_subaru_(suspenders)', 'oozora_subaru_(work)'],
         'eshuushuu': ['Oozora Subaru'],
@@ -231,7 +216,6 @@ TAGS = {
     },
     'Usada Pekora': {
         'yande.re': ['don-chan_(usada_pekora)', 'usada_pekora'],
-        'konachan': ['usada_pekora'],
         'safebooru': ['don-chan_(usada_pekora)', 'jiru-kun_(usada_pekora)', 'nousagi_(usada_pekora)', 'pekomon_(usada_pekora)', 'usada_pekora', "usada_pekora's_mother", 'usada_pekora_(10th_costume)', 'usada_pekora_(11th_costume)', 'usada_pekora_(1st_costume)', 'usada_pekora_(2nd_costume)', 'usada_pekora_(3rd_costume)', 'usada_pekora_(4th_costume)', 'usada_pekora_(5th_costume)', 'usada_pekora_(6th_costume)', 'usada_pekora_(7th_costume)', 'usada_pekora_(8th_costume)', 'usada_pekora_(9th_costume)', 'usada_pekora_(cameo)', 'usada_pekora_(casual)', 'usada_pekora_(cosplay)', 'usada_pekora_(furi_furi_bunny_dress)', 'usada_pekora_(jiangshi)', 'usada_pekora_(new_year)', 'usada_pekora_(pekoland_princess)', 'usada_pekora_(prisoner)', 'usada_pekora_(punk_angel)', 'usada_pekora_(rabbit)', 'usada_pekora_(reality_fantasy)', 'usada_pekora_(summer)', 'usada_pekora_(usagi_the_megami!!)', 'usada_pekora_(usagi_the_megami)'],
         'nekosia': ['usada-pekora'],
         'eshuushuu': ['Usada Pekora'],
@@ -241,7 +225,6 @@ TAGS = {
     },
     'Shiranui Flare': {
         'yande.re': ['elfriend_(shiranui_flare)', 'kintsuba_(shiranui_flare)', 'shiranui_flare'],
-        'konachan': ['shiranui_flare'],
         'safebooru': ['elfriend_(shiranui_flare)', 'kintsuba_(shiranui_flare)', 'shiranui_flare', 'shiranui_flare_(1st_costume)', 'shiranui_flare_(2nd_costume)', 'shiranui_flare_(3rd_costume)', 'shiranui_flare_(4th_costume)', 'shiranui_flare_(5th_costume)', 'shiranui_flare_(6th_costume)', 'shiranui_flare_(7th_costume)', 'shiranui_flare_(8th_costume)', 'shiranui_flare_(artist)', 'shiranui_flare_(casual)', 'shiranui_flare_(cosplay)', 'shiranui_flare_(holonatsu_paradise)', 'shiranui_flare_(hoodie)', 'shiranui_flare_(loungewear)', 'shiranui_flare_(luminous)', 'shiranui_flare_(new_year)', 'shiranui_flare_(old_design)', 'shiranui_flare_(reality_fantasy)', 'shiranui_flare_(street)'],
         'eshuushuu': ['Shiranui Flare'],
         'anime_dl': ['shiranui flare', 'shiranui flare (1st costume)', 'shiranui flare (2nd costume)', 'shiranui flare (4th costume)', 'shiranui flare (loungewear)', 'shiranui flare (old design)', 'shiranui flare (street)'],
@@ -250,7 +233,6 @@ TAGS = {
     },
     'Shirogane Noel': {
         'yande.re': ['shirogane_noel'],
-        'konachan': ['#shirogane_noel', 'shirogane_noel'],
         'safebooru': ["dan'in-san_(shirogane_noel)", 'pop_(shirogane_noel)', 'shirogane_noel', 'shirogane_noel_(1st_costume)', 'shirogane_noel_(2nd_costume)', 'shirogane_noel_(3rd_costume)', 'shirogane_noel_(4th_costume)', 'shirogane_noel_(5th_costume)', 'shirogane_noel_(6th_costume)', 'shirogane_noel_(7th_costume)', 'shirogane_noel_(battle_nun)', 'shirogane_noel_(casual)', 'shirogane_noel_(cosplay)', 'shirogane_noel_(dirndl)', 'shirogane_noel_(new_year)', 'shirogane_noel_(princess_knight)', 'shirogane_noel_(reality_fantasy)', 'shirogane_noel_(school_uniform)', 'shirogane_noel_(summer_2020)'],
         'eshuushuu': ['Shirogane Noel'],
         'anime_dl': ['shirogane noel', 'shirogane noel (1st costume)', 'shirogane noel (2nd costume)', 'shirogane noel (4th costume)', 'shirogane noel (5th costume)', 'shirogane noel (6th costume)', 'shirogane noel (7th costume)', 'shirogane noel (9th costume)', 'shirogane noel (casual)'],
@@ -259,7 +241,6 @@ TAGS = {
     },
     'Houshou Marine': {
         'yande.re': ['houshou_marine', 'houshou_marine_(artist)'],
-        'konachan': ['houshou_marine', 'houshou_marine_(artist)'],
         'danbooru': ['a_horny_money_world_(houshou_marine)', "dead_ma'am's_chest_(houshou_marine)", 'dokuro-kun_(houshou_marine)', "houshou_marine's_manager", "houshou_marine's_sister", 'houshou_marine_(10th_costume)', 'houshou_marine_(11th_costume)', 'houshou_marine_(1st_costume)', 'houshou_marine_(2nd_costume)', 'houshou_marine_(3rd_costume)', 'houshou_marine_(4th_costume)', 'houshou_marine_(5th_costume)', 'houshou_marine_(6th_costume)', 'houshou_marine_(7th_costume)', 'houshou_marine_(8th_costume)', 'houshou_marine_(9th_costume)', "houshou_marine_(ahoy!!_you're_all_pirates)", 'houshou_marine_(akaneko_punk)', 'houshou_marine_(birthday_2025)', 'houshou_marine_(gothic_lolita)', 'houshou_marine_(gyaru)', 'houshou_marine_(holonatsu_paradise)', 'houshou_marine_(loungewear)', 'houshou_marine_(reality_fantasy)', 'houshou_marine_(roomwear)', 'houshou_marine_(shrine_maiden)', 'how_about_paipai_mask?_(houshou_marine)', 'jack_(houshou_marine)', 'marine_papa_(houshou_marine)'],
         'safebooru': ["dead_ma'am's_chest_(houshou_marine)", 'dokuro-kun_(houshou_marine)', 'houshou_marine', 'houshou_marine_(10th_costume)', 'houshou_marine_(11th_costume)', 'houshou_marine_(1st_costume)', 'houshou_marine_(2nd_costume)', 'houshou_marine_(3rd_costume)', 'houshou_marine_(4th_costume)', 'houshou_marine_(5th_costume)', 'houshou_marine_(6th_costume)', 'houshou_marine_(7th_costume)', 'houshou_marine_(8th_costume)', 'houshou_marine_(9th_costume)', "houshou_marine_(ahoy!!_you're_all_pirates)", 'houshou_marine_(artist)', 'houshou_marine_(birthday_2025)', 'houshou_marine_(businesswoman)', 'houshou_marine_(cosplay)', 'houshou_marine_(gothic_lolita)', 'houshou_marine_(loungewear)', 'houshou_marine_(marching_band)', 'houshou_marine_(new_year)', 'houshou_marine_(nun)', 'houshou_marine_(reality_fantasy)', 'houshou_marine_(roomwear)', 'houshou_marine_(school_uniform)', 'houshou_marine_(summer)'],
         'eshuushuu': ['Houshou Marine'],
@@ -268,7 +249,6 @@ TAGS = {
     },
     'Tsunomaki Watame': {
         'yande.re': ['tsunomaki_watame'],
-        'konachan': ['tsunomaki_watame'],
         'safebooru': ['tsunomaki_watame', 'tsunomaki_watame_(1st_costume)', 'tsunomaki_watame_(1st_solo_live)', 'tsunomaki_watame_(2nd_costume)', 'tsunomaki_watame_(3rd_costume)', 'tsunomaki_watame_(4th_costume)', 'tsunomaki_watame_(5th_costume)', 'tsunomaki_watame_(6th_costume)', 'tsunomaki_watame_(7th_costume)', 'tsunomaki_watame_(8th_costume)', 'tsunomaki_watame_(9th_costume)', 'tsunomaki_watame_(amazing_swing)', 'tsunomaki_watame_(cosplay)', 'tsunomaki_watame_(gyaru)', 'tsunomaki_watame_(holonatsu_paradise)', 'tsunomaki_watame_(loungewear)', 'tsunomaki_watame_(my_song)', 'tsunomaki_watame_(new_year)', 'tsunomaki_watame_(school_uniform)', 'tsunomaki_watame_(sheep)', 'tsunomaki_watame_(street_casual)', 'tsunomaki_watame_(watame_night_fever!!)', 'tsunomaki_watame_(young)'],
         'eshuushuu': ['Tsunomaki Watame'],
         'anime_dl': ['tsunomaki watame', 'tsunomaki watame (1st costume)', 'tsunomaki watame (2nd costume)', 'tsunomaki watame (3rd costume)', 'tsunomaki watame (4th costume)', 'tsunomaki watame (5th costume)'],
@@ -277,7 +257,6 @@ TAGS = {
     },
     'Tokoyami Towa': {
         'yande.re': ['tokoyami_towa'],
-        'konachan': ['tokoyami_towa'],
         'safebooru': ['bazubi_bazab_(tokoyami_towa)', 'bibi_(tokoyami_towa)', 'papakin_(tokoyami_towa)', 'tokoyami_towa', 'tokoyami_towa_(1st_costume)', 'tokoyami_towa_(2nd_costume)', 'tokoyami_towa_(3rd_costume)', 'tokoyami_towa_(4th_costume)', 'tokoyami_towa_(5th_costume)', 'tokoyami_towa_(6th_costume)', 'tokoyami_towa_(7th_costume)', 'tokoyami_towa_(8th_costume)', 'tokoyami_towa_(9th_costume)', 'tokoyami_towa_(break_your_xxx)', 'tokoyami_towa_(cosplay)', 'tokoyami_towa_(cyberpunk)', 'tokoyami_towa_(holonatsu_paradise)', 'tokoyami_towa_(jersey_maid)', 'tokoyami_towa_(jirai_kei)', 'tokoyami_towa_(new_year)', 'tokoyami_towa_(school_uniform)', 'tokoyami_towa_(shinier)', 'tokoyami_towa_(underworld_uniform)'],
         'eshuushuu': ['Tokoyami Towa'],
         'anime_dl': ['tokoyami towa', 'tokoyami towa (1st costume)', 'tokoyami towa (2nd costume)', 'tokoyami towa (7th costume)', 'tokoyami towa (break your xxx)', 'tokoyami towa (cosplay)', 'tokoyami towa (cyberpunk)', 'tokoyami towa (jirai kei)', 'tokoyami towa (underworld uniform)'],
@@ -286,7 +265,6 @@ TAGS = {
     },
     'Himemori Luna': {
         'yande.re': ['himemori_luna'],
-        'konachan': ['himemori_luna'],
         'danbooru': ['himemori_luna_(1st_costume)', 'himemori_luna_(2nd_costume)', 'himemori_luna_(3rd_costume)', 'himemori_luna_(4th_costume)', 'himemori_luna_(5th_costume)', 'himemori_luna_(6th_costume)', 'himemori_luna_(7th_costume)', 'himemori_luna_(8th_costume)', 'himemori_luna_(9th_costume)', 'himemori_luna_(dress)', 'himemori_luna_(holonatsu_paradise)', 'himemori_luna_(streetwear)', 'himemori_luna_(summer)', 'himemori_luna_(sundress)', 'luknight_(himemori_luna)', 'luknight_(himemori_luna)_(cosplay)', 'nanora_(himemori_luna)', 'papa_(himemori_luna)'],
         'safebooru': ['himemori_luna', 'himemori_luna_(1st_costume)', 'himemori_luna_(2nd_costume)', 'himemori_luna_(3rd_costume)', 'himemori_luna_(4th_costume)', 'himemori_luna_(5th_costume)', 'himemori_luna_(6th_costume)', 'himemori_luna_(7th_costume)', 'himemori_luna_(8th_costume)', 'himemori_luna_(9th_costume)', 'himemori_luna_(cosplay)', 'himemori_luna_(dress)', 'himemori_luna_(holonatsu_paradise)', 'himemori_luna_(new_year)', 'himemori_luna_(streetwear)', 'himemori_luna_(sundress)'],
         'eshuushuu': ['Himemori Luna'],
@@ -295,7 +273,6 @@ TAGS = {
     },
     'Yukihana Lamy': {
         'yande.re': ['daifuku_(yukihana_lamy)', 'yukihana_lamy', 'yukimin_(yukihana_lamy)'],
-        'konachan': ['yukihana_lamy'],
         'safebooru': ['daifuku_(yukihana_lamy)', 'yukihana_lamy', 'yukihana_lamy_(1st_costume)', 'yukihana_lamy_(2nd_costume)', 'yukihana_lamy_(3rd_costume)', 'yukihana_lamy_(4th_costume)', 'yukihana_lamy_(5th_costume)', 'yukihana_lamy_(6th_costume)', 'yukihana_lamy_(casual)', 'yukihana_lamy_(cosplay)', 'yukihana_lamy_(cyber)', 'yukihana_lamy_(holonatsu_paradise)', 'yukihana_lamy_(loungewear)', 'yukihana_lamy_(new_year)', 'yukihana_lamy_(roomwear)'],
         'nekosia': ['yukihana-lamy'],
         'eshuushuu': ['Yukihana Lamy'],
@@ -305,7 +282,6 @@ TAGS = {
     },
     'Momosuzu Nene': {
         'yande.re': ['momosuzu_nene'],
-        'konachan': ['momosuzu_nene'],
         'danbooru': ['momosuzu_nene', 'momosuzu_nene_(1st_costume)', 'momosuzu_nene_(2nd_costume)', 'momosuzu_nene_(3rd_costume)', 'momosuzu_nene_(4th_costume)', 'momosuzu_nene_(5st_costume)', 'momosuzu_nene_(5th_costume)', 'momosuzu_nene_(6th_costume)', 'momosuzu_nene_(7th_costume)', 'momosuzu_nene_(8th_costume)', 'momosuzu_nene_(artist)', 'momosuzu_nene_(casual)', 'momosuzu_nene_(cheerleader)', 'momosuzu_nene_(china_dress)', 'momosuzu_nene_(cosplay)', 'momosuzu_nene_(holonatsu_paradise)', 'momosuzu_nene_(jiangshi)', 'momosuzu_nene_(maid)', 'momosuzu_nene_(nene_rhythm)', 'momosuzu_nene_(nene_rythm)', 'momosuzu_nene_(new_year)', 'momosuzu_nene_(old_design)', 'momosuzu_nene_(seal)', 'nekko_(momosuzu_nene)', 'nekko_(momosuzu_nene)_(cosplay)'],
         'safebooru': ['momosuzu_nene', 'momosuzu_nene_(1st_costume)', 'momosuzu_nene_(2nd_costume)', 'momosuzu_nene_(3rd_costume)', 'momosuzu_nene_(4th_costume)', 'momosuzu_nene_(5th_costume)', 'momosuzu_nene_(6th_costume)', 'momosuzu_nene_(7th_costume)', 'momosuzu_nene_(8th_costume)', 'momosuzu_nene_(artist)', 'momosuzu_nene_(casual)', 'momosuzu_nene_(cheerleader)', 'momosuzu_nene_(cosplay)', 'momosuzu_nene_(holonatsu_paradise)', 'momosuzu_nene_(jiangshi)', 'momosuzu_nene_(maid)', 'momosuzu_nene_(nene_rhythm)', 'momosuzu_nene_(new_year)', 'momosuzu_nene_(old_design)', 'momosuzu_nene_(seal)'],
         'eshuushuu': ['Momosuzu Nene'],
@@ -314,7 +290,6 @@ TAGS = {
     },
     'Shishiro Botan': {
         'yande.re': ['shishiro_botan'],
-        'konachan': ['shishiro_botan'],
         'safebooru': ['shishiro_botan', 'shishiro_botan_(1st_costume)', 'shishiro_botan_(2nd_costume)', 'shishiro_botan_(3rd_costume)', 'shishiro_botan_(4th_costume)', 'shishiro_botan_(5th_costume)', 'shishiro_botan_(6th_costume)', 'shishiro_botan_(7th_costume)', 'shishiro_botan_(button-down)', 'shishiro_botan_(casual)', 'shishiro_botan_(cosplay)', 'shishiro_botan_(holonatsu_paradise)', 'shishiro_botan_(jirai_kei)', 'shishiro_botan_(lion)', 'shishiro_botan_(midnight_convenience_store)', 'shishiro_botan_(new_year)', 'shishirobotan'],
         'eshuushuu': ['Shishiro Botan'],
         'anime_dl': ['shishiro botan', 'shishiro botan (1st costume)', 'shishiro botan (3rd costume)', 'shishiro botan (5th costume)', 'shishiro botan (casual)', 'shishiro botan (cosplay)', 'shishiro botan (jirai kei)', 'shishiro botan (new year)'],
@@ -323,7 +298,6 @@ TAGS = {
     },
     'Omaru Polka': {
         'yande.re': ['omaru_polka'],
-        'konachan': ['omaru_polka'],
         'danbooru': ['omaru_polka', 'omaru_polka_(1st_costume)', 'omaru_polka_(2nd_costume)', 'omaru_polka_(3rd_costume)', 'omaru_polka_(4th_costume)', 'omaru_polka_(5th_costume)', 'omaru_polka_(6th_costume)', 'omaru_polka_(7th_costume)', 'omaru_polka_(casual)', 'omaru_polka_(cosplay)', 'omaru_polka_(fox)', 'omaru_polka_(gyaru)', 'omaru_polka_(holonatsu_paradise)', 'omaru_polka_(maid)', 'omaru_polka_(new_year)', 'omaru_polka_(new_year_costume)', 'omaru_polka_(school_uniform)', 'omaru_polka_(street_casual)', 'omaru_polka_(waitress)'],
         'safebooru': ['omaru_polka', 'omaru_polka_(1st_costume)', 'omaru_polka_(2nd_costume)', 'omaru_polka_(3rd_costume)', 'omaru_polka_(4th_costume)', 'omaru_polka_(5th_costume)', 'omaru_polka_(6th_costume)', 'omaru_polka_(7th_costume)', 'omaru_polka_(casual)', 'omaru_polka_(cosplay)', 'omaru_polka_(fox)', 'omaru_polka_(holonatsu_paradise)', 'omaru_polka_(new_year)', 'omaru_polka_(school_uniform)', 'omaru_polka_(street_casual)', 'omaru_polka_(waitress)'],
         'eshuushuu': ['Omaru Polka'],
@@ -338,7 +312,6 @@ TAGS = {
     },
     'Takane Lui': {
         'yande.re': ['ganmo_(takane_lui)', 'takane_lui', 'tsukune_(takane_lui)', 'tsumire_(takane_lui)'],
-        'konachan': ['takane_lui'],
         'safebooru': ['takane_lui', 'takane_lui_(1st_costume)', 'takane_lui_(2nd_costume)', 'takane_lui_(3rd_costume)', 'takane_lui_(4th_costume)', 'takane_lui_(5th_costume)', 'takane_lui_(british_gothic)', 'takane_lui_(casual)', 'takane_lui_(china_dress)', 'takane_lui_(cosplay)', 'takane_lui_(dark_rose)', 'takane_lui_(hawk)', 'takane_lui_(holonatsu_paradise)', 'takane_lui_(new_year)'],
         'eshuushuu': ['Takane Lui'],
         'anime_dl': ['takane lui', 'takane lui (1st costume)', 'takane lui (3rd costume)', 'takane lui (4th costume)', 'takane lui (5th costume)', 'takane lui (cosplay)'],
@@ -347,7 +320,6 @@ TAGS = {
     },
     'Hakui Koyori': {
         'yande.re': ['hakui_koyori', 'mofukoyo_(hakui_koyori)'],
-        'konachan': ['hakui_koyori'],
         'danbooru': ['chiikoyo_(hakui_koyori)', 'hakui_koyori_(1st_costume)', 'hakui_koyori_(2nd_costume)', 'hakui_koyori_(3rd_costume)', 'hakui_koyori_(4th_costume)', 'hakui_koyori_(5th_costume)', 'hakui_koyori_(6th_costume)', 'hakui_koyori_(dark_maid)', 'hakui_koyori_(first_mission)', 'hakui_koyori_(holonatsu_paradise)', 'hakui_koyori_(school_uniform)', 'kokoro_(hakui_koyori)', 'mofukoyo_(hakui_koyori)'],
         'safebooru': ['hakui_koyori', 'hakui_koyori_(1st_costume)', 'hakui_koyori_(2nd_costume)', 'hakui_koyori_(3rd_costume)', 'hakui_koyori_(4th_costume)', 'hakui_koyori_(5th_costume)', 'hakui_koyori_(6th_costume)', 'hakui_koyori_(cosplay)', 'hakui_koyori_(coyote)', 'hakui_koyori_(dark_maid)', 'hakui_koyori_(new_year)', 'hakui_koyori_(school_uniform)', 'hakui_koyori_(summer)', 'mofukoyo_(hakui_koyori)'],
         'nekosia': ['hakui-koyori'],
@@ -357,7 +329,6 @@ TAGS = {
     },
     'Sakamata Chloe': {
         'yande.re': ['sakamata_chloe'],
-        'konachan': ['sakamata_chloe'],
         'safebooru': ['inu_(sakamata_chloe)', 'sakamata_chloe', 'sakamata_chloe_(1st_costume)', 'sakamata_chloe_(2nd_costume)', 'sakamata_chloe_(3rd_costume)', 'sakamata_chloe_(4th_costume)', 'sakamata_chloe_(cosplay)', 'sakamata_chloe_(gyarumata)', 'sakamata_chloe_(jirai_kei)', 'sakamata_chloe_(new_year)', 'sakamata_chloe_(orca)', 'sakamata_chloe_(school_uniform)'],
         'nekosia': ['sakamata-chloe'],
         'eshuushuu': ['Sakamata Chloe'],
@@ -367,7 +338,6 @@ TAGS = {
     },
     'Kazama Iroha': {
         'yande.re': ['kazama_iroha'],
-        'konachan': ['kazama_iroha'],
         'danbooru': ['kazama_iroha', 'kazama_iroha_(1st_costume)', 'kazama_iroha_(2nd_costume)', 'kazama_iroha_(3rd_costume)', 'kazama_iroha_(4th_costume)', 'kazama_iroha_(5th_costume)', 'kazama_iroha_(6th_costume)', 'kazama_iroha_(cosplay)', 'kazama_iroha_(first_mission)', 'kazama_iroha_(holonatsu_paradise)', 'kazama_iroha_(magical_gozaru)', 'kazama_iroha_(maid)', 'kazama_iroha_(new_year)', 'kazama_iroha_(pop_dance)', 'kazama_iroha_(school_uniform)', 'kazama_iroha_(street)', 'kazama_iroha_(streetwear)'],
         'safebooru': ['kazama_iroha', 'kazama_iroha_(1st_costume)', 'kazama_iroha_(2nd_costume)', 'kazama_iroha_(3rd_costume)', 'kazama_iroha_(4th_costume)', 'kazama_iroha_(5th_costume)', 'kazama_iroha_(6th_costume)', 'kazama_iroha_(cosplay)', 'kazama_iroha_(magical_gozaru)', 'kazama_iroha_(maid)', 'kazama_iroha_(new_year)', 'kazama_iroha_(pop_dance)', 'kazama_iroha_(school_uniform)', 'kazama_iroha_(street)', 'kazama_iroha_(streetwear)'],
         'eshuushuu': ['Kazama Iroha'],
@@ -376,7 +346,6 @@ TAGS = {
     },
     'Otonose Kanade': {
         'yande.re': ['otonose_kanade'],
-        'konachan': ['otonose_kanade'],
         'danbooru': ['cheerful_vibes_echo_(otonose_kanade)', 'otonose_kanade', 'otonose_kanade_(1st_costume)', 'otonose_kanade_(1st_costume)1girl', 'otonose_kanade_(2nd_costume)', 'otonose_kanade_(3rd_costume)', 'otonose_kanade_(4th_costume)', 'otonose_kanade_(cosplay)', 'otonose_kanade_(flashpoint)', 'otonose_kanade_(holonatsu_paradise)', 'otonose_kanade_(new_year)', 'otonose_kanade_(regloss_uniform)'],
         'safebooru': ['otonose_kanade', 'otonose_kanade_(1st_costume)', 'otonose_kanade_(2nd_costume)', 'otonose_kanade_(3rd_costume)', 'otonose_kanade_(4th_costume)', 'otonose_kanade_(cosplay)', 'otonose_kanade_(flashpoint)', 'otonose_kanade_(holonatsu_paradise)', 'otonose_kanade_(new_year)', 'otonose_kanade_(regloss_uniform)'],
         'eshuushuu': ['Otonose Kanade'],
@@ -385,7 +354,6 @@ TAGS = {
     },
     'Ichijou Ririka': {
         'yande.re': ['ichijou_ririka'],
-        'konachan': ['ichijou_ririka'],
         'danbooru': ['happiness_phenomenon_(ichijou_ririka)', 'ichijou_ririka_(1st_costume)', 'ichijou_ririka_(2nd_costume)', 'ichijou_ririka_(3rd_costume)', 'ichijou_ririka_(4th_costume)', 'ichijou_ririka_(cosplay)', 'ichijou_ririka_(flashpoint)', 'ichijou_ririka_(holonatsu_paradise)', 'ichijou_ririka_(new_year)', 'ichijou_ririka_(regloss_uniform)'],
         'safebooru': ['ichijou_ririka', 'ichijou_ririka_(1st_costume)', 'ichijou_ririka_(2nd_costume)', 'ichijou_ririka_(3rd_costume)', 'ichijou_ririka_(4th_costume)', 'ichijou_ririka_(cosplay)', 'ichijou_ririka_(flashpoint)', 'ichijou_ririka_(holonatsu_paradise)', 'ichijou_ririka_(new_year)', 'ichijou_ririka_(regloss_uniform)', 'uni_(ichijou_ririka)'],
         'anime_dl': ['ichijou ririka', 'ichijou ririka (1st costume)'],
@@ -393,7 +361,6 @@ TAGS = {
     },
     'Juufuutei Raden': {
         'yande.re': ['juufuutei_raden'],
-        'konachan': ['juufuutei_raden'],
         'danbooru': ['juufuutei_raden', 'juufuutei_raden_(1st_costume)', 'juufuutei_raden_(2nd_costume)', 'juufuutei_raden_(3rd_costume)', 'juufuutei_raden_(4th_costume)', 'juufuutei_raden_(cosplay)', 'juufuutei_raden_(flashpoint)', 'juufuutei_raden_(holonatsu_paradise)', 'juufuutei_raden_(museum_princess)', 'juufuutei_raden_(new_year)', 'juufuutei_raden_(regloss_uniform)'],
         'safebooru': ['juufuutei_raden', 'juufuutei_raden_(1st_costume)', 'juufuutei_raden_(2nd_costume)', 'juufuutei_raden_(3rd_costume)', 'juufuutei_raden_(4th_costume)', 'juufuutei_raden_(cosplay)', 'juufuutei_raden_(flashpoint)', 'juufuutei_raden_(holonatsu_paradise)', 'juufuutei_raden_(museum_princess)', 'juufuutei_raden_(new_year)', 'juufuutei_raden_(regloss_uniform)'],
         'eshuushuu': ['Juufuutei Raden'],
@@ -402,7 +369,6 @@ TAGS = {
     },
     'Todoroki Hajime': {
         'yande.re': ['todoroki_hajime'],
-        'konachan': ['todoroki_hajime'],
         'safebooru': ['bancho_(todoroki_hajime)', 'banpen_(todoroki_hajime)', 'todoroki_hajime', 'todoroki_hajime_(1st_costume)', 'todoroki_hajime_(2nd_costume)', 'todoroki_hajime_(3rd_costume)', 'todoroki_hajime_(4th_costume)', 'todoroki_hajime_(black_aurora)', 'todoroki_hajime_(flashpoint)', 'todoroki_hajime_(holonatsu_paradise)', 'todoroki_hajime_(new_year)', 'todoroki_hajime_(regloss_uniform)'],
         'anime_dl': ['todoroki hajime'],
         'zerochan': ['Todoroki Hajime', 'Todoroki Hajime (1st Costume)', 'Todoroki Hajime (2nd Costume)', 'Todoroki Hajime (3rd Costume)', 'Todoroki Hajime (4th Costume)', 'Todoroki Hajime (Flashpoint)'],
@@ -410,7 +376,6 @@ TAGS = {
     },
     'Isaki Riona': {
         'yande.re': ['isaki_riona'],
-        'konachan': ['isaki_riona'],
         'danbooru': ['isaki_riona', 'isaki_riona_(1st_costume)', 'isaki_riona_(2nd_costume)', 'isaki_riona_(3rd_costume)', 'isaki_riona_(cosplay)', 'isaki_riona_(default)', 'isaki_riona_(flowglow_uniform)', 'isaki_riona_(holonatsu_paradise)', 'isaki_riona_(new_year)'],
         'safebooru': ['isaki_riona', 'isaki_riona_(1st_costume)', 'isaki_riona_(2nd_costume)', 'isaki_riona_(3rd_costume)', 'isaki_riona_(flowglow_uniform)', 'isaki_riona_(new_year)'],
         'anime_dl': ['isaki riona'],
@@ -418,7 +383,6 @@ TAGS = {
     },
     'Koganei Niko': {
         'yande.re': ['koganei_niko'],
-        'konachan': ['koganei_niko'],
         'danbooru': ['koganei_niko', 'koganei_niko_(1st_costume)', 'koganei_niko_(2nd_costume)', 'koganei_niko_(cosplay)', 'koganei_niko_(default)', 'koganei_niko_(flowglow_uniform)', 'koganei_niko_(holonatsu_paradise)', 'koganei_niko_(new_year)'],
         'safebooru': ['koganei_niko', 'koganei_niko_(1st_costume)', 'koganei_niko_(2nd_costume)', 'koganei_niko_(flowglow_uniform)', 'koganei_niko_(new_year)'],
         'anime_dl': ['koganei niko'],
@@ -426,14 +390,12 @@ TAGS = {
     },
     'Mizumiya Su': {
         'yande.re': ['mizumiya_su'],
-        'konachan': ['mizumiya_su'],
         'danbooru': ['mizumiya_su', 'mizumiya_su_(1st_costume)', 'mizumiya_su_(2nd_costume)', 'mizumiya_su_(3rd_costume)', 'mizumiya_su_(cosplay)', 'mizumiya_su_(default)', 'mizumiya_su_(flowglow_uniform)', 'mizumiya_su_(holonatsu_paradise)', 'mizumiya_su_(new_year)'],
         'safebooru': ['mizumiya_su', 'mizumiya_su_(1st_costume)', 'mizumiya_su_(2nd_costume)', 'mizumiya_su_(3rd_costume)', 'mizumiya_su_(cosplay)', 'mizumiya_su_(flowglow_uniform)', 'mizumiya_su_(holonatsu_paradise)', 'mizumiya_su_(new_year)', 'rekio_(mizumiya_su)'],
         'anime_dl': ['mizumiya su'],
         'zerochan': ['Mizumiya Su', 'Mizumiya Su (1st Costume)', 'Mizumiya Su (2nd Costume)', 'Mizumiya Su (3rd Costume)'],
     },
     'Rindo Chihaya': {
-        'konachan': ['rindo_chihaya'],
         'safebooru': ['rindo_chihaya', 'rindo_chihaya_(1st_costume)', 'rindo_chihaya_(2nd_costume)', 'rindo_chihaya_(3rd_costume)', 'rindo_chihaya_(flowglow_uniform)', 'rindo_chihaya_(new_year)'],
         'anime_dl': ['rindo chihaya', 'rindo chihaya (holonatsu paradise)'],
         'zerochan': ['Rindo Chihaya', 'Rindo Chihaya (1st Costume)', 'Rindo Chihaya (2nd Costume)', 'Rindo Chihaya (3rd Costume)', 'Rindo Chihaya (HoloNatsu Paradise)'],
@@ -442,7 +404,6 @@ TAGS = {
     },
     'Kikirara Vivi': {
         'yande.re': ['kikirara_vivi'],
-        'konachan': ['kikirara_vivi'],
         'danbooru': ['kikirara_vivi', 'kikirara_vivi_(1st_costume)', 'kikirara_vivi_(2nd_costume)', 'kikirara_vivi_(cosplay)', 'kikirara_vivi_(default)', 'kikirara_vivi_(flowglow_uniform)', 'kikirara_vivi_(holonatsu_paradise)', 'kikirara_vivi_(new_year)'],
         'safebooru': ['kikirara_vivi', 'kikirara_vivi_(1st_costume)', 'kikirara_vivi_(2nd_costume)', 'kikirara_vivi_(flowglow_uniform)', 'kikirara_vivi_(new_year)'],
         'anime_dl': ['kikirara vivi'],
@@ -457,7 +418,6 @@ TAGS = {
         'yande.re': [],
     },
     'Kanade Izuru': {
-        'konachan': ['kanade_izuru'],
         'danbooru': ['kanade_izuru', 'kanade_izuru_(1st_costume)', 'kanade_izuru_(2nd_costume)', 'kanade_izuru_(3rd_costume)', 'kanade_izuru_(4th_costume)', 'kanade_izuru_(5th_costume)', 'kanade_izuru_(6th_costume)', 'kanade_izuru_(7th_costume)', 'kanade_izuru_(8th_costume)', 'kanade_izuru_(cosplay)', 'kanade_izuru_(fall/winter)', "one_arm's_reach_from_laika_(kanade_izuru)"],
         'safebooru': ['kanade_izuru', 'kanade_izuru_(1st_costume)', 'kanade_izuru_(2nd_costume)', 'kanade_izuru_(3rd_costume)', 'kanade_izuru_(4th_costume)', 'kanade_izuru_(5th_costume)', 'kanade_izuru_(6th_costume)', 'kanade_izuru_(7th_costume)', 'kanade_izuru_(8th_costume)', 'kanade_izuru_(cosplay)', 'kanade_izuru_(fall/winter)', 'unhinged_izuru_(kanade_izuru)'],
         'anime_dl': ['kanade izuru'],
@@ -465,7 +425,6 @@ TAGS = {
         'yande.re': [],
     },
     'Arurandeisu': {
-        'konachan': ['arurandeisu'],
         'danbooru': ['arurandeisu', 'arurandeisu_(1st_costume)', 'arurandeisu_(2nd_costume)', 'arurandeisu_(3rd_costume)', 'arurandeisu_(4th_costume)', 'arurandeisu_(accession)', 'arurandeisu_(cosplay)', 'arurandeisu_(old_design)', 'pizza-kun_(arurandeisu)'],
         'safebooru': ['arurandeisu', 'arurandeisu_(1st_costume)', 'arurandeisu_(2nd_costume)', 'arurandeisu_(3rd_costume)', 'arurandeisu_(4th_costume)', 'arurandeisu_(accession)', 'arurandeisu_(cosplay)', 'arurandeisu_(old_design)'],
         'anime_dl': ['arurandeisu', 'arurandeisu_(1st_costume)', 'arurandeisu_(2nd_costume)', 'arurandeisu_(3rd_costume)'],
@@ -479,7 +438,6 @@ TAGS = {
         'safebooru': [],
     },
     'Astel Leda': {
-        'konachan': ['astel_leda'],
         'danbooru': ['astel_leda_(1st_costume)', 'astel_leda_(2nd_costume)', 'astel_leda_(3rd_costume)', 'astel_leda_(4th_costume)', 'astel_leda_(fall/winter)', 'astel_leda_(old_design)', 'juke_(astel_leda)', 'knoll_(astel_leda)', 'merck_(astel_leda)'],
         'safebooru': ['astel_leda', 'astel_leda_(1st_costume)', 'astel_leda_(2nd_costume)', 'astel_leda_(3rd_costume)', 'astel_leda_(4th_costume)', 'astel_leda_(fall/winter)', 'astel_leda_(old_design)', 'merck_(astel_leda)'],
         'eshuushuu': ['Astel Leda'],
@@ -495,7 +453,6 @@ TAGS = {
         'yande.re': [],
     },
     'Yukoku Roberu': {
-        'konachan': ['yukoku_roberu'],
         'safebooru': ['yukoku_roberu', 'yukoku_roberu_(1st_costume)', 'yukoku_roberu_(2nd_costume)', 'yukoku_roberu_(3rd_costume)', 'yukoku_roberu_(4th_costume)', 'yukoku_roberu_(5th_costume)', 'yukoku_roberu_(6th_costume)', 'yukoku_roberu_(7th_costume)', 'yukoku_roberu_(cosplay)', 'yukoku_roberu_(fall/winter)'],
         'anime_dl': ['yukoku roberu'],
         'zerochan': ['Yukoku Roberu', 'Yukoku Roberu (1st Costume)', 'Yukoku Roberu (2nd Costume)', 'Yukoku Roberu (3rd Costume)', 'Yukoku Roberu (4th Costume)', 'Yukoku Roberu (5th Costume)', 'Yukoku Roberu (6th Costume)', 'Yukoku Roberu (7th Costume)'],
@@ -517,7 +474,6 @@ TAGS = {
         'yande.re': [],
     },
     'Yatogami Fuma': {
-        'konachan': ['yatogami_fuma'],
         'safebooru': ['kotatsu_(yatogami_fuma)', 'yatogami_fuma', 'yatogami_fuma_(1st_costume)', 'yatogami_fuma_(2nd_costume)', 'yatogami_fuma_(3rd_costume)', 'yatogami_fuma_(4th_costume)', 'yatogami_fuma_(5th_costume)', 'yatogami_fuma_(after-school)'],
         'anime_dl': ['yatogami fuma'],
         'zerochan': ['Yatogami Fuma', 'Yatogami Fuma (1st Costume)', 'Yatogami Fuma (2nd Costume)', 'Yatogami Fuma (3rd Costume)', 'Yatogami Fuma (4th Costume)', 'Yatogami Fuma (5th Costume)'],
@@ -540,7 +496,6 @@ TAGS = {
     },
     'Ayunda Risu': {
         'yande.re': ['ayunda_risu'],
-        'konachan': ['ayunda_risu'],
         'danbooru': ['ayunda_risu_(1st_costume)', 'ayunda_risu_(2nd_costume)', 'ayunda_risu_(3rd_costume)', 'ayunda_risu_(4th_costume)', 'ayunda_risu_(5th_costume)', 'ayunda_risu_(6th_costume)', 'ayunda_risu_(7th_costume)', 'ayunda_risu_(cosplay)', 'ayunda_risu_(cyberpunk)', 'ayunda_risu_(dark_side)', 'ayunda_risu_(fall_casual)', 'ayunda_risu_(goddess)', 'ayunda_risu_(holonatsu_paradise)', 'ayunda_risu_(indonesian_casual)', 'ayunda_risu_(new_year)', 'ayunda_risu_(work)'],
         'safebooru': ['ayunda_risu', 'ayunda_risu_(1st_costume)', 'ayunda_risu_(2nd_costume)', 'ayunda_risu_(3rd_costume)', 'ayunda_risu_(4th_costume)', 'ayunda_risu_(5th_costume)', 'ayunda_risu_(6th_costume)', 'ayunda_risu_(7th_costume)', 'ayunda_risu_(cosplay)', 'ayunda_risu_(cyberpunk)', 'ayunda_risu_(dark_side)', 'ayunda_risu_(fall_casual)', 'ayunda_risu_(holonatsu_paradise)', 'ayunda_risu_(indonesian_casual)', 'ayunda_risu_(new_year)', 'ayunda_risu_(squirrel)', 'ayunda_risu_(work)'],
         'eshuushuu': ['Ayunda Risu'],
@@ -549,7 +504,6 @@ TAGS = {
     },
     'Moona Hoshinova': {
         'yande.re': ['moona_hoshinova'],
-        'konachan': ['moona_hoshinova'],
         'danbooru': ['distortion_(moona_hoshinova)', 'moona_hoshinova', "moona_hoshinova's_father", "moona_hoshinova's_mother", "moona_hoshinova's_younger_brother", 'moona_hoshinova_(1st_costume)', 'moona_hoshinova_(2nd_costume)', 'moona_hoshinova_(3rd_costume)', 'moona_hoshinova_(4th_costume)', 'moona_hoshinova_(5th_costume)', 'moona_hoshinova_(6th_costume)', 'moona_hoshinova_(7th_costume)', 'moona_hoshinova_(artist)', 'moona_hoshinova_(casual)', 'moona_hoshinova_(cosplay)', 'moona_hoshinova_(goddess)', 'moona_hoshinova_(holonatsu_paradise)', 'moona_hoshinova_(indonesian_casual)', 'moona_hoshinova_(new_year)', 'moona_hoshinova_(pajamas)', 'moona_hoshinova_(punk_rock)', 'moona_hoshinova_(work)', 'moonabito_(moona_hoshinova)'],
         'safebooru': ['moona_hoshinova', 'moona_hoshinova_(1st_costume)', 'moona_hoshinova_(2nd_costume)', 'moona_hoshinova_(3rd_costume)', 'moona_hoshinova_(4th_costume)', 'moona_hoshinova_(5th_costume)', 'moona_hoshinova_(6th_costume)', 'moona_hoshinova_(7th_costume)', 'moona_hoshinova_(artist)', 'moona_hoshinova_(casual)', 'moona_hoshinova_(cosplay)', 'moona_hoshinova_(goddess)', 'moona_hoshinova_(indonesian_casual)', 'moona_hoshinova_(new_year)', 'moona_hoshinova_(pajamas)', 'moona_hoshinova_(punk_rock)', 'moona_hoshinova_(work)'],
         'eshuushuu': ['Moona Hoshinova'],
@@ -558,7 +512,6 @@ TAGS = {
     },
     'Airani Iofifteen': {
         'yande.re': ['airani_iofifteen'],
-        'konachan': ['airani_iofifteen'],
         'danbooru': ['airabella_ioletta_(airani_iofifteen)', "airani_iofifteen's_mother", 'airani_iofifteen_(1st_costume)', 'airani_iofifteen_(2nd_costume)', 'airani_iofifteen_(3rd_costume)', 'airani_iofifteen_(4th_costume)', 'airani_iofifteen_(5th_costume)', 'airani_iofifteen_(6th_costume)', 'airani_iofifteen_(7th_costume)', 'airani_iofifteen_(8th_costume)', 'airani_iofifteen_(artist)', 'airani_iofifteen_(cosplay)', 'airani_iofifteen_(goddess)', 'airani_iofifteen_(holonatsu_paradise)', 'airani_iofifteen_(indonesian_casual)', 'airani_iofifteen_(military_casual)', 'airani_iofifteen_(new_year)', 'airani_iofifteen_(sci-fi_princess)', 'airani_iofifteen_(work)', 'ioforia_(airani_iofifteen)'],
         'safebooru': ['airabella_ioletta_(airani_iofifteen)', 'airani_iofifteen', 'airani_iofifteen_(1st_costume)', 'airani_iofifteen_(2nd_costume)', 'airani_iofifteen_(3rd_costume)', 'airani_iofifteen_(4th_costume)', 'airani_iofifteen_(5th_costume)', 'airani_iofifteen_(6th_costume)', 'airani_iofifteen_(7th_costume)', 'airani_iofifteen_(8th_costume)', 'airani_iofifteen_(artist)', 'airani_iofifteen_(cosplay)', 'airani_iofifteen_(goddess)', 'airani_iofifteen_(indonesian_casual)', 'airani_iofifteen_(military_casual)', 'airani_iofifteen_(new_year)', 'airani_iofifteen_(sci-fi_princess)', 'airani_iofifteen_(work)'],
         'anime_dl': ['airani iofifteen'],
@@ -566,7 +519,6 @@ TAGS = {
     },
     'Kureiji Ollie': {
         'yande.re': ['kureiji_ollie'],
-        'konachan': ['kureiji_ollie'],
         'danbooru': ['history_(kureiji_ollie)', 'kureiji_ollie', 'kureiji_ollie_(1st_costume)', 'kureiji_ollie_(2nd_costume)', 'kureiji_ollie_(3rd_costume)', 'kureiji_ollie_(3rd_outfit)', 'kureiji_ollie_(4th_costume)', 'kureiji_ollie_(5th_costume)', 'kureiji_ollie_(6th_costume)', 'kureiji_ollie_(7th_costume)', 'kureiji_ollie_(artist)', 'kureiji_ollie_(cosplay)', 'kureiji_ollie_(holo-wota_happi)', 'kureiji_ollie_(holonatsu_paradise)', 'kureiji_ollie_(indonesian_dress)', 'kureiji_ollie_(living)', 'kureiji_ollie_(mafia_princess)', 'kureiji_ollie_(new_year)', 'kureiji_ollie_(new_year_costume)', 'kureiji_ollie_(rebirth)', 'kureiji_ollie_(scarlet_moonlight_embrace)', 'olivia_(kureiji_ollie)', 'olivia_(kureiji_ollie)_(cosplay)'],
         'safebooru': ['kureiji_ollie', 'kureiji_ollie_(1st_costume)', 'kureiji_ollie_(2nd_costume)', 'kureiji_ollie_(3rd_costume)', 'kureiji_ollie_(4th_costume)', 'kureiji_ollie_(5th_costume)', 'kureiji_ollie_(6th_costume)', 'kureiji_ollie_(7th_costume)', 'kureiji_ollie_(artist)', 'kureiji_ollie_(cosplay)', 'kureiji_ollie_(holo-wota_happi)', 'kureiji_ollie_(indonesian_dress)', 'kureiji_ollie_(living)', 'kureiji_ollie_(mafia_princess)', 'kureiji_ollie_(new_year)', 'kureiji_ollie_(rebirth)', 'kureiji_ollie_(scarlet_moonlight_embrace)'],
         'eshuushuu': ['Kureiji Ollie'],
@@ -575,7 +527,6 @@ TAGS = {
     },
     'Anya Melfissa': {
         'yande.re': ['anya_melfissa'],
-        'konachan': ['anya_melfissa'],
         'danbooru': ['anya_melfissa', 'anya_melfissa_(1st_costume)', 'anya_melfissa_(2nd_costume)', 'anya_melfissa_(3rd_costume)', 'anya_melfissa_(4th_costume)', 'anya_melfissa_(casual)', 'anya_melfissa_(cosplay)', 'anya_melfissa_(holonatsu_paradise)', 'anya_melfissa_(indonesian_casual)', 'anya_melfissa_(new_year)', 'anya_melfissa_(steampunk)', 'anya_melfissa_(sword)', 'melfriend_(anya_melfissa)'],
         'safebooru': ['anya_melfissa', 'anya_melfissa_(1st_costume)', 'anya_melfissa_(2nd_costume)', 'anya_melfissa_(3rd_costume)', 'anya_melfissa_(4th_costume)', 'anya_melfissa_(casual)', 'anya_melfissa_(cosplay)', 'anya_melfissa_(holonatsu_paradise)', 'anya_melfissa_(indonesian_casual)', 'anya_melfissa_(new_year)', 'anya_melfissa_(steampunk)', 'anya_melfissa_(sword)'],
         'anime_dl': ['anya melfissa'],
@@ -583,7 +534,6 @@ TAGS = {
     },
     'Pavolia Reine': {
         'yande.re': ['pavolia_reine'],
-        'konachan': ['pavolia_reine'],
         'danbooru': ['merakyat_(pavolia_reine)', 'pavolia_reine_(1st_costume)', 'pavolia_reine_(2nd_costume)', 'pavolia_reine_(3rd_costume)', 'pavolia_reine_(4th_costume)', 'pavolia_reine_(5th_costume)', 'pavolia_reine_(6th_costume)', 'pavolia_reine_(holonatsu_paradise)', 'pavolia_reine_(indonesian_casual)', 'pavolia_reine_(new_year)', 'pavolia_reine_(street)', 'pavolia_reine_(streetwear)'],
         'safebooru': ['pavolia_reine', 'pavolia_reine_(1st_costume)', 'pavolia_reine_(2nd_costume)', 'pavolia_reine_(3rd_costume)', 'pavolia_reine_(4th_costume)', 'pavolia_reine_(5th_costume)', 'pavolia_reine_(6th_costume)', 'pavolia_reine_(artist)', 'pavolia_reine_(cosplay)', 'pavolia_reine_(indonesian_casual)', 'pavolia_reine_(new_year)', 'pavolia_reine_(peahen)', 'pavolia_reine_(street)', 'pavolia_reine_(streetwear)'],
         'eshuushuu': ['Pavolia Reine'],
@@ -592,7 +542,6 @@ TAGS = {
     },
     'Vestia Zeta': {
         'yande.re': ['vestia_zeta'],
-        'konachan': ['vestia_zeta'],
         'safebooru': ['bazo_(vestia_zeta)', 'vestia_zeta', 'vestia_zeta_(1st_costume)', 'vestia_zeta_(2nd_costume)', 'vestia_zeta_(3rd_costume)', 'vestia_zeta_(4th_costume)', 'vestia_zeta_(5th_costume)', 'vestia_zeta_(artist)', 'vestia_zeta_(businesswoman)', 'vestia_zeta_(cat)', 'vestia_zeta_(cosplay)', 'vestia_zeta_(holonatsu_paradise)', 'vestia_zeta_(jirai_kei)', 'vestia_zeta_(new_year)'],
         'eshuushuu': ['Vestia Zeta'],
         'anime_dl': ['vestia zeta', 'vestia zeta (businesswoman)'],
@@ -601,7 +550,6 @@ TAGS = {
     },
     'Kaela Kovalskia': {
         'yande.re': ['kaela_kovalskia'],
-        'konachan': ['kaela_kovalskia'],
         'danbooru': ['ckia_(kaela_kovalskia)', 'gachan_(kaela_kovalskia)', 'goriela_(kaela_kovalskia)', 'kaela_kovalskia', 'kaela_kovalskia_(1st_costume)', 'kaela_kovalskia_(2nd_costume)', 'kaela_kovalskia_(3rd_costume)', 'kaela_kovalskia_(4th_costume)', 'kaela_kovalskia_(5th_costume)', 'kaela_kovalskia_(business_casual)', 'kaela_kovalskia_(cosplay)', 'kaela_kovalskia_(holonatsu_paradise)', 'kaela_kovalskia_(indonesian_casual)', 'kaela_kovalskia_(new_default)', 'kaela_kovalskia_(new_year)', 'kaela_kovalskia_(penguin)', 'pemaloe_(kaela_kovalskia)'],
         'safebooru': ['ckia_(kaela_kovalskia)', 'gachan_(kaela_kovalskia)', 'galon_(kaela_kovalskia)', 'kaela_kovalskia', 'kaela_kovalskia_(1st_costume)', 'kaela_kovalskia_(2nd_costume)', 'kaela_kovalskia_(3rd_costume)', 'kaela_kovalskia_(4th_costume)', 'kaela_kovalskia_(5th_costume)', 'kaela_kovalskia_(barong)', 'kaela_kovalskia_(business_casual)', 'kaela_kovalskia_(cosplay)', 'kaela_kovalskia_(indonesian_casual)', 'kaela_kovalskia_(new_year)', 'kaela_kovalskia_(penguin)'],
         'eshuushuu': ['Kaela Kovalskia'],
@@ -610,7 +558,6 @@ TAGS = {
     },
     'Kobo Kanaeru': {
         'yande.re': ['kobo_kanaeru'],
-        'konachan': ['kobo_kanaeru'],
         'danbooru': ['cebo-kun_(kobo_kanaeru)', 'cilus_(kobo_kanaeru)', 'kobo_kanaeru', "kobo_kanaeru's_brother", 'kobo_kanaeru_(1st_costume)', 'kobo_kanaeru_(2nd_costume)', 'kobo_kanaeru_(3rd_costume)', 'kobo_kanaeru_(4th_costume)', 'kobo_kanaeru_(5th_costume)', 'kobo_kanaeru_(casual)', 'kobo_kanaeru_(cosplay)', 'kobo_kanaeru_(holonatsu_paradise)', 'kobo_kanaeru_(indonesian_dress)', 'kobo_kanaeru_(new_year)', 'kobokerz_(kobo_kanaeru)'],
         'safebooru': ['cebo-kun_(kobo_kanaeru)', 'cilus_(kobo_kanaeru)', 'kobo_kanaeru', 'kobo_kanaeru_(1st_costume)', 'kobo_kanaeru_(2nd_costume)', 'kobo_kanaeru_(3rd_costume)', 'kobo_kanaeru_(4th_costume)', 'kobo_kanaeru_(5th_costume)', 'kobo_kanaeru_(cosplay)', 'kobo_kanaeru_(indonesian_dress)', 'kobo_kanaeru_(new_year)', 'kobokerz_(kobo_kanaeru)'],
         'eshuushuu': ['Kobo Kanaeru'],
@@ -619,7 +566,6 @@ TAGS = {
     },
     'Mori Calliope': {
         'yande.re': ['mori_calliope'],
-        'konachan': ['mori_calliope'],
         'danbooru': ['bully_(mori_calliope)', 'deadbeat_(mori_calliope)', 'death-sensei_(mori_calliope)', 'end_of_a_life_(mori_calliope)', 'ghost_cat_(mori_calliope)', 'mori_calliope', 'mori_calliope_(10th_costume)', 'mori_calliope_(11th_costume)', 'mori_calliope_(12th_costume)', 'mori_calliope_(1st_costume)', 'mori_calliope_(2nd_costume)', 'mori_calliope_(3rd_costume)', 'mori_calliope_(4th_costume)', 'mori_calliope_(5th_costume)', 'mori_calliope_(6th_costume)', 'mori_calliope_(7th_costume)', 'mori_calliope_(8th_costume)', 'mori_calliope_(9th_costume)', 'mori_calliope_(artist)', 'mori_calliope_(casual)', 'mori_calliope_(cosplay)', 'mori_calliope_(ferrywoman)', 'mori_calliope_(gold_unbalance)', 'mori_calliope_(grimoire)', 'mori_calliope_(holonatsu_paradise)', 'mori_calliope_(jewelry_bonney)', 'mori_calliope_(jigoku_6)', 'mori_calliope_(kawaiiope)', 'mori_calliope_(new_underworld_order)', 'mori_calliope_(new_year)', 'mori_calliope_(party_dress)', 'mori_calliope_(puppet)', 'mori_calliope_(q)', 'mori_calliope_(rock)', 'mori_calliope_(rock_bunny)', 'mori_calliope_(rocker)', 'mori_calliope_(sheriff)', 'mori_calliope_(sleepwear)', 'mori_calliope_(streetwear)', 'mori_calliope_(stygian_zinogre)', 'mori_calliope_(style)', 'mori_calliope_(the_story_thus_far)', 'mori_calliope_(vegapunk)', 'mori_calliope_(voice_actor)', 'overkill_(mori_calliope)'],
         'safebooru': ['death-sensei_(mori_calliope)', 'end_of_a_life_(mori_calliope)', 'ghost_cat_(mori_calliope)', 'mori_calliope', 'mori_calliope_(10th_costume)', 'mori_calliope_(11th_costume)', 'mori_calliope_(12th_costume)', 'mori_calliope_(1st_costume)', 'mori_calliope_(2nd_costume)', 'mori_calliope_(3rd_costume)', 'mori_calliope_(4th_costume)', 'mori_calliope_(5th_costume)', 'mori_calliope_(6th_costume)', 'mori_calliope_(7th_costume)', 'mori_calliope_(8th_costume)', 'mori_calliope_(9th_costume)', 'mori_calliope_(artist)', 'mori_calliope_(cosplay)', 'mori_calliope_(ferrywoman)', 'mori_calliope_(grimoire)', 'mori_calliope_(holonatsu_paradise)', 'mori_calliope_(jigoku_6)', 'mori_calliope_(kawaiiope)', 'mori_calliope_(new_underworld_order)', 'mori_calliope_(new_year)', 'mori_calliope_(party_dress)', 'mori_calliope_(rock_bunny)', 'mori_calliope_(sheriff)', 'mori_calliope_(sleepwear)', 'mori_calliope_(streetwear)', 'mori_calliope_(stygian_zinogre)', 'mori_calliope_(the_story_thus_far)', 'overkill_(mori_calliope)'],
         'eshuushuu': ['Mori Calliope'],
@@ -628,7 +574,6 @@ TAGS = {
     },
     'Takanashi Kiara': {
         'yande.re': ['takanashi_kiara'],
-        'konachan': ['takanashi_kiara'],
         'safebooru': ['chimera_(takanashi_kiara)', 'chonkers_(takanashi_kiara)', 'colonel_kernel_(takanashi_kiara)', 'do_u_(takanashi_kiara)', 'ego_(takanashi_kiara)', 'kfp_employee_(takanashi_kiara)', 'kotori_(takanashi_kiara)', 'mirage_(takanashi_kiara)', 'takanashi_kiara', 'takanashi_kiara_(1st_costume)', 'takanashi_kiara_(2nd_costume)', 'takanashi_kiara_(3rd_costume)', 'takanashi_kiara_(4th_costume)', 'takanashi_kiara_(5th_costume)', 'takanashi_kiara_(6th_costume)', 'takanashi_kiara_(7th_costume)', 'takanashi_kiara_(artist)', 'takanashi_kiara_(casual)', 'takanashi_kiara_(cosplay)', 'takanashi_kiara_(cozy)', 'takanashi_kiara_(dirndl)', 'takanashi_kiara_(drawn_to_dawn)', 'takanashi_kiara_(fever_night)', 'takanashi_kiara_(knight)', 'takanashi_kiara_(namielle)', 'takanashi_kiara_(new_year)', 'takanashi_kiara_(party_dress)', 'takanashi_kiara_(perfume)', 'takanashi_kiara_(phoenix)', 'takanashi_kiara_(winter_casual)', 'tiara_(takanashi_kiara)'],
         'eshuushuu': ['Takanashi Kiara'],
         'anime_dl': ['takanashi kiara', 'takanashi kiara (1st costume)', 'takanashi kiara (casual)', 'takanashi kiara (dirndl)', 'takanashi kiara (fever night)', 'takanashi kiara (new year)', 'takanashi kiara (party dress)', 'takanashi kiara (perfume)', 'takanashi kiara (winter casual)'],
@@ -637,7 +582,6 @@ TAGS = {
     },
     "Ninomae Ina'nis": {
         'yande.re': ["ao-chan_(ninomae_ina'nis)", "ninomae_ina'nis", "ninomae_ina'nis_(artist)"],
-        'konachan': ["ninomae_ina'nis", "ninomae_ina'nis_(artist)"],
         'danbooru': ["ane'nis_(ninomae_ina'nis)", "ao-chan_(ninomae_ina'nis)", "meconopsis_(ninomae_ina'nis)", "ninomae_ina'nis", "ninomae_ina'nis_(1st_costume)", "ninomae_ina'nis_(2nd_costume)", "ninomae_ina'nis_(3rd_costume)", "ninomae_ina'nis_(4th_costume)", "ninomae_ina'nis_(5th_costume)", "ninomae_ina'nis_(6th_costume)", "ninomae_ina'nis_(7th_costume)", "ninomae_ina'nis_(8th_costume)", "ninomae_ina'nis_(artist)", "ninomae_ina'nis_(casual)", "ninomae_ina'nis_(cosplay)", "ninomae_ina'nis_(drawn_to_dawn)", "ninomae_ina'nis_(hololive_production_in_waterland)", "ninomae_ina'nis_(holonatsu_paradise)", "ninomae_ina'nis_(ina_the_hero)", "ninomae_ina'nis_(loungewear)", "ninomae_ina'nis_(new_year)", "ninomae_ina'nis_(nu_udra)", "ninomae_ina'nis_(party_dress)", "ninomae_ina'nis_(pastry_chef)", "ninomae_ina'nis_(school_uniform)"],
         'safebooru': ["ao-chan_(ninomae_ina'nis)", "meconopsis_(ninomae_ina'nis)", "ninomae_ina'nis", "ninomae_ina'nis_(1st_costume)", "ninomae_ina'nis_(2nd_costume)", "ninomae_ina'nis_(3rd_costume)", "ninomae_ina'nis_(4th_costume)", "ninomae_ina'nis_(5th_costume)", "ninomae_ina'nis_(6th_costume)", "ninomae_ina'nis_(7th_costume)", "ninomae_ina'nis_(8th_costume)", "ninomae_ina'nis_(artist)", "ninomae_ina'nis_(casual)", "ninomae_ina'nis_(cosplay)", "ninomae_ina'nis_(drawn_to_dawn)", "ninomae_ina'nis_(holonatsu_paradise)", "ninomae_ina'nis_(ina_the_hero)", "ninomae_ina'nis_(loungewear)", "ninomae_ina'nis_(new_year)", "ninomae_ina'nis_(nu_udra)", "ninomae_ina'nis_(party_dress)", "ninomae_ina'nis_(pastry_chef)", "ninomae_ina'nis_(school_uniform)", "tako_(ninomae_ina'nis)"],
         'eshuushuu': ["Ninomae Ina'nis"],
@@ -653,7 +597,6 @@ TAGS = {
     },
     'IRyS': {
         'yande.re': ['airysher', 'fairys', 'irys_(hololive)', 'mirysa_rh'],
-        'konachan': ['irys_(hololive)'],
         'danbooru': ['airys_ooo', 'anerys_(irys)', 'bloom_(irys)', 'chakiryshka', 'dadrys_(irys)', 'dollrys_(irys)', 'fairys_(vtuber)', 'gloom_(irys)', 'irys955', 'irys_(4th_costume)_(hololive)', 'irys_(5th_costume)', 'irys_(gamer)_(hololive)', 'irys_(gaming_casual)_(hololive)', 'irys_(hololive)_(1st_costume)', 'irys_(hololive)_(2nd_costume)', 'irys_(hololive)_(3rd_costume)', 'irys_(hololive)_(holonatsu_paradise)', 'irys_(holonatsu_paradise)_(hololive)', 'irys_(maid)_(hololive)', 'irys_(mizutsune)_(hololive)', 'irys_(race_queenrys)_(hololive)', 'irys_(school_uniform)_(hololive)', 'irysiz', 'irystocrat_(irys)', 'kisirys', 'mirysa_rh', 'onigirysenbei'],
         'safebooru': ['airys_ooo', 'airysher', 'bloom_(irys)', 'chakiryshka', 'dollrys_(irys)', 'fairys_(fairys_channel)', 'fairys_(virtual_youtuber)', 'fairys_(vtuber)', 'irys', 'irys_(1st_costume)_(hololive)', 'irys_(2nd_costume)_(hololive)', 'irys_(3rd_costume)_(hololive)', 'irys_(4th_costume)', 'irys_(5th_costume)', 'irys_(casualrys)_(hololive)', 'irys_(gamer)_(hololive)', 'irys_(gamera)', 'irys_(gaming_casual)_(hololive)', 'irys_(hololive)', 'irys_(hololive)_(cosplay)', 'irys_(irys_1.0)_(hololive)', 'irys_(irys_2.0)_(hololive)', 'irys_(maid)_(hololive)', 'irys_(mizutsune)_(hololive)', 'irys_(new_year)_(hololive)', 'irys_(old_design)_(hololive)', 'irys_(race_queenrys)_(hololive)', 'winrirysart'],
         'eshuushuu': ['IRyS', 'irys_(1st_costume)', 'irys_(2nd_costume)', 'irys_(3rd_costume)', 'irys_(4th_costume)', 'irys_(5th_costume)'],
@@ -662,7 +605,6 @@ TAGS = {
     },
     'Ouro Kronii': {
         'yande.re': ['ouro_kronii'],
-        'konachan': ['ouro_kronii'],
         'danbooru': ['am_(ouro_kronii)', 'boros_(ouro_kronii)', 'boros_(ouro_kronii)_(cosplay)', 'kroma_(ouro_kronii)', 'kronie_(ouro_kronii)', 'medusaronii_(ouro_kronii)', 'ouro_kronii', 'ouro_kronii_(1st_costume)', 'ouro_kronii_(2nd_costume)', 'ouro_kronii_(3rd_costume)', 'ouro_kronii_(4st_costume)', 'ouro_kronii_(4th_costume)', 'ouro_kronii_(5th_costume)', 'ouro_kronii_(6th_costume)', 'ouro_kronii_(artist)', 'ouro_kronii_(casual)', 'ouro_kronii_(commander)', 'ouro_kronii_(cosplay)', 'ouro_kronii_(crow)', 'ouro_kronii_(divine)', 'ouro_kronii_(goddess)', 'ouro_kronii_(holonatsu_paradise)', 'ouro_kronii_(maid)', 'ouro_kronii_(new_year)', 'ouro_kronii_(snake)', 'ourokronii', 'pm_(ouro_kronii)'],
         'safebooru': ['kroma_(ouro_kronii)', 'kronie_(ouro_kronii)', 'medusaronii_(ouro_kronii)', 'ouro_kronii', 'ouro_kronii_(1st_costume)', 'ouro_kronii_(2nd_costume)', 'ouro_kronii_(3rd_costume)', 'ouro_kronii_(4th_costume)', 'ouro_kronii_(5th_costume)', 'ouro_kronii_(6th_costume)', 'ouro_kronii_(casual)', 'ouro_kronii_(cosplay)', 'ouro_kronii_(crow)', 'ouro_kronii_(divine)', 'ouro_kronii_(goddess)', 'ouro_kronii_(holonatsu_paradise)', 'ouro_kronii_(maid)', 'ouro_kronii_(new_year)', 'ouro_kronii_(snake)', 'ourokronii', 'yukkronii_(ouro_kronii)'],
         'eshuushuu': ['Ouro Kronii'],
@@ -671,7 +613,6 @@ TAGS = {
     },
     'Hakos Baelz': {
         'yande.re': ['hakos_baelz'],
-        'konachan': ['hakos_baelz'],
         'danbooru': ['backup_dancer_(hakos_baelz)', 'backup_dancer_(hakos_baelz)_(cosplay)', 'brat_(hakos_baelz)', 'friendtaro_(hakos_baelz)', 'hakos_baelz_(#sleepwellbae_outfit)', 'hakos_baelz_(1st_costume)', 'hakos_baelz_(2nd_costume)', 'hakos_baelz_(3rd_costume)', 'hakos_baelz_(4th_costume)', 'hakos_baelz_(5th_costume)', 'hakos_baelz_(6th_costume)', 'hakos_baelz_(casual)', 'hakos_baelz_(holonatsu_paradise)', 'hakos_baelz_(military_casual)', 'hakos_baelz_(monochrome_dancer)', 'hakos_baelz_(recolor)', 'hakos_baelz_(sleepwear)', 'hakos_baelz_(sleepwellbae)', 'hakos_baelz_(steel_rose)', 'hakos_baelz_(strawberry)', 'hakos_baelz_(strawberry_onesie)', 'mama_rat_(hakos_baelz)', 'mr._squeaks_(hakos_baelz)'],
         'safebooru': ['backup_dancer_(hakos_baelz)', 'brat_(hakos_baelz)', 'friendtaro_(hakos_baelz)', 'hakos_baelz', 'hakos_baelz_(1st_costume)', 'hakos_baelz_(2nd_costume)', 'hakos_baelz_(3rd_costume)', 'hakos_baelz_(4th_costume)', 'hakos_baelz_(5th_costume)', 'hakos_baelz_(6th_costume)', 'hakos_baelz_(artist)', 'hakos_baelz_(casual)', 'hakos_baelz_(cosplay)', 'hakos_baelz_(holonatsu_paradise)', 'hakos_baelz_(monochrome_dancer)', 'hakos_baelz_(new_year)', 'hakos_baelz_(rat)', 'hakos_baelz_(recolor)', 'hakos_baelz_(sleepwellbae)', 'hakos_baelz_(steel_rose)', 'hakos_baelz_(strawberry)', 'hakos_baelz_(strawberry_onesie)', 'mr._squeaks_(hakos_baelz)'],
         'eshuushuu': ['Hakos Baelz'],
@@ -680,7 +621,6 @@ TAGS = {
     },
     'Shiori Novella': {
         'yande.re': ['shiori_novella'],
-        'konachan': ['shiori_novella'],
         'safebooru': ['novelites_(shiori_novella)', 'nyakuza_(shiori_novella)', 'shiori_novella', 'shiori_novella_(1st_costume)', 'shiori_novella_(2nd_costume)', 'shiori_novella_(3rd_costume)', 'shiori_novella_(casual)', 'shiori_novella_(cosplay)', 'shiori_novella_(ebony_odogaron)', 'shiori_novella_(new_year)', 'shiori_novella_(pajamas)', 'shiori_novella_(sleepwear)'],
         'eshuushuu': ['Shiori Novella'],
         'anime_dl': ['shiori novella', 'shiori novella (1st costume)', 'shiori novella (casual)', 'shiori novella (holonatsu paradise)', 'shiori novella (new year)', 'shiori novella (sleepwear)'],
@@ -689,7 +629,6 @@ TAGS = {
     },
     'Koseki Bijou': {
         'yande.re': ['koseki_bijou'],
-        'konachan': ['koseki_bijou'],
         'danbooru': ['cat_wick_(koseki_bijou)', 'dadseki_(koseki_bijou)', 'geow_(koseki_bijou)', 'john_cat_(koseki_bijou)', 'koseki_bijou', 'koseki_bijou_(1st_costume)', 'koseki_bijou_(1st_costume)_(cosplay)', 'koseki_bijou_(2nd_costume)', 'koseki_bijou_(3rd_costume)', 'koseki_bijou_(4th_costume)', 'koseki_bijou_(artist)', 'koseki_bijou_(casual)', 'koseki_bijou_(code:81800)', 'koseki_bijou_(cosplay)', 'koseki_bijou_(gore_magala)', 'koseki_bijou_(holonatsu_paradise)', 'koseki_bijou_(new_year)', 'koseki_bijou_(pebble_pajamas)', 'koseki_bijou_(pebble_pajamas)_(cosplay)', 'kosekibijou', 'moai_(koseki_bijou)', 'momseki_(koseki_bijou)', 'pebble_(koseki_bijou)', 'prism_magic_(koseki_bijou)'],
         'safebooru': ['koseki_bijou', 'koseki_bijou_(1st_costume)', 'koseki_bijou_(2nd_costume)', 'koseki_bijou_(3rd_costume)', 'koseki_bijou_(4th_costume)', 'koseki_bijou_(artist)', 'koseki_bijou_(casual)', 'koseki_bijou_(cosplay)', 'koseki_bijou_(gore_magala)', 'koseki_bijou_(holonatsu_paradise)', 'koseki_bijou_(new_year)', 'koseki_bijou_(pebble_pajamas)', 'momseki_(koseki_bijou)'],
         'eshuushuu': ['Koseki Bijou'],
@@ -698,7 +637,6 @@ TAGS = {
     },
     'Nerissa Ravencroft': {
         'yande.re': ['nerissa_ravencroft'],
-        'konachan': ['nerissa_ravencroft'],
         'danbooru': ['anerissa_ravencroft', 'jailbird_(nerissa_ravencroft)', 'jailbird_(nerissa_ravencroft)_(cosplay)', 'little_baby_(nerissa_ravencroft)', 'little_darling_(nerissa_ravencroft)', 'mofufu_(nerissa_ravencroft)', 'nerissa_ravencroft', 'nerissa_ravencroft_(1st_costume)', 'nerissa_ravencroft_(2nd_costume)', 'nerissa_ravencroft_(3rd_costume)', 'nerissa_ravencroft_(3rd_costume)shiori_novella', 'nerissa_ravencroft_(businesswoman)', 'nerissa_ravencroft_(casual)', 'nerissa_ravencroft_(cosplay)', 'nerissa_ravencroft_(holonatsu_paradise)', 'nerissa_ravencroft_(new_year)', 'nerissa_ravencroft_(nighttime_princess)', 'nerissa_ravencroft_(raven)', 'nerissa_ravencroft_(sleepwear)', 'oyomeholic_(nerissa_ravencroft)'],
         'safebooru': ['anerissa_ravencroft', 'jailbird_(nerissa_ravencroft)', 'little_darling_(nerissa_ravencroft)', 'mofufu_(nerissa_ravencroft)', 'nerissa_ravencroft', "nerissa_ravencroft's_sister", 'nerissa_ravencroft_(1st_costume)', 'nerissa_ravencroft_(2nd_costume)', 'nerissa_ravencroft_(3rd_costume)', 'nerissa_ravencroft_(casual)', 'nerissa_ravencroft_(cosplay)', 'nerissa_ravencroft_(new_year)', 'nerissa_ravencroft_(nighttime_princess)', 'nerissa_ravencroft_(raven)', 'nerissa_ravencroft_(sleepwear)'],
         'eshuushuu': ['Nerissa Ravencroft'],
@@ -707,7 +645,6 @@ TAGS = {
     },
     'Fuwawa Abyssgard': {
         'yande.re': ['fuwawa_abyssgard'],
-        'konachan': ['fuwawa_abyssgard'],
         'danbooru': ['fuwawa_abyssgard', 'fuwawa_abyssgard_(1st_costume)', 'fuwawa_abyssgard_(2nd_costume)', 'fuwawa_abyssgard_(3rd_costume)', 'fuwawa_abyssgard_(casual)', 'fuwawa_abyssgard_(cosplay)', 'fuwawa_abyssgard_(dog)', 'fuwawa_abyssgard_(holonatsu_paradise)', 'fuwawa_abyssgard_(new_year)', 'fuwawa_abyssgard_(new_year)_(cosplay)', 'fuwawa_abyssgard_(pajamas)', 'fuwawa_abyssgard_(puppet)'],
         'safebooru': ['fuwawa_abyssgard', 'fuwawa_abyssgard_(1st_costume)', 'fuwawa_abyssgard_(2nd_costume)', 'fuwawa_abyssgard_(3rd_costume)', 'fuwawa_abyssgard_(casual)', 'fuwawa_abyssgard_(cosplay)', 'fuwawa_abyssgard_(dog)', 'fuwawa_abyssgard_(new_year)', 'fuwawa_abyssgard_(pajamas)'],
         'eshuushuu': ['Fuwawa Abyssgard'],
@@ -716,7 +653,6 @@ TAGS = {
     },
     'Mococo Abyssgard': {
         'yande.re': ['mococo_abyssgard'],
-        'konachan': ['mococo_abyssgard'],
         'danbooru': ['mococo_abyssgard', 'mococo_abyssgard_(1st_costume)', 'mococo_abyssgard_(2nd_costume)', 'mococo_abyssgard_(3rd_costume)', 'mococo_abyssgard_(casual)', 'mococo_abyssgard_(cosplay)', 'mococo_abyssgard_(dog)', 'mococo_abyssgard_(holonatsu_paradise)', 'mococo_abyssgard_(new_year)', 'mococo_abyssgard_(pajamas)', 'mococo_abyssgard_(puppet)'],
         'safebooru': ['mococo_abyssgard', 'mococo_abyssgard_(1st_costume)', 'mococo_abyssgard_(2nd_costume)', 'mococo_abyssgard_(3rd_costume)', 'mococo_abyssgard_(casual)', 'mococo_abyssgard_(cosplay)', 'mococo_abyssgard_(dog)', 'mococo_abyssgard_(new_year)', 'mococo_abyssgard_(pajamas)'],
         'nekosia': ['mococo-abyssgard'],
@@ -726,7 +662,6 @@ TAGS = {
     },
     'Elizabeth Rose Bloodflame': {
         'yande.re': ['elizabeth_rose_bloodflame'],
-        'konachan': ['elizabeth_rose_bloodflame'],
         'danbooru': ['bobby_(elizabeth_rose_bloodflame)', 'eliza_ashvale_(elizabeth_rose_bloodflame)', 'elizabeth_rose_bloodflame', 'elizabeth_rose_bloodflame_(1st_costume)', 'elizabeth_rose_bloodflame_(2nd_costume)', 'elizabeth_rose_bloodflame_(artist)', 'elizabeth_rose_bloodflame_(cosplay)', 'elizabeth_rose_bloodflame_(holonatsu_paradise)', 'elizabeth_rose_bloodflame_(new_year)', 'elizabeth_rose_bloodflame_(puppet)', 'elizabeth_rose_bloodflame_(skeleton)', 'elizabeth_rose_bloodflame_(voice_actor)', 'lizzie_winters_(elizabeth_rose_bloodflame)'],
         'safebooru': ['bobby_(elizabeth_rose_bloodflame)', 'eliza_ashvale_(elizabeth_rose_bloodflame)', 'elizabeth_rose_bloodflame', 'elizabeth_rose_bloodflame_(1st_costume)', 'elizabeth_rose_bloodflame_(2nd_costume)', 'elizabeth_rose_bloodflame_(artist)', 'elizabeth_rose_bloodflame_(cosplay)', 'elizabeth_rose_bloodflame_(new_year)', 'elizabeth_rose_bloodflame_(skeleton)', 'rosarian_(elizabeth_rose_bloodflame)'],
         'eshuushuu': ['Elizabeth Rose Bloodflame'],
@@ -735,7 +670,6 @@ TAGS = {
     },
     'Gigi Murin': {
         'yande.re': ['gigi_murin'],
-        'konachan': ['gigi_murin'],
         'danbooru': ['gigi_murin', "gigi_murin's_september_karaoke_stream", 'gigi_murin_(1st_costume)', 'gigi_murin_(2nd_costume)', 'gigi_murin_(artist)', 'gigi_murin_(chatacabra)', 'gigi_murin_(cosplay)', 'gigi_murin_(holonatsu_paradise)', 'gigi_murin_(new_year)', 'gigi_murin_(puppet)', 'grem_(gigi_murin)', 'popo_(gigi_murin)'],
         'safebooru': ['gigi_murin', "gigi_murin's_september_karaoke_stream", 'gigi_murin_(1st_costume)', 'gigi_murin_(2nd_costume)', 'gigi_murin_(artist)', 'gigi_murin_(chatacabra)', 'gigi_murin_(cosplay)', 'gigi_murin_(new_year)', 'popo_(gigi_murin)'],
         'anime_dl': ['gigi murin', 'gigi murin (1st costume)', 'gigi murin (chatacabra)', 'gigi murin (holonatsu paradise)', 'gigi murin (new year)'],
@@ -743,7 +677,6 @@ TAGS = {
     },
     'Cecilia Immergreen': {
         'yande.re': ['cecilia_immergreen'],
-        'konachan': ['cecilia_immergreen'],
         'danbooru': ['cecilia_immergreen', 'cecilia_immergreen_(1st_costume)', 'cecilia_immergreen_(2nd_costume)', 'cecilia_immergreen_(artist)', 'cecilia_immergreen_(cosplay)', 'cecilia_immergreen_(holonatsu_paradise)', 'cecilia_immergreen_(new_year)', 'cecilia_immergreen_(puppet)', 'otomo_(cecilia_immergreen)', 'otomo_(cecilia_immergreen)_(cosplay)', 'ototori_(cecilia_immergreen)'],
         'safebooru': ['cecilia_immergreen', 'cecilia_immergreen_(1st_costume)', 'cecilia_immergreen_(2nd_costume)', 'cecilia_immergreen_(artist)', 'cecilia_immergreen_(cosplay)', 'cecilia_immergreen_(holonatsu_paradise)', 'cecilia_immergreen_(new_year)', 'cecilia_immergreen_(puppet)'],
         'anime_dl': ['cecilia immergreen', 'cecilia immergreen (1st costume)', 'cecilia immergreen (holonatsu paradise)', 'cecilia immergreen (new year)'],
@@ -751,7 +684,6 @@ TAGS = {
     },
     'Raora Panthera': {
         'yande.re': ['raora_panthera', 'raora_panthera_(artist)'],
-        'konachan': ['raora_panthera'],
         'safebooru': ['chattino_(raora_panthera)', 'chattino_(raora_panthera)_(cosplay)', 'raora_panthera', 'raora_panthera_(1st_costume)', 'raora_panthera_(2nd_costume)', 'raora_panthera_(artist)', 'raora_panthera_(cosplay)', 'raora_panthera_(goth)', 'raora_panthera_(maid)', 'raora_panthera_(new_year)', 'raora_panthera_(panther)', 'raora_panthera_(rathalos)'],
         'eshuushuu': ['Raora Panthera'],
         'anime_dl': ['raora panthera', 'raora panthera (1st costume)', 'raora panthera (holonatsu paradise)', 'raora panthera (new year)'],
@@ -791,7 +723,6 @@ TAGS = {
         'yande.re': [],
     },
     'Banzoin Hakka': {
-        'konachan': ['banzoin_hakka'],
         'danbooru': ['banzoin_hakka', 'banzoin_hakka_(1st_costume)', 'banzoin_hakka_(2nd_costume)', 'banzoin_hakka_(3rd_costume)', 'banzoin_hakka_(4th_costume)', 'banzoin_hakka_(5th_costume)', 'banzoin_hakka_(cosplay)'],
         'safebooru': ['banzoin_hakka', 'banzoin_hakka_(1st_costume)', 'banzoin_hakka_(2nd_costume)', 'banzoin_hakka_(3rd_costume)', 'banzoin_hakka_(4th_costume)', 'banzoin_hakka_(5th_costume)', 'banzoin_hakka_(cosplay)', 'hakkito_(banzoin_hakka)'],
         'eshuushuu': ['Banzoin Hakka'],
