@@ -551,14 +551,14 @@ def _serve_health(port):
 async def main():
     global _APP_LOOP, _BOT_USERNAME
     _APP_LOOP = asyncio.get_running_loop()
-    if not TOKEN:
-        raise SystemExit("BOT_TOKEN not set")
     # Start health server FIRST so Railway's health check passes even if
     # the Telegram API handshake below hangs on a slow proxy.
     try:
         _serve_health(PORT)
     except Exception as e:
         print(f"Health server failed to start: {e}")
+    if not TOKEN:
+        raise SystemExit("BOT_TOKEN not set")
     dp = Dispatcher()
     proxy = os.getenv("https_proxy") or os.getenv("http_proxy")
     session = AiohttpSession(proxy=proxy) if proxy else None
