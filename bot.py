@@ -315,18 +315,26 @@ def _run_worker(skey, tag, net_config, count):
 
 async def _send_file(bot: Bot, chat_id, name, label, tag, fp, as_doc):
     """Send a single downloaded file."""
-    try:
-        fsize = os.path.getsize(fp)
-        use_doc = as_doc or fsize > 10*1024*1024 or os.path.splitext(fp)[1].lower() not in {".jpg", ".jpeg", ".png", ".webp"}
-        infile = FSInputFile(fp)
-        if use_doc:
-            await asyncio.wait_for(bot.send_document(chat_id, infile, caption=f"{name} • {label} • {tag}"), timeout=60)
-        else:
-            await asyncio.wait_for(bot.send_photo(chat_id, infile, caption=f"{name} • {label} • {tag}"), timeout=60)
-    except asyncio.TimeoutError:
-        await bot.send_message(chat_id, f"Send timeout for {name} • {label} • {tag} - try smaller amount")
-    except Exception as e:
-        await bot.send_message(chat_id, f"Send failed for one file: {e}")
+    for attempt in range(3):
+        try:
+            fsize = os.path.getsize(fp)
+            use_doc = as_doc or fsize > 10*1024*1024 or os.path.splitext(fp)[1].lower() not in {".jpg", ".jpeg", ".png", ".webp"}
+            infile = FSInputFile(fp)
+            if use_doc:
+                await asyncio.wait_for(bot.send_document(chat_id, infile, caption=f"{name} • {label} • {tag}"), timeout=60)
+            else:
+                await asyncio.wait_for(bot.send_photo(chat_id, infile, caption=f"{name} • {label} • {tag}"), timeout=60)
+            return  # success
+        except asyncio.TimeoutError:
+            if attempt < 2:
+                await asyncio.sleep(2)
+                continue
+            await bot.send_message(chat_id, f"Send timeout for {name} • {label} • {tag} - try smaller amount")
+        except Exception as e:
+            if attempt < 2:
+                await asyncio.sleep(2)
+                continue
+            await bot.send_message(chat_id, f"Send failed for one file: {e}")
 
 async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, send_immediately=True, force_doc=None):
     label = next(l for k, l, _r in SOURCES if k == skey)
