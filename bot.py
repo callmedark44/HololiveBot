@@ -305,6 +305,7 @@ async def cmd_mode(message: types.Message, **kw):
 # ── fetch + send ──────────────────────────────────────────
 _FETCH_LOCK = threading.Lock()
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".tiff", ".tif"}
+_SEND_SEM = asyncio.Semaphore(1)  # serialize Telegram sends per aiohttp session
 
 def _run_worker(skey, tag, net_config, count):
     mod_name, fn_name, extractor = FETCHERS[skey]
@@ -314,17 +315,22 @@ def _run_worker(skey, tag, net_config, count):
     fn(*args)
 
 async def _send_file(bot: Bot, chat_id, name, label, tag, fp, as_doc):
-    """Send a single downloaded file."""
+    """Send a single downloaded file. Serialized via semaphore to avoid
+    concurrent Telegram uploads through one aiohttp session (ClientOSError)."""
     for attempt in range(3):
         try:
-            fsize = os.path.getsize(fp)
-            use_doc = as_doc or fsize > 10*1024*1024 or os.path.splitext(fp)[1].lower() not in {".jpg", ".jpeg", ".png", ".webp"}
-            infile = FSInputFile(fp)
-            if use_doc:
-                await asyncio.wait_for(bot.send_document(chat_id, infile, caption=f"{name} • {label} • {tag}"), timeout=60)
-            else:
-                await asyncio.wait_for(bot.send_photo(chat_id, infile, caption=f"{name} • {label} • {tag}"), timeout=60)
-            return  # success
+            await _SEND_SEM.acquire()  # ponytail: single send at a time; a per-chat semaphore if ever needed
+            try:
+                fsize = os.path.getsize(fp)
+                use_doc = as_doc or fsize > 10*1024*1024 or os.path.splitext(fp)[1].lower() not in {".jpg", ".jpeg", ".png", ".webp"}
+                infile = FSInputFile(fp)
+                if use_doc:
+                    await asyncio.wait_for(bot.send_document(chat_id, infile, caption=f"{name} • {label} • {tag}"), timeout=60)
+                else:
+                    await asyncio.wait_for(bot.send_photo(chat_id, infile, caption=f"{name} • {label} • {tag}"), timeout=60)
+                return  # success
+            finally:
+                _SEND_SEM.release()
         except asyncio.TimeoutError:
             if attempt < 2:
                 await asyncio.sleep(2)
@@ -332,7 +338,7 @@ async def _send_file(bot: Bot, chat_id, name, label, tag, fp, as_doc):
             await bot.send_message(chat_id, f"Send timeout for {name} • {label} • {tag} - try smaller amount")
         except Exception as e:
             if attempt < 2:
-                await asyncio.sleep(2)
+                await asyncio.sleep(3)
                 continue
             await bot.send_message(chat_id, f"Send failed for one file: {e}")
 
