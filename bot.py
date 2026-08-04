@@ -236,6 +236,48 @@ async def cmd_sources(message: types.Message, **kw):
         lines.append(f"• {label}")
     await message.answer("\n".join(lines))
 
+SRC_LOOKUP = {k: k for k, _l, _r in SOURCES} | {l.lower(): k for k, l, _r in SOURCES}
+
+async def cmd_fetch(message: types.Message, bot: Bot):
+    """One-shot fetch: /fetch <member> <source> [count] [tag]"""
+    args = (message.text or "").split()[1:]
+    si = next((i for i, a in enumerate(args) if a.lower() in SRC_LOOKUP), None)
+    if si is None or si == 0:
+        await message.answer("Usage: /fetch <member> <source> [count] [tag]\n"
+                             "e.g. /fetch Houshou Marine konachan 5")
+        return
+    name_q = " ".join(args[:si]).strip()
+    skey = SRC_LOOKUP[args[si].lower()]
+    rest = args[si + 1:]
+    count = DEFAULT_AMOUNT
+    tag = None
+    if rest:
+        if rest[0].isdigit():
+            count = int(rest[0])
+            rest = rest[1:]
+        if rest:
+            tag = " ".join(rest).strip()
+    count = max(1, min(count, 100))
+    label = next(l for k, l, _r in SOURCES if k == skey)
+
+    name = next((n for n in MEMBERS if name_q.lower() in n.lower()), None)
+    if not name:
+        await message.answer(f"No member found for '{name_q}'. Try /members.")
+        return
+    uid = str(message.from_user.id)
+    tl = member_tags(name, skey)
+    if not tl:
+        await message.answer(f"No tags for {name} on {label} yet.")
+        return
+    if tag is None:
+        tag = tl[0]
+    elif tag.lower() not in (t.lower() for t in tl):
+        await message.answer(f"No tag '{tag}' for {name} on {label}.\n"
+                             f"Known: {', '.join(tl[:8])}{'…' if len(tl) > 8 else ''}")
+        return
+    await message.answer(f"Fetching {count} for {name} from {label} ({tag})…")
+    asyncio.create_task(_fetch_and_send(message.chat.id, uid, name, skey, tag, count, bot))
+
 async def cmd_mode(message: types.Message, **kw):
     uid = str(message.from_user.id)
     text = message.text or ""
@@ -472,9 +514,10 @@ async def main():
     dp.message.register(cmd_members, Command("members"))
     dp.message.register(cmd_tags, Command("tags"))
     dp.message.register(cmd_sources, Command("sources"))
+    dp.message.register(cmd_fetch, Command("fetch"))
     dp.message.register(cmd_mode, Command("mode"))
     dp.callback_query.register(on_menu_click)
-    dp.message.register(on_message, F.text)
+    dp.message.register(on_message, F.text & ~F.text.startswith("/"))
 
     _serve_health(PORT)
     print(f"Bot starting (health on :{PORT})...")
