@@ -90,8 +90,13 @@ def member_for(tag):
     if core in multi:
         return multi[core]
     if core in single:
-        if t == core or "(" in t:
+        # single-token names are ambiguous: only accept exact or explicit hololive/holostars
+        if t == core or "(hololive" in t or "(holostars" in t:
             return single[core]
+    # member snake can appear as a parenthesised disambiguation, e.g. "deadbeat_(mori_calliope)"
+    for s, idx in multi.items():
+        if f"({s})" in t or f"({s}_" in t:
+            return idx
     return None
 
 WORKERS = [("yande.re", "yande_tag_names.json"), ("konachan", "kona_tag_names.json"),

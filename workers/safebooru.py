@@ -32,8 +32,15 @@ class SafebooruWorker(BaseDownloader):
                     self.log(f"ERROR {resp.status_code}. Change proxy.")
                     break
                 resp.raise_for_status()
-
-                data = resp.json()
+                text = resp.text
+                if not text.strip():
+                    self.log("Empty response from API.")
+                    break
+                try:
+                    data = resp.json()
+                except Exception:
+                    self.log(f"Invalid JSON response: {text[:200]}")
+                    break
                 if isinstance(data, dict):
                     posts = data.get("post", [])
                 elif isinstance(data, list):

@@ -7,8 +7,12 @@ import asyncio
 class NekosiaWorker(BaseDownloader):
     def __init__(self, tag, amount, net_config):
         super().__init__("nekosia", "Nekosia", amount, net_config)
-        self.included_tags = [t.strip().lower() for t in tag.split() if t.strip() and not t.startswith("-")]
-        self.exclusions = [t[1:] for t in tag.split() if t.startswith("-") and len(t) > 1]
+        # Normalize tag: convert azki_(2nd_costume) -> azki, usada-pekora -> usada pekora
+        import re
+        norm = re.sub(r"[_-]+", " ", tag)
+        norm = re.sub(r"\s*\(\d+(?:st|nd|rd|th)\s*costume\)", "", norm).strip()
+        self.included_tags = [t.strip().lower() for t in norm.split() if t.strip()]
+        self.exclusions = [t[1:] for t in norm.split() if t.startswith("-") and len(t) > 1]
         if not self.included_tags:
             self.included_tags = ["waifu"]
         self.full_tag = "_".join(self.included_tags)
@@ -25,17 +29,26 @@ class NekosiaWorker(BaseDownloader):
             return "Invalid Argument: rating"
         if not included_tags:
             return "Included tags can't be empty"
-        count = max(1, min(count, 20))
         params = {"count": count, "additionalTags": ",".join(included_tags),
                   "blacklistedTags": ",".join(blacklisted_tags), "rating": rating}
-        response = self.session.get("https://api.nekosia.cat/api/v1/images/nothing", params=params)
-        if response.status_code != 200:
+        response = self.session.get("https://api.nekosia.cat/api/v1/images/search", params=params)
+        if response.status_code not in (200, 400):
             return f"non 200 status code: {response.status_code}"
-        data = response.json()
-        if data.get("status") in (400, 429):
-            return [] if data["status"] == 400 else "Rate limit exceeded"
+        try:
+            data = response.json()
+        except Exception:
+            return f"invalid JSON response: {response.text[:200]}"
+        if not data.get("success"):
+            # 400 with success=false = no images, not a hard error
+            if response.status_code == 400:
+                return []
+            return f"API error: {data.get('status')} {data.get('message', '')}"
         result = []
-        for image in data.get("images", []):
+        # handle both single image or list of images (both possible in API response)
+        images = data.get("images")
+        if isinstance(images, dict):
+            images = [images]
+        for image in images or []:
             img = image.get("image", {})
             result.append({
                 "id": image.get("id"),

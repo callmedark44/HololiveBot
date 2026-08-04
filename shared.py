@@ -5,7 +5,10 @@ import time
 import requests
 import asyncio
 import hashlib
+import urllib3
 from PIL import Image, PngImagePlugin
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MASTER_FOLDER = os.path.normpath(os.path.join(BASE_DIR, "Rem God"))
@@ -240,7 +243,10 @@ class BaseDownloader:
             self.log(f"--- All {self.downloaded_count} {dw} completed successfully! ---")
         else:
             if not self.stop_event.is_set():
-                self.log("Task finished. No new images to download.")
+                if self.downloaded_count > 0:
+                    self.log(f"--- All {self.downloaded_count} downloads completed! ---")
+                else:
+                    self.log("Task finished. No images downloaded.")
             else:
                 self.log("Stop requested. Worker terminated.")
 

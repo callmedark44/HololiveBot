@@ -9,8 +9,9 @@ rejects requests (403) unless two cookies are present:
 """
 import os, re
 import asyncio
+import shared
+from shared import BaseDownloader, add_to_gallery, send_tags
 from curl_cffi import requests as curl_requests
-from shared import BaseDownloader
 
 API = "https://api.anime-pictures.net/api/v3"
 PER_PAGE = 80
@@ -73,9 +74,9 @@ class AnimeDlWorker(BaseDownloader):
             f.write(r.content)
 
         rel = os.path.relpath(fpath, shared.MASTER_FOLDER)
-        from shared import add_to_gallery, send_tags
         add_to_gallery(self.name, filename, rel, [self.tag], [])
         send_tags(self.name, filename, [self.tag])
+        self.downloaded_count += 1
         self.log(f"[SUCCESS] Downloaded {filename}")
 
     async def scraper_task(self):
@@ -127,7 +128,6 @@ def main():
     worker = AnimeDlWorker(args.tag, args.count, net_config)
     worker.tag_dir = os.path.join(args.output, worker.tag_slug)
     os.makedirs(worker.tag_dir, exist_ok=True)
-    from shared import MASTER_FOLDER
     worker.site_root = args.output
     asyncio.run(worker.run_async_loop(worker.scraper_task))
 
