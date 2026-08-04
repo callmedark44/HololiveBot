@@ -344,11 +344,22 @@ async def _send_file(bot, chat_id, name, label, tag, fp, as_doc):
                     caption=f"{name} • {label} • {tag}",
                 )
             else:
-                await bot.send_photo(
-                    chat_id,
-                    infile,
-                    caption=f"{name} • {label} • {tag}",
-                )
+                try:
+                    await bot.send_photo(
+                        chat_id,
+                        infile,
+                        caption=f"{name} • {label} • {tag}",
+                    )
+                except Exception as e:
+                    if "PHOTO_INVALID_DIMENSIONS" in str(e):
+                        # Fall back to document for images with invalid dimensions
+                        await bot.send_document(
+                            chat_id,
+                            infile,
+                            caption=f"{name} • {label} • {tag}",
+                        )
+                    else:
+                        raise
             # File sent successfully — delete from disk to save storage
             try:
                 os.remove(fp)
