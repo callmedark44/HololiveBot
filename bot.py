@@ -137,7 +137,7 @@ def source_keyboard(name, page=0):
     nav = []
     if page > 0:
         nav.append(_btn("◀️", f"pg:{_store({'name': name, 'back': 'sources', 'page': page - 1})}"))
-    nav.append(_btn("Back", f"branch:{_store({'branch': 'home'})}"))
+    nav.append(_btn("Back", f"m:{_store({'name': name})}"))
     if (page + 1) * PAGE_SIZE < len(sources):
         nav.append(_btn("▶️", f"pg:{_store({'name': name, 'back': 'sources', 'page': page + 1})}"))
     keys.append(nav)
