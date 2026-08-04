@@ -284,7 +284,7 @@ async def cmd_fetch(message: types.Message, bot: Bot):
                              f"Known: {', '.join(tl[:8])}{'…' if len(tl) > 8 else ''}")
         return
     await message.answer(f"Fetching {count} for {name} from {label} ({tag})… {'as files' if send_as_doc else 'as HD photos'}")
-    asyncio.create_task(_fetch_and_send(message.chat.id, uid, name, skey, tag, count, bot, send_immediately=True))
+    asyncio.create_task(_fetch_and_send(message.chat.id, uid, name, skey, tag, count, bot, send_immediately=True, force_doc=send_as_doc))
 
 async def cmd_mode(message: types.Message, **kw):
     uid = str(message.from_user.id)
@@ -328,9 +328,9 @@ async def _send_file(bot: Bot, chat_id, name, label, tag, fp, as_doc):
     except Exception as e:
         await bot.send_message(chat_id, f"Send failed for one file: {e}")
 
-async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, send_immediately=True):
+async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, send_immediately=True, force_doc=None):
     label = next(l for k, l, _r in SOURCES if k == skey)
-    as_doc = user_pref(uid, "as_doc", False)
+    as_doc = force_doc if force_doc is not None else user_pref(uid, "as_doc", False)
     try:
         with _FETCH_LOCK:
             proxy = os.getenv("https_proxy") or os.getenv("http_proxy")
@@ -341,30 +341,20 @@ async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, send_i
             tmp = tempfile.mkdtemp(prefix="remgod_bot_")
             old = shared.MASTER_FOLDER
             shared.MASTER_FOLDER = tmp
+            send_futures = []
+            loop = asyncio.get_event_loop()
             try:
-                if send_immediately:
-                    # Stream files as soon as they download
-                    loop = asyncio.get_event_loop()
-                    def on_download(filepath, filename):
-                        asyncio.run_coroutine_threadsafe(
-                            _send_file(bot, chat_id, name, label, tag, filepath, as_doc), loop
-                        )
-                    net_config["download_callback"] = on_download
-                    await asyncio.to_thread(_run_worker, skey, tag, net_config, count)
-                else:
-                    # Collect all files first, then send (original behavior)
-                    await asyncio.to_thread(_run_worker, skey, tag, net_config, count)
-                    files = []
-                    for root, _d, names in os.walk(tmp):
-                        for n in names:
-                            if os.path.splitext(n)[1].lower() in IMAGE_EXT:
-                                files.append(os.path.join(root, n))
-                    if not files:
-                        await bot.send_message(chat_id, f"No images found for {name} on {label} ({tag}).")
-                        return
-                    await bot.send_message(chat_id, f"Found {len(files)} — sending… ({'files' if as_doc else 'photos'})")
-                    for fp in files[:count]:
-                        await _send_file(bot, chat_id, name, label, tag, fp, as_doc)
+                def on_download(filepath, filename):
+                    f = asyncio.run_coroutine_threadsafe(
+                        _send_file(bot, chat_id, name, label, tag, filepath, as_doc), loop
+                    )
+                    send_futures.append(f)
+                net_config["download_callback"] = on_download
+                await asyncio.to_thread(_run_worker, skey, tag, net_config, count)
+                # Wait for ALL pending sends to finish before cleanup
+                for f in send_futures:
+                    try: f.result(timeout=120)
+                    except Exception: pass
             finally:
                 shared.MASTER_FOLDER = old
     except Exception as e:
