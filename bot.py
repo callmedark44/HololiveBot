@@ -34,7 +34,6 @@ SOURCES = [
     ("zero", "Zerochan", "zerochan"),
     ("nekosia", "Nekosia", "nekosia"),
     ("eshuushuu", "E-shuushuu", "eshuushuu"),
-    ("anime_dl", "Anime Pictures", "anime_dl"),
 ]
 SOURCE_BY_REPORT = {r: k for k, _l, r in SOURCES}
 
@@ -45,7 +44,6 @@ FETCHERS = {
     "zero": ("workers.zerochan", "worker_zerochan", lambda t, nc, n: (t, n, nc)),
     "nekosia": ("workers.nekosia", "worker_nekosia", lambda t, nc, n: (t, n, nc)),
     "eshuushuu": ("workers.eshuushuu", "worker_eshuushuu", lambda t, nc, n: (t, n, [], "", nc)),
-    "anime_dl": ("workers.anime_dl", "worker_anime_dl", lambda t, nc, n: (t, n, nc)),
 }
 
 # ── per-user prefs (send mode only) ──────────────────────

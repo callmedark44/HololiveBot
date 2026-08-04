@@ -98,10 +98,9 @@ def member_for(tag):
             return idx
     return None
 
-WORKERS = [("yande.re", "yande_tag_names.json"), ("konachan", "kona_tag_names.json"),
-           ("danbooru", "dan_tag_names.json"), ("safebooru", "safe_tag_names.json"),
-           ("nekosia", "nekosia_tag_names.json"), ("eshuushuu", "eshuushuu_tags.json"),
-           ("anime_dl", "anime_tags.json")]
+WORKERS = [("yande.re", "yande_tag_names.json"), ("danbooru", "dan_tag_names.json"),
+           ("safebooru", "safe_tag_names.json"), ("nekosia", "nekosia_tag_names.json"),
+           ("eshuushuu", "eshuushuu_tags.json")]
 
 tags = {M[i][3]: {} for i in range(len(M))}   # display -> {source: [tag,...]}
 for wname, fname in WORKERS:

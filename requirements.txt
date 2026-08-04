@@ -1,7 +1,6 @@
 requests==2.34.2
 urllib3==2.7.0
 Pillow==11.3.0
-curl-cffi==0.15.0
 aiogram==3.30.0
 aiohttp-socks==0.11.0
 python-dotenv==1.0.1
