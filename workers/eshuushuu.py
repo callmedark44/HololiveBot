@@ -94,16 +94,31 @@ class EShuushuuWorker(BaseDownloader):
                 params.append(f"page={page}")
                 search_url = f"https://e-shuushuu.net/search?{'&'.join(params)}"
 
-                resp = await asyncio.to_thread(self.session.get, search_url, timeout=15)
-                if resp.status_code in (403, 429):
-                    self.log(f"Blocked ({resp.status_code}).")
-                    break
-                resp.raise_for_status()
-                html = resp.text
+                try:
+                    resp = await asyncio.to_thread(self.session.get, search_url, timeout=15)
+                    if resp.status_code in (503, 523):
+                        self.log(f"Site temporarily down (HTTP {resp.status_code}), stopping.")
+                        cb = self.net_config.get("on_site_down")
+                        if cb:
+                            try: cb(self.site_folder, resp.status_code)
+                            except Exception: pass
+                        break
+                    if resp.status_code in (403, 429):
+                        self.log(f"Blocked ({resp.status_code}).")
+                        break
+                    resp.raise_for_status()
+                    html = resp.text
 
-                # if search redirected to homepage, tag doesn't exist
-                if '/search' not in resp.url:
-                    self.log(f"Tag '{self.original_tag}' doesn't exist (redirected to homepage).")
+                    # if search redirected to homepage, tag doesn't exist
+                    if '/search' not in resp.url:
+                        self.log(f"Tag '{self.original_tag}' doesn't exist (redirected to homepage).")
+                        break
+                except Exception as e:
+                    self.log(f"Search page {page} error: {e}")
+                    cb = self.net_config.get("on_site_down")
+                    if cb:
+                        try: cb(self.site_folder, None)
+                        except Exception: pass
                     break
 
                 thumb_ids = re.findall(r'/thumbs/\d{4}-\d{2}-\d{2}-(\d+)\.webp', html)

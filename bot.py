@@ -411,7 +411,16 @@ async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, send_i
                     send_queue.put_nowait, (filepath, filename)
                 )
 
+            def on_site_down(site_folder, status_code):
+                code = f" (HTTP {status_code})" if status_code else ""
+                msg = f"⚠️ {site_folder} is temporarily unreachable{code}. Try again later."
+                if _APP_LOOP:
+                    asyncio.run_coroutine_threadsafe(
+                        bot.send_message(chat_id, msg), _APP_LOOP
+                    )
+
             net_config["download_callback"] = on_download
+            net_config["on_site_down"] = on_site_down
             await asyncio.to_thread(_run_worker, skey, tag, net_config, count)
             await send_queue.join()
             _APP_LOOP.call_soon_threadsafe(send_queue.put_nowait, None)
