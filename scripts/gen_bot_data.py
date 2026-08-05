@@ -120,7 +120,8 @@ br_file = os.path.join(BOT, "booru_tags.json")
 
 # Load DB dump tags for validation
 db_tags = {}
-for fname, sname in [("yande_tag_names.json", "yande.re"), ("kona_tag_names.json", "konachan")]:
+for fname, sname in [("yande_tag_names.json", "yande.re"), ("kona_tag_names.json", "konachan"),
+                     ("dan_tag_names.json", "danbooru"), ("safe_tag_names.json", "safebooru")]:
     db_tags[sname] = set(load_tags(fname))
 
 if os.path.exists(br_file):
