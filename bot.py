@@ -663,11 +663,6 @@ async def main():
 
     print(f"Bot starting (health on :{PORT})...")
     await dp.start_polling(bot)
-    # Background task: random art every 4 hours
-    asyncio.create_task(random_art_scheduler(bot))
-
-    print(f"Bot starting (health on :{PORT})...")
-    await dp.start_polling(bot)
 
 if __name__ == "__main__":
     asyncio.run(main())
