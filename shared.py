@@ -207,7 +207,7 @@ class BaseDownloader:
 
                 if self.download_callback:
                     try:
-                        self.download_callback(filepath, filename)
+                        self.download_callback(filepath, filename, url)
                     except Exception as e:
                         self.log(f"[callback] {e}")
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Telegram bot: pick a hololive member -> source -> tag, fetch via existing workers, send, delete."""
-import asyncio, importlib, json, os, re, threading, concurrent.futures
+import asyncio, html, importlib, json, os, re, threading
 from dotenv import load_dotenv; load_dotenv()
 
 import shared
@@ -9,8 +9,7 @@ from bot_data import MEMBERS, TAGS
 from aiogram import Dispatcher, Bot, types, F
 from aiogram.client.session.aiohttp import AiohttpSession
 from aiogram.filters import Command
-from aiogram.types import BotCommand, FSInputFile
-from aiogram.utils.keyboard import InlineKeyboardBuilder
+from aiogram.types import BotCommand, FSInputFile, InputMediaDocument, InputMediaPhoto
 
 TOKEN = os.getenv("BOT_TOKEN", "")
 PORT = int(os.getenv("PORT", "8080"))
@@ -108,6 +107,7 @@ def branch_keyboard():
             if n:
                 rows.append([_btn(f"{LANG_EMOJI[lang]} {BRANCH_LABEL[br]} ({n})", f"b:{lang}:{br}")])
     rows.append([_btn(f"All ({len(MEMBERS)})", "b:all")])
+    rows.append([_btn("🎲 Random art", "rnd")])
     return _kb(rows)
 
 def member_keyboard(members, page):
@@ -181,8 +181,10 @@ def count_keyboard(name, skey, tag, uid):
         rows.append([_btn(str(n), f"count:{_store({'name': name, 'source': skey, 'tag': tag, 'count': n})}")
                      for n in COUNT_CHOICES[i:i+3]])
     as_doc = user_pref(uid, "as_doc", False)
-    mode_label = "Send as file (full res)" if not as_doc else "Send as photo (HD)"
+    mode_label = "File: ON" if as_doc else "File: OFF"
     rows.append([_btn(f"📄 {mode_label}", f"mode:{_store({'name': name, 'source': skey, 'tag': tag, 'back': 'count'})}")])
+    group_label = "Album: ON" if user_pref(uid, "group", True) else "Album: OFF"
+    rows.append([_btn(f"🖼 {group_label}", f"grp:{_store({'name': name, 'source': skey, 'tag': tag})}")])
     rows.append([_btn("Back", f"bk:{_store({'to': 'tags', 'name': name, 'source': skey})}")])
     return _kb(rows)
 
@@ -296,7 +298,7 @@ async def cmd_fetch(message: types.Message, bot: Bot):
 
     count = max(1, min(count, 100))
     await message.answer(f"Fetching {count} for {name} from {label} ({tag})… {'as files' if send_as_doc else 'as HD photos'}")
-    asyncio.create_task(_fetch_and_send(message.chat.id, uid, name, skey, tag, count, bot, send_immediately=True, force_doc=send_as_doc))
+    asyncio.create_task(_fetch_and_send(message.chat.id, uid, name, skey, tag, count, bot, force_doc=send_as_doc))
 
 async def cmd_mode(message: types.Message, **kw):
     uid = str(message.from_user.id)
@@ -308,11 +310,22 @@ async def cmd_mode(message: types.Message, **kw):
     elif args and args[0].lower() in ("doc", "file", "document", "1"):
         set_user_pref(uid, "as_doc", True)
         await message.answer("Send mode: **document** — images sent as files at full resolution.")
+    elif args and args[0].lower() in ("group", "album"):
+        set_user_pref(uid, "group", True)
+        await message.answer("Send mode: **grouped** — images sent as one album.")
+    elif args and args[0].lower() in ("single", "one", "separate"):
+        set_user_pref(uid, "group", False)
+        await message.answer("Send mode: **single** — each image sent separately.")
     else:
         cur = "document (full res)" if user_pref(uid, "as_doc", False) else "photo (HD)"
+        grp = "grouped (album)" if user_pref(uid, "group", True) else "single (one by one)"
         await message.answer(
-            f"Current send mode: **{cur}**\n"
-            "Use /mode doc to send as files (full resolution), or /mode photo for HD inline images.")
+            f"Current send mode: **{cur}**, **{grp}**\n"
+            "Use /mode doc|photo for file vs inline, /mode group|single for album vs separate.")
+
+async def cmd_random(message: types.Message, bot: Bot, **kw):
+    status_msg = await message.answer("🎲 Sending random art…")
+    await _send_random_art(bot, message.chat.id, uid=str(message.from_user.id), status_msg=status_msg)
 
 # ── fetch + send ──────────────────────────────────────────
 _FETCH_LOCK = threading.Lock()
@@ -325,39 +338,36 @@ def _run_worker(skey, tag, net_config, count):
     args = extractor(tag, net_config, count)
     fn(*args)
 
-async def _send_file(bot, chat_id, name, label, tag, fp, as_doc):
+def _caption(name, label, tag, url=None):
+    c = f"{html.escape(name)} • {html.escape(label)} • {html.escape(tag)}"
+    if url:
+        c += f"\n<a href=\"{html.escape(url, quote=True)}\">Link</a>"
+    return c
+
+def _is_image(fp):
+    return os.path.splitext(fp)[1].lower() in IMAGE_EXT
+
+def _use_doc(fp, as_doc):
+    fsize = os.path.getsize(fp)
+    return (as_doc
+            or fsize > 10 * 1024 * 1024
+            or os.path.splitext(fp)[1].lower() not in {".jpg", ".jpeg", ".png", ".webp"})
+
+async def _send_file(bot, chat_id, name, label, tag, fp, as_doc, url=None):
     """Send a single downloaded file. Sequential via the sender coroutine."""
     for attempt in range(3):
         try:
-            fsize = os.path.getsize(fp)
-            use_doc = (
-                as_doc
-                or fsize > 10 * 1024 * 1024
-                or os.path.splitext(fp)[1].lower()
-                not in {".jpg", ".jpeg", ".png", ".webp"}
-            )
             infile = FSInputFile(fp)
-            if use_doc:
-                await bot.send_document(
-                    chat_id,
-                    infile,
-                    caption=f"{name} • {label} • {tag}",
-                )
+            caption = _caption(name, label, tag, url)
+            if _use_doc(fp, as_doc):
+                await bot.send_document(chat_id, infile, caption=caption, parse_mode="HTML")
             else:
                 try:
-                    await bot.send_photo(
-                        chat_id,
-                        infile,
-                        caption=f"{name} • {label} • {tag}",
-                    )
+                    await bot.send_photo(chat_id, infile, caption=caption, parse_mode="HTML")
                 except Exception as e:
                     if "PHOTO_INVALID_DIMENSIONS" in str(e):
                         # Fall back to document for images with invalid dimensions
-                        await bot.send_document(
-                            chat_id,
-                            infile,
-                            caption=f"{name} • {label} • {tag}",
-                        )
+                        await bot.send_document(chat_id, infile, caption=caption, parse_mode="HTML")
                     else:
                         raise
             # File sent successfully — delete from disk to save storage
@@ -380,7 +390,39 @@ async def _send_file(bot, chat_id, name, label, tag, fp, as_doc):
                     f"Send failed for {os.path.basename(fp)}:\n{e}",
                 )
 
-async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, send_immediately=True, force_doc=None):
+async def _send_group(bot, chat_id, name, label, tag, items, as_doc):
+    """Send a batch as media groups (albums). Telegram won't mix photos & documents,
+    so split by type. Falls back to one-by-one per item on failure."""
+    for use_doc in (False, True):
+        batch = [it for it in items if _use_doc(it[0], as_doc) == use_doc]
+        if not batch:
+            continue
+        caption = f"{html.escape(name)} • {html.escape(label)} • {html.escape(tag)} ({len(batch)})"
+        for _fp, _fn, u in batch:
+            link = f"\n<a href=\"{html.escape(u, quote=True)}\">Link</a>"
+            if len(caption) + len(link) > 1024:  # ponytail: album caption limit; overflow links dropped
+                break
+            caption += link
+        media = []
+        for i, (fp, _fn, url) in enumerate(batch):
+            cls = InputMediaDocument if use_doc else InputMediaPhoto
+            kwargs = {"media": FSInputFile(fp)}
+            if i == 0:
+                kwargs["caption"] = caption
+                kwargs["parse_mode"] = "HTML"
+            media.append(cls(**kwargs))
+        try:
+            await bot.send_media_group(chat_id, media=media)
+        except Exception:
+            for fp, _fn, url in batch:
+                await _send_file(bot, chat_id, name, label, tag, fp, as_doc, url)
+    for fp, _fn, _url in items:
+        try:
+            os.remove(fp)
+        except OSError:
+            pass
+
+async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, force_doc=None, status_msg=None, quiet=False):
     label = next(l for k, l, _r in SOURCES if k == skey)
     as_doc = force_doc if force_doc is not None else user_pref(uid, "as_doc", False)
     try:
@@ -391,24 +433,48 @@ async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, send_i
                           "api_timeout": 10, "retry_wait": 3, "download_retries": 3}
 
             send_queue = asyncio.Queue()
+            use_group = user_pref(uid, "group", True)
+            sent = 0
 
             async def sender():
+                nonlocal sent
+                pending = []
                 while True:
                     item = await send_queue.get()
                     if item is None:
                         send_queue.task_done()
                         break
-                    filepath, filename = item
-                    try:
-                        await _send_file(bot, chat_id, name, label, tag, filepath, as_doc)
-                    finally:
+                    filepath = item[0]
+                    if not _is_image(filepath):
                         send_queue.task_done()
+                        try:
+                            os.remove(filepath)
+                        except OSError:
+                            pass
+                        continue
+                    pending.append(item)
+                    send_queue.task_done()
+                    if len(pending) >= 10:
+                        if use_group:
+                            await _send_group(bot, chat_id, name, label, tag, pending, as_doc)
+                        else:
+                            for fp, _fn, url in pending:
+                                await _send_file(bot, chat_id, name, label, tag, fp, as_doc, url)
+                        sent += len(pending)
+                        pending = []
+                if pending:
+                    if use_group:
+                        await _send_group(bot, chat_id, name, label, tag, pending, as_doc)
+                    else:
+                        for fp, _fn, url in pending:
+                            await _send_file(bot, chat_id, name, label, tag, fp, as_doc, url)
+                    sent += len(pending)
 
             sender_task = asyncio.create_task(sender())
 
-            def on_download(filepath, filename):
+            def on_download(filepath, filename, url):
                 _APP_LOOP.call_soon_threadsafe(
-                    send_queue.put_nowait, (filepath, filename)
+                    send_queue.put_nowait, (filepath, filename, url)
                 )
 
             def on_site_down(site_folder, status_code):
@@ -425,6 +491,16 @@ async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, send_i
             await send_queue.join()
             _APP_LOOP.call_soon_threadsafe(send_queue.put_nowait, None)
             await sender_task
+            if sent == 0 and not quiet:
+                await bot.send_message(
+                    chat_id,
+                    f"Couldn't find any new images for {tag}",
+                )
+            if status_msg is not None:
+                try:
+                    await status_msg.delete()
+                except Exception:
+                    pass
     except Exception as e:
         await bot.send_message(chat_id, f"Error fetching {name} from {label}: {e}")
 
@@ -510,6 +586,13 @@ async def on_menu_click(call: types.CallbackQuery, bot: Bot):
         await call.message.edit_text(f"{name} • {tag} — how many?",
                                   reply_markup=count_keyboard(name, skey, tag, uid))
 
+    elif kind == "grp":
+        st = _get(parts[1])
+        name, skey, tag = st["name"], st["source"], st["tag"]
+        set_user_pref(uid, "group", not user_pref(uid, "group", True))
+        await call.message.edit_text(f"{name} • {tag} — how many?",
+                                  reply_markup=count_keyboard(name, skey, tag, uid))
+
     elif kind == "count":
         st = _get(parts[1])
         name, skey, tag, count = st["name"], st["source"], st["tag"], st["count"]
@@ -521,11 +604,25 @@ async def on_menu_click(call: types.CallbackQuery, bot: Bot):
         st = _get(parts[1])
         name, skey, tag, count = st["name"], st["source"], st["tag"], st["count"]
         _COUNT_PENDING.pop(uid, None)
-        await call.message.edit_text(f"Fetching {count} for {name} from {skey}… ({tag})")
-        asyncio.create_task(_fetch_and_send(call.message.chat.id, uid, name, skey, tag, count, bot))
+        status_msg = await call.message.edit_text(f"Fetching {count} for {name} from {skey}… ({tag})")
+        asyncio.create_task(_fetch_and_send(call.message.chat.id, uid, name, skey, tag, count, bot, status_msg=status_msg))
+
+    elif kind == "rnd":
+        status_msg = await call.message.edit_text("🎲 Sending random art…")
+        await _send_random_art(bot, call.message.chat.id, uid=uid, status_msg=status_msg)
 
 # ── message handler ──────────────────────────────────────
 _BOT_USERNAME = ""
+
+async def _groups_only(handler, event, data):
+    """Drop everything outside group/supergroup chats."""
+    chat = getattr(event, "chat", None)
+    if chat is None:
+        msg = getattr(event, "message", None)
+        chat = getattr(msg, "chat", None)
+    if not chat or chat.type not in ("group", "supergroup"):
+        return
+    return await handler(event, data)
 
 async def on_message(message: types.Message, bot: Bot):
     if not message.text:
@@ -560,13 +657,11 @@ async def on_chat_member(update: types.ChatMemberUpdated, bot: Bot):
 
     if update.new_chat_member.status in ("member", "creator", "administrator"):
         _KNOWN_CHATS.add(str(update.chat.id))
-        if getattr(update.new_chat_member, "user", None) and getattr(update.new_chat_member.user, "is_bot", False):
-            return
         await _send_random_art(bot, update.chat.id, uid=None)
         await bot.send_message(update.chat.id, "🎉 Welcome! Here's some art.")
 
 
-async def _pick_random_art(bot: Bot) -> tuple | None:
+async def _pick_random_art() -> tuple | None:
     """Pick a random member+source+tag combo that has downloadable art."""
     import random as _random
 
@@ -581,16 +676,15 @@ async def _pick_random_art(bot: Bot) -> tuple | None:
     return _random.choice(candidates)
 
 
-async def _send_random_art(bot: Bot, chat_id, uid=None):
+async def _send_random_art(bot: Bot, chat_id, uid=None, status_msg=None):
     """Fetch + send one random art to chat."""
-    import random as _random
-    picked = await _pick_random_art(bot)
+    picked = await _pick_random_art()
     if not picked:
         return
     name, skey, tag = picked
-    label = next(l for k, l, _r in SOURCES if k == skey)
     as_doc = user_pref(uid or "0", "as_doc", False) if uid else False
-    await _fetch_and_send(chat_id, uid or "0", name, skey, tag, 1, bot, force_doc=as_doc)
+    await _fetch_and_send(chat_id, uid or "0", name, skey, tag, 1, bot,
+                          force_doc=as_doc, quiet=True, status_msg=status_msg)
 
 
 async def random_art_scheduler(bot: Bot):
@@ -643,6 +737,7 @@ async def main():
             ("tags", "List a member's tags"),
             ("sources", "List sources"),
             ("mode", "Photo (HD) vs file (full res)"),
+            ("random", "Send a random art"),
         )])
     except Exception:
         pass
@@ -654,9 +749,13 @@ async def main():
     dp.message.register(cmd_sources, Command("sources"))
     dp.message.register(cmd_fetch, Command("fetch"))
     dp.message.register(cmd_mode, Command("mode"))
+    dp.message.register(cmd_random, Command("random"))
+    dp.message.outer_middleware(_groups_only)
+    dp.callback_query.outer_middleware(_groups_only)
     dp.callback_query.register(on_menu_click)
     dp.message.register(on_message, F.text & ~F.text.startswith("/"))
     dp.chat_member.register(on_chat_member)
+    dp.my_chat_member.register(on_chat_member)
 
     # Background task: random art every 4 hours
     asyncio.create_task(random_art_scheduler(bot))
