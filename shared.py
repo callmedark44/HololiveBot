@@ -153,6 +153,8 @@ class BaseDownloader:
         if artists is None: artists = []
         if filename in self.dl_history or filename in self._seen_filenames or os.path.exists(filepath):
             return False
+        if os.path.splitext(filepath)[1].lower() in {".mp4", ".mkv", ".mov", ".avi", ".zip", ".gif"}:
+            return False
         file_size = 0
         try:
             resp = await asyncio.to_thread(self.session.head, url, timeout=5)
@@ -170,7 +172,7 @@ class BaseDownloader:
 
         for attempt in range(self.dl_retries):
             try:
-                r = await asyncio.to_thread(self.session.get, url, stream=True, timeout=30, headers={"Referer": url})
+                r = await asyncio.to_thread(self.session.get, url, stream=True, timeout=90, headers={"Referer": url})
                 r.raise_for_status()
                 content_length = int(r.headers.get('Content-Length', 0)) or file_size
                 if content_length and (content_length != file_size):

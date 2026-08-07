@@ -329,7 +329,7 @@ async def cmd_random(message: types.Message, bot: Bot, **kw):
 
 # ── fetch + send ──────────────────────────────────────────
 _FETCH_LOCK = threading.Lock()
-IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".tiff", ".tif"}
+IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".webm", ".gif", ".bmp", ".tiff", ".tif"}
 
 def _run_worker(skey, tag, net_config, count):
     mod_name, fn_name, extractor = FETCHERS[skey]
@@ -430,7 +430,7 @@ async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, force_
             proxy = os.getenv("https_proxy") or os.getenv("http_proxy")
             net_config = {"use_proxy": bool(proxy), "proxy_url": proxy or "",
                           "verify_tls": False, "anti_ban_pause": 1.0,
-                          "api_timeout": 10, "retry_wait": 3, "download_retries": 3}
+                          "api_timeout": 10, "retry_wait": 3, "download_retries": 5}
 
             send_queue = asyncio.Queue()
             use_group = user_pref(uid, "group", True)
