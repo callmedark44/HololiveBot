@@ -6,3 +6,4 @@ Rem God/
 database/
 .claude/
 scripts/
+*_tag_report.json
