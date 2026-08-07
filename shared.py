@@ -172,7 +172,7 @@ class BaseDownloader:
 
         for attempt in range(self.dl_retries):
             try:
-                r = await asyncio.to_thread(self.session.get, url, stream=True, timeout=90, headers={"Referer": url})
+                r = await asyncio.to_thread(self.session.get, url, stream=True, timeout=180, headers={"Referer": url})
                 r.raise_for_status()
                 content_length = int(r.headers.get('Content-Length', 0)) or file_size
                 if content_length and (content_length != file_size):

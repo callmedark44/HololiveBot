@@ -24,6 +24,7 @@ _LOOP_LOCK = threading.Lock()
 LANG_EMOJI = {"jp": "🇯🇵", "id": "🇮🇩", "en": "🇺🇸"}
 BRANCH_LABEL = {"hololive": "hololive", "holostars": "HOLOSTARS"}
 PAGE_SIZE = 10
+ALBUM_MAX = 10  # Telegram hard cap for media-group albums
 
 # (key, label, report_key)
 SOURCES = [
@@ -99,28 +100,28 @@ def _btn(text, data=None, url=None):
         kwargs["url"] = url
     return InlineKeyboardButton(**kwargs)
 
-def branch_keyboard():
+def branch_keyboard(uid=None):
     rows = []
     for lang in ("jp", "id", "en"):
         for br in ("hololive", "holostars"):
             n = sum(1 for m in MEMBERS.values() if m["lang"] == lang and m["branch"] == br)
             if n:
-                rows.append([_btn(f"{LANG_EMOJI[lang]} {BRANCH_LABEL[br]} ({n})", f"b:{lang}:{br}")])
-    rows.append([_btn(f"All ({len(MEMBERS)})", "b:all")])
+                rows.append([_btn(f"{LANG_EMOJI[lang]} {BRANCH_LABEL[br]} ({n})", f"b:{lang}:{br}:{_store({'uid': uid})}")])
+    rows.append([_btn(f"All ({len(MEMBERS)})", f"b:all:{_store({'uid': uid})}")])
     rows.append([_btn("🎲 Random art", "rnd")])
     return _kb(rows)
 
-def member_keyboard(members, page):
+def member_keyboard(members, page, uid=None):
     keys = []
     for name in members[page * PAGE_SIZE:(page + 1) * PAGE_SIZE]:
         m = MEMBERS[name]
-        keys.append([_btn(f"{LANG_EMOJI[m['lang']]} {name} ({m['gen']})", f"m:{_store({'name': name})}")])
+        keys.append([_btn(f"{LANG_EMOJI[m['lang']]} {name} ({m['gen']})", f"m:{_store({'name': name, 'uid': uid})}")])
     nav = []
     if page > 0:
-        nav.append(_btn("◀️", f"pg:{_store({'members': members, 'page': page - 1})}"))
-    nav.append(_btn("Back", f"branch:{_store({'branch': 'home'})}"))
+        nav.append(_btn("◀️", f"pg:{_store({'members': members, 'page': page - 1, 'uid': uid})}"))
+    nav.append(_btn("Back", f"branch:{_store({'branch': 'home', 'uid': uid})}"))
     if (page + 1) * PAGE_SIZE < len(members):
-        nav.append(_btn("▶️", f"pg:{_store({'members': members, 'page': page + 1})}"))
+        nav.append(_btn("▶️", f"pg:{_store({'members': members, 'page': page + 1, 'uid': uid})}"))
     keys.append(nav)
     return _kb(keys)
 
@@ -129,17 +130,17 @@ def available_sources(name):
     return [(skey, label) for skey, label, report_key in SOURCES
             if any(tl[r] for r in tl if SOURCE_BY_REPORT.get(r) == skey)]
 
-def source_keyboard(name, page=0):
+def source_keyboard(name, page=0, uid=None):
     sources = available_sources(name)
     keys = []
     for skey, label in sources[page * PAGE_SIZE:(page + 1) * PAGE_SIZE]:
-        keys.append([_btn(label, f"s:{_store({'name': name, 'source': skey})}")])
+        keys.append([_btn(label, f"s:{_store({'name': name, 'source': skey, 'uid': uid})}")])
     nav = []
     if page > 0:
-        nav.append(_btn("◀️", f"pg:{_store({'name': name, 'back': 'sources', 'page': page - 1})}"))
-    nav.append(_btn("Back", f"b:all"))
+        nav.append(_btn("◀️", f"pg:{_store({'name': name, 'back': 'sources', 'page': page - 1, 'uid': uid})}"))
+    nav.append(_btn("Back", f"bk:{_store({'to': 'home', 'uid': uid})}"))
     if (page + 1) * PAGE_SIZE < len(sources):
-        nav.append(_btn("▶️", f"pg:{_store({'name': name, 'back': 'sources', 'page': page + 1})}"))
+        nav.append(_btn("▶️", f"pg:{_store({'name': name, 'back': 'sources', 'page': page + 1, 'uid': uid})}"))
     keys.append(nav)
     return _kb(keys)
 
@@ -159,17 +160,17 @@ def member_tags(name, skey):
         return sorted(TAGS[name][report_key], key=lambda t: _tag_sort_key(t, name))
     return []
 
-def tag_keyboard(name, skey, page=0):
+def tag_keyboard(name, skey, page=0, uid=None):
     tl = member_tags(name, skey)
     keys = []
     for t in tl[page * PAGE_SIZE:(page + 1) * PAGE_SIZE]:
-        keys.append([_btn(t, f"t:{_store({'name': name, 'source': skey, 'tag': t})}")])
+        keys.append([_btn(t, f"t:{_store({'name': name, 'source': skey, 'tag': t, 'uid': uid})}")])
     nav = []
     if page > 0:
-        nav.append(_btn("◀️", f"pg:{_store({'name': name, 'source': skey, 'back': 'tags', 'page': page - 1})}"))
-    nav.append(_btn("Back", f"bk:{_store({'to': 'sources', 'name': name})}"))
+        nav.append(_btn("◀️", f"pg:{_store({'name': name, 'source': skey, 'back': 'tags', 'page': page - 1, 'uid': uid})}"))
+    nav.append(_btn("Back", f"bk:{_store({'to': 'sources', 'name': name, 'uid': uid})}"))
     if (page + 1) * PAGE_SIZE < len(tl):
-        nav.append(_btn("▶️", f"pg:{_store({'name': name, 'source': skey, 'back': 'tags', 'page': page + 1})}"))
+        nav.append(_btn("▶️", f"pg:{_store({'name': name, 'source': skey, 'back': 'tags', 'page': page + 1, 'uid': uid})}"))
     keys.append(nav)
     return _kb(keys), None
 
@@ -178,26 +179,24 @@ COUNT_CHOICES = [1, 2, 3, 5, 10, 20]
 def count_keyboard(name, skey, tag, uid):
     rows = []
     for i in range(0, len(COUNT_CHOICES), 3):
-        rows.append([_btn(str(n), f"count:{_store({'name': name, 'source': skey, 'tag': tag, 'count': n})}")
+        rows.append([_btn(str(n), f"count:{_store({'name': name, 'source': skey, 'tag': tag, 'count': n, 'uid': uid})}")
                      for n in COUNT_CHOICES[i:i+3]])
     as_doc = user_pref(uid, "as_doc", False)
     mode_label = "File: ON" if as_doc else "File: OFF"
-    rows.append([_btn(f"📄 {mode_label}", f"mode:{_store({'name': name, 'source': skey, 'tag': tag, 'back': 'count'})}")])
-    group_label = "Album: ON" if user_pref(uid, "group", True) else "Album: OFF"
-    rows.append([_btn(f"🖼 {group_label}", f"grp:{_store({'name': name, 'source': skey, 'tag': tag})}")])
-    rows.append([_btn("Back", f"bk:{_store({'to': 'tags', 'name': name, 'source': skey})}")])
+    rows.append([_btn(f"📄 {mode_label}", f"mode:{_store({'name': name, 'source': skey, 'tag': tag, 'back': 'count', 'uid': uid})}")])
+    rows.append([_btn("Back", f"bk:{_store({'to': 'tags', 'name': name, 'source': skey, 'uid': uid})}")])
     return _kb(rows)
 
-def confirm_keyboard(name, skey, tag, count):
+def confirm_keyboard(name, skey, tag, count, uid=None):
     label = next((l for k, l, _r in SOURCES if k == skey), skey)
     return _kb([[
-        _btn(f"Fetch {count} from {label}", f"fetch:{_store({'name': name, 'source': skey, 'tag': tag, 'count': count})}"),
-        _btn("Back", f"bk:{_store({'to': 'count', 'name': name, 'source': skey, 'tag': tag})}"),
+        _btn(f"Fetch {count} from {label}", f"fetch:{_store({'name': name, 'source': skey, 'tag': tag, 'count': count, 'uid': uid})}"),
+        _btn("Back", f"bk:{_store({'to': 'count', 'name': name, 'source': skey, 'tag': tag, 'uid': uid})}"),
     ]])
 
 # ── commands ──────────────────────────────────────────────
 async def cmd_menu(message: types.Message, **kw):
-    await message.answer("Choose a branch:", reply_markup=branch_keyboard())
+    await message.answer("Choose a branch:", reply_markup=branch_keyboard(str(message.from_user.id)))
 
 async def cmd_start(message: types.Message, **kw):
     await message.answer("I fetch images for hololive members.\nTap me in a group or use /menu, /members, /tags, /sources.")
@@ -211,7 +210,7 @@ async def cmd_members(message: types.Message, **kw):
     else:
         members = list(MEMBERS)
     members.sort(key=lambda n: (MEMBERS[n]["branch"], MEMBERS[n]["lang"]))
-    await message.answer(f"Members ({len(members)}):", reply_markup=member_keyboard(members, 0))
+    await message.answer(f"Members ({len(members)}):", reply_markup=member_keyboard(members, 0, str(message.from_user.id)))
 
 async def cmd_tags(message: types.Message, **kw):
     text = message.text or ""
@@ -310,18 +309,11 @@ async def cmd_mode(message: types.Message, **kw):
     elif args and args[0].lower() in ("doc", "file", "document", "1"):
         set_user_pref(uid, "as_doc", True)
         await message.answer("Send mode: **document** — images sent as files at full resolution.")
-    elif args and args[0].lower() in ("group", "album"):
-        set_user_pref(uid, "group", True)
-        await message.answer("Send mode: **grouped** — images sent as one album.")
-    elif args and args[0].lower() in ("single", "one", "separate"):
-        set_user_pref(uid, "group", False)
-        await message.answer("Send mode: **single** — each image sent separately.")
     else:
         cur = "document (full res)" if user_pref(uid, "as_doc", False) else "photo (HD)"
-        grp = "grouped (album)" if user_pref(uid, "group", True) else "single (one by one)"
         await message.answer(
-            f"Current send mode: **{cur}**, **{grp}**\n"
-            "Use /mode doc|photo for file vs inline, /mode group|single for album vs separate.")
+            f"Current send mode: **{cur}** — always sent as one album.\n"
+            "Use /mode doc|photo for file vs inline.")
 
 async def cmd_random(message: types.Message, bot: Bot, **kw):
     status_msg = await message.answer("🎲 Sending random art…")
@@ -343,6 +335,10 @@ def _caption(name, label, tag, url=None):
     if url:
         c += f"\n<a href=\"{html.escape(url, quote=True)}\">Link</a>"
     return c
+
+def _ordinal(n):
+    suffix = "th" if 10 <= n % 100 <= 20 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
+    return f"{n}{suffix}"
 
 def _is_image(fp):
     return os.path.splitext(fp)[1].lower() in IMAGE_EXT
@@ -398,8 +394,8 @@ async def _send_group(bot, chat_id, name, label, tag, items, as_doc):
         if not batch:
             continue
         caption = f"{html.escape(name)} • {html.escape(label)} • {html.escape(tag)} ({len(batch)})"
-        for _fp, _fn, u in batch:
-            link = f"\n<a href=\"{html.escape(u, quote=True)}\">Link</a>"
+        for i, (_fp, _fn, u) in enumerate(batch, 1):
+            link = f"\n{_ordinal(i)}: <a href=\"{html.escape(u, quote=True)}\">Link</a>"
             if len(caption) + len(link) > 1024:  # ponytail: album caption limit; overflow links dropped
                 break
             caption += link
@@ -433,7 +429,6 @@ async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, force_
                           "api_timeout": 10, "retry_wait": 3, "download_retries": 5}
 
             send_queue = asyncio.Queue()
-            use_group = user_pref(uid, "group", True)
             sent = 0
 
             async def sender():
@@ -454,20 +449,12 @@ async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, force_
                         continue
                     pending.append(item)
                     send_queue.task_done()
-                    if len(pending) >= 10:
-                        if use_group:
-                            await _send_group(bot, chat_id, name, label, tag, pending, as_doc)
-                        else:
-                            for fp, _fn, url in pending:
-                                await _send_file(bot, chat_id, name, label, tag, fp, as_doc, url)
+                    if len(pending) >= ALBUM_MAX:
+                        await _send_group(bot, chat_id, name, label, tag, pending, as_doc)
                         sent += len(pending)
                         pending = []
                 if pending:
-                    if use_group:
-                        await _send_group(bot, chat_id, name, label, tag, pending, as_doc)
-                    else:
-                        for fp, _fn, url in pending:
-                            await _send_file(bot, chat_id, name, label, tag, fp, as_doc, url)
+                    await _send_group(bot, chat_id, name, label, tag, pending, as_doc)
                     sent += len(pending)
 
             sender_task = asyncio.create_task(sender())
@@ -511,33 +498,45 @@ async def on_menu_click(call: types.CallbackQuery, bot: Bot):
     parts = data.split(":", 1)
     kind = parts[0]
     uid = str(call.from_user.id)
+    if kind != "rnd":
+        key = parts[1].rsplit(":", 1)[-1] if kind == "b" else parts[1]
+        st = _get(key)
+        if not st:
+            await call.answer("This menu has expired. Use /menu to start over.", show_alert=True)
+            return
+        if st.get("uid") and st["uid"] != uid:
+            await call.answer("This menu belongs to another user.", show_alert=True)
+            return
     if kind in ("b", "branch", "m", "s", "pg", "bk"):
         _COUNT_PENDING.pop(uid, None)
 
     if kind == "b":
         _, rest = parts
-        if rest == "all":
+        segs = rest.split(":")
+        if segs[0] == "all":
             members = list(MEMBERS)
             title = f"All members ({len(members)}):"
         else:
-            lang, br = rest.split(":")
+            lang, br = segs[0], segs[1]
             members = [n for n, m in MEMBERS.items() if m["lang"] == lang and m["branch"] == br]
             title = f"{LANG_EMOJI[lang]} {BRANCH_LABEL[br]} ({len(members)}):"
         members.sort(key=lambda n: (MEMBERS[n]["gen"], MEMBERS[n]["lang"]))
-        await call.message.edit_text(title, reply_markup=member_keyboard(members, 0))
+        await call.message.edit_text(title, reply_markup=member_keyboard(members, 0, uid))
 
     elif kind == "branch":
-        await call.message.edit_text("Choose a branch:", reply_markup=branch_keyboard())
+        await call.message.edit_text("Choose a branch:", reply_markup=branch_keyboard(uid))
 
     elif kind == "bk":
         st = _get(parts[1])
         to = st["to"]
-        if to == "sources":
+        if to == "home":
+            await call.message.edit_text("Choose a branch:", reply_markup=branch_keyboard(uid))
+        elif to == "sources":
             name = st["name"]
-            await call.message.edit_text(f"{name} — source:", reply_markup=source_keyboard(name, 0))
+            await call.message.edit_text(f"{name} — source:", reply_markup=source_keyboard(name, 0, uid))
         elif to == "tags":
             name, skey = st["name"], st["source"]
-            kb, _note = tag_keyboard(name, skey, 0)
+            kb, _note = tag_keyboard(name, skey, 0, uid)
             await call.message.edit_text(f"{name} — tag:", reply_markup=kb)
         elif to == "count":
             name, skey, tag = st["name"], st["source"], st["tag"]
@@ -550,12 +549,12 @@ async def on_menu_click(call: types.CallbackQuery, bot: Bot):
         if not available_sources(name):
             await call.message.edit_text(f"No tag data for {name} in any source yet.")
             return
-        await call.message.edit_text(f"{name} — source:", reply_markup=source_keyboard(name, 0))
+        await call.message.edit_text(f"{name} — source:", reply_markup=source_keyboard(name, 0, uid))
 
     elif kind == "s":
         st = _get(parts[1])
         name, skey = st["name"], st["source"]
-        kb, note = tag_keyboard(name, skey, 0)
+        kb, note = tag_keyboard(name, skey, 0, uid)
         text = f"{name} — {next(l for k, l, _r in SOURCES if k == skey)} — tag:" + (f"\n{note}" if note else "")
         await call.message.edit_text(text, reply_markup=kb)
 
@@ -569,13 +568,13 @@ async def on_menu_click(call: types.CallbackQuery, bot: Bot):
         st = _get(parts[1])
         page = st.get("page", 0)
         if "members" in st:
-            await call.message.edit_text("Members:", reply_markup=member_keyboard(st["members"], page))
+            await call.message.edit_text("Members:", reply_markup=member_keyboard(st["members"], page, uid))
         elif st.get("back") == "sources":
             name = st["name"]
-            await call.message.edit_text(f"{name} — source:", reply_markup=source_keyboard(name, page))
+            await call.message.edit_text(f"{name} — source:", reply_markup=source_keyboard(name, page, uid))
         elif st.get("back") == "tags":
             name, skey = st["name"], st["source"]
-            kb, _note = tag_keyboard(name, skey, page)
+            kb, _note = tag_keyboard(name, skey, page, uid)
             await call.message.edit_text(f"{name} — tag:", reply_markup=kb)
 
     elif kind == "mode":
@@ -586,19 +585,12 @@ async def on_menu_click(call: types.CallbackQuery, bot: Bot):
         await call.message.edit_text(f"{name} • {tag} — how many?",
                                   reply_markup=count_keyboard(name, skey, tag, uid))
 
-    elif kind == "grp":
-        st = _get(parts[1])
-        name, skey, tag = st["name"], st["source"], st["tag"]
-        set_user_pref(uid, "group", not user_pref(uid, "group", True))
-        await call.message.edit_text(f"{name} • {tag} — how many?",
-                                  reply_markup=count_keyboard(name, skey, tag, uid))
-
     elif kind == "count":
         st = _get(parts[1])
         name, skey, tag, count = st["name"], st["source"], st["tag"], st["count"]
         _COUNT_PENDING[uid] = st
         await call.message.edit_text(f"Fetch {count} of {name} from {skey} ({tag})? (or type a number to change)",
-                                  reply_markup=confirm_keyboard(name, skey, tag, count))
+                                  reply_markup=confirm_keyboard(name, skey, tag, count, uid))
 
     elif kind == "fetch":
         st = _get(parts[1])
@@ -648,7 +640,7 @@ async def on_message(message: types.Message, bot: Bot):
         return
 
     if _BOT_USERNAME and f"@{_BOT_USERNAME}" in text:
-        await message.answer("Choose a branch:", reply_markup=branch_keyboard())
+        await message.answer("Choose a branch:", reply_markup=branch_keyboard(uid))
 
 # ── random art feature ────────────────────────────────────
 # Track chats we've seen so scheduler only posts where the bot is present.
