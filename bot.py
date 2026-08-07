@@ -615,13 +615,15 @@ async def on_menu_click(call: types.CallbackQuery, bot: Bot):
 _BOT_USERNAME = ""
 
 async def _groups_only(handler, event, data):
-    """Drop everything outside group/supergroup chats."""
+    """Drop everything outside group/supergroup chats. Also learns the group ids
+    the bot is in, since the Bot API offers no way to enumerate them."""
     chat = getattr(event, "chat", None)
     if chat is None:
         msg = getattr(event, "message", None)
         chat = getattr(msg, "chat", None)
     if not chat or chat.type not in ("group", "supergroup"):
         return
+    _KNOWN_CHATS.add(str(chat.id))
     return await handler(event, data)
 
 async def on_message(message: types.Message, bot: Bot):
