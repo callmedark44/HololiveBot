@@ -391,8 +391,16 @@ async def _send_file(bot, chat_id, name, label, tag, fp, as_doc, url=None):
 async def _send_group(bot, chat_id, name, label, tag, items, as_doc):
     """Send a batch as media groups (albums). Telegram won't mix photos & documents,
     so split by type. Falls back to one-by-one per item on failure."""
+    # Classify each item once up front: _send_file deletes files after sending,
+    # so re-running _use_doc() on a later pass would hit FileNotFoundError.
+    by_type = {False: [], True: []}
+    for it in items:
+        try:
+            by_type[_use_doc(it[0], as_doc)].append(it)
+        except OSError:
+            pass  # file already gone; nothing to send
     for use_doc in (False, True):
-        batch = [it for it in items if _use_doc(it[0], as_doc) == use_doc]
+        batch = by_type[use_doc]
         if not batch:
             continue
         if len(batch) == 1:
