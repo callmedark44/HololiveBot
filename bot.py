@@ -351,6 +351,7 @@ def _use_doc(fp, as_doc):
 
 async def _send_file(bot, chat_id, name, label, tag, fp, as_doc, url=None):
     """Send a single downloaded file. Sequential via the sender coroutine."""
+    print(f"[SEND] {os.path.basename(fp)} → send_{'document' if _use_doc(fp, as_doc) else 'photo'}")
     for attempt in range(3):
         try:
             infile = FSInputFile(fp)
@@ -366,6 +367,7 @@ async def _send_file(bot, chat_id, name, label, tag, fp, as_doc, url=None):
                         await bot.send_document(chat_id, infile, caption=caption, parse_mode="HTML")
                     else:
                         raise
+            print(f"[SEND] sent {os.path.basename(fp)}")
             # File sent successfully — delete from disk to save storage
             try:
                 os.remove(fp)
@@ -393,6 +395,12 @@ async def _send_group(bot, chat_id, name, label, tag, items, as_doc):
         batch = [it for it in items if _use_doc(it[0], as_doc) == use_doc]
         if not batch:
             continue
+        if len(batch) == 1:
+            # Telegram media groups require 2-10 items; send singles directly.
+            fp, _fn, url = batch[0]
+            await _send_file(bot, chat_id, name, label, tag, fp, as_doc, url)
+            continue
+        print(f"[SEND] album of {len(batch)} {os.path.basename(batch[0][0])}…")
         caption = f"{html.escape(name)} • {html.escape(label)} • {html.escape(tag)} ({len(batch)})"
         for i, (_fp, _fn, u) in enumerate(batch, 1):
             link = f"\n{_ordinal(i)}: <a href=\"{html.escape(u, quote=True)}\">Link</a>"
@@ -421,34 +429,36 @@ async def _send_group(bot, chat_id, name, label, tag, items, as_doc):
 async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, force_doc=None, status_msg=None, quiet=False):
     label = next(l for k, l, _r in SOURCES if k == skey)
     as_doc = force_doc if force_doc is not None else user_pref(uid, "as_doc", False)
+    # Acquire the fetch lock off-loop so a stalled fetch can't freeze the event loop.
+    await asyncio.to_thread(_FETCH_LOCK.acquire)
     try:
-        with _FETCH_LOCK:
-            proxy = os.getenv("https_proxy") or os.getenv("http_proxy")
-            net_config = {"use_proxy": bool(proxy), "proxy_url": proxy or "",
-                          "verify_tls": False, "anti_ban_pause": 1.0,
-                          "api_timeout": 10, "retry_wait": 3, "download_retries": 5}
+        proxy = os.getenv("https_proxy") or os.getenv("http_proxy")
+        net_config = {"use_proxy": bool(proxy), "proxy_url": proxy or "",
+                      "verify_tls": False, "anti_ban_pause": 1.0,
+                      "api_timeout": 10, "retry_wait": 3, "download_retries": 5}
 
-            send_queue = asyncio.Queue()
-            sent = 0
+        send_queue = asyncio.Queue()
+        sender_done = asyncio.Event()
+        sent = 0
+        send_errors = []
 
-            async def sender():
-                nonlocal sent
-                pending = []
+        async def sender():
+            nonlocal sent
+            pending = []
+            try:
                 while True:
                     item = await send_queue.get()
+                    send_queue.task_done()
                     if item is None:
-                        send_queue.task_done()
                         break
                     filepath = item[0]
                     if not _is_image(filepath):
-                        send_queue.task_done()
                         try:
                             os.remove(filepath)
                         except OSError:
                             pass
                         continue
                     pending.append(item)
-                    send_queue.task_done()
                     if len(pending) >= ALBUM_MAX:
                         await _send_group(bot, chat_id, name, label, tag, pending, as_doc)
                         sent += len(pending)
@@ -456,40 +466,62 @@ async def _fetch_and_send(chat_id, uid, name, skey, tag, count, bot: Bot, force_
                 if pending:
                     await _send_group(bot, chat_id, name, label, tag, pending, as_doc)
                     sent += len(pending)
+            except Exception as e:
+                print(f"[SEND] sender error: {e!r}")
+                send_errors.append(e)
+            finally:
+                sender_done.set()
 
-            sender_task = asyncio.create_task(sender())
+        asyncio.create_task(sender())
 
-            def on_download(filepath, filename, url):
+        def on_download(filepath, filename, url):
+            if _APP_LOOP:
                 _APP_LOOP.call_soon_threadsafe(
                     send_queue.put_nowait, (filepath, filename, url)
                 )
 
-            def on_site_down(site_folder, status_code):
-                code = f" (HTTP {status_code})" if status_code else ""
-                msg = f"⚠️ {site_folder} is temporarily unreachable{code}. Try again later."
-                if _APP_LOOP:
-                    asyncio.run_coroutine_threadsafe(
-                        bot.send_message(chat_id, msg), _APP_LOOP
-                    )
+        def on_site_down(site_folder, status_code):
+            code = f" (HTTP {status_code})" if status_code else ""
+            msg = f"⚠️ {site_folder} is temporarily unreachable{code}. Try again later."
+            if _APP_LOOP:
+                asyncio.run_coroutine_threadsafe(
+                    bot.send_message(chat_id, msg), _APP_LOOP
+                )
 
-            net_config["download_callback"] = on_download
-            net_config["on_site_down"] = on_site_down
+        net_config["download_callback"] = on_download
+        net_config["on_site_down"] = on_site_down
+        try:
             await asyncio.to_thread(_run_worker, skey, tag, net_config, count)
-            await send_queue.join()
-            _APP_LOOP.call_soon_threadsafe(send_queue.put_nowait, None)
-            await sender_task
-            if sent == 0 and not quiet:
+        finally:
+            # Worker is done, so every download is queued. Sentinel drains the
+            # queue; the sender flushes the tail and exits.
+            if _APP_LOOP:
+                _APP_LOOP.call_soon_threadsafe(send_queue.put_nowait, None)
+
+        # Bounded wait: a hung send must not wedge _FETCH_LOCK (and with it, every
+        # later fetch) forever. ponytail: 300s fixed bound, per-send timeout if needed.
+        try:
+            await asyncio.wait_for(sender_done.wait(), timeout=300)
+        except asyncio.TimeoutError:
+            print(f"[SEND] timeout after 300s waiting for send of {tag}; releasing fetch lock")
+        if send_errors:
+            print(f"[SEND] {len(send_errors)} send(s) failed; last: {send_errors[-1]!r}")
+        if sent == 0:
+            print(f"[SEND] 0 items sent for {tag}")
+            if not quiet:
                 await bot.send_message(
                     chat_id,
                     f"Couldn't find any new images for {tag}",
                 )
-            if status_msg is not None:
-                try:
-                    await status_msg.delete()
-                except Exception:
-                    pass
+        if status_msg is not None:
+            try:
+                await status_msg.delete()
+            except Exception:
+                pass
     except Exception as e:
         await bot.send_message(chat_id, f"Error fetching {name} from {label}: {e}")
+    finally:
+        _FETCH_LOCK.release()
 
 # ── callback handler ──────────────────────────────────────
 async def on_menu_click(call: types.CallbackQuery, bot: Bot):
