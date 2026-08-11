@@ -47,6 +47,7 @@ def load_gallery():
 
 def save_gallery(data):
     with GALLERY_LOCK:
+        os.makedirs(os.path.dirname(GALLERY_FILE), exist_ok=True)
         with open(GALLERY_FILE, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
 
@@ -155,6 +156,8 @@ class BaseDownloader:
             return False
         if os.path.splitext(filepath)[1].lower() in {".mp4", ".mkv", ".mov", ".avi", ".zip", ".gif"}:
             return False
+        # Add to set BEFORE any yield so concurrent coroutines can't slip through
+        self._seen_filenames.add(filename)
         file_size = 0
         try:
             resp = await asyncio.to_thread(self.session.head, url, timeout=5)
@@ -162,7 +165,6 @@ class BaseDownloader:
         except Exception:
             pass
         self.total_bytes += file_size
-        self._seen_filenames.add(filename)
         self.download_queue.put_nowait((url, filepath, filename, tags_list, artists, file_size))
         return True
 
@@ -203,9 +205,14 @@ class BaseDownloader:
 
                 pct = max(0, min(100, int(self.downloaded_bytes * 100 / self.total_bytes))) if self.total_bytes > 0 else 0
                 self.log(f"[SUCCESS] Downloaded {filename} ({self.downloaded_count}/{self.total_to_download}) [{pct}%]")
-                rel_path = os.path.relpath(filepath, MASTER_FOLDER)
-                add_to_gallery(self.name, filename, rel_path, tags_list, artists)
-                write_image_metadata(filepath, tags_list, artists, self.name)
+
+                # Bookkeeping must not fail the download or trigger retries
+                try:
+                    rel_path = os.path.relpath(filepath, MASTER_FOLDER)
+                    add_to_gallery(self.name, filename, rel_path, tags_list, artists)
+                    write_image_metadata(filepath, tags_list, artists, self.name)
+                except Exception as e:
+                    self.log(f"[post-process] {e}")
 
                 if self.download_callback:
                     try:

@@ -1,0 +1,4480 @@
+{
+  "nodes": [
+    {
+      "id": "bot",
+      "label": "bot.py",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_load_users",
+      "label": "_load_users()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L51",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_save_users",
+      "label": "_save_users()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L61",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_user_pref",
+      "label": "user_pref()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L66",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_set_user_pref",
+      "label": "set_user_pref()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L69",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_store",
+      "label": "_store()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L78",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_get",
+      "label": "_get()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L87",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_kb",
+      "label": "_kb()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L90",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_btn",
+      "label": "_btn()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L94",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_branch_keyboard",
+      "label": "branch_keyboard()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L103",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_member_keyboard",
+      "label": "member_keyboard()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L114",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_available_sources",
+      "label": "available_sources()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L128",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_source_keyboard",
+      "label": "source_keyboard()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L133",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_tag_sort_key",
+      "label": "_tag_sort_key()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L147",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_member_tags",
+      "label": "member_tags()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L157",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_tag_keyboard",
+      "label": "tag_keyboard()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L163",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_count_keyboard",
+      "label": "count_keyboard()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L179",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_confirm_keyboard",
+      "label": "confirm_keyboard()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L190",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_cmd_menu",
+      "label": "cmd_menu()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L198",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "message",
+      "label": "Message",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_cmd_start",
+      "label": "cmd_start()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L201",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_cmd_members",
+      "label": "cmd_members()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L204",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_cmd_tags",
+      "label": "cmd_tags()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L215",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_cmd_sources",
+      "label": "cmd_sources()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L232",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_cmd_fetch",
+      "label": "cmd_fetch()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L240",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot",
+      "label": "Bot",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_cmd_mode",
+      "label": "cmd_mode()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L302",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_cmd_random",
+      "label": "cmd_random()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L318",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_run_worker",
+      "label": "_run_worker()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L326",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_caption",
+      "label": "_caption()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L333",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_ordinal",
+      "label": "_ordinal()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L339",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_is_image",
+      "label": "_is_image()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L343",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_use_doc",
+      "label": "_use_doc()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L346",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_send_file",
+      "label": "_send_file()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L352",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_send_group",
+      "label": "_send_group()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L389",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_fetch_and_send",
+      "label": "_fetch_and_send()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L421",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_on_menu_click",
+      "label": "on_menu_click()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L495",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "callbackquery",
+      "label": "CallbackQuery",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_groups_only",
+      "label": "_groups_only()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L609",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_on_message",
+      "label": "on_message()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L621",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_on_chat_member",
+      "label": "on_chat_member()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L649",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "chatmemberupdated",
+      "label": "ChatMemberUpdated",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_pick_random_art",
+      "label": "_pick_random_art()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L658",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_send_random_art",
+      "label": "_send_random_art()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L673",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_random_art_scheduler",
+      "label": "random_art_scheduler()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L684",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_serve_health",
+      "label": "_serve_health()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L698",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_main",
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "bot.py",
+      "source_location": "L710",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_rationale_241",
+      "label": "One-shot fetch: /fetch <member> <source> [count] [tag] [doc|photo]",
+      "file_type": "rationale",
+      "source_file": "bot.py",
+      "source_location": "L241",
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_rationale_353",
+      "label": "Send a single downloaded file. Sequential via the sender coroutine.",
+      "file_type": "rationale",
+      "source_file": "bot.py",
+      "source_location": "L353",
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_rationale_390",
+      "label": "Send a batch as media groups (albums). Telegram won't mix photos & documents,…",
+      "file_type": "rationale",
+      "source_file": "bot.py",
+      "source_location": "L390",
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_rationale_610",
+      "label": "Drop everything outside group/supergroup chats. Also learns the group ids the…",
+      "file_type": "rationale",
+      "source_file": "bot.py",
+      "source_location": "L610",
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_rationale_650",
+      "label": "When a new member joins a chat, send them a random art.",
+      "file_type": "rationale",
+      "source_file": "bot.py",
+      "source_location": "L650",
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_rationale_659",
+      "label": "Pick a random member+source+tag combo that has downloadable art.",
+      "file_type": "rationale",
+      "source_file": "bot.py",
+      "source_location": "L659",
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_rationale_674",
+      "label": "Fetch + send one random art to chat.",
+      "file_type": "rationale",
+      "source_file": "bot.py",
+      "source_location": "L674",
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_rationale_685",
+      "label": "Every 4 hours, post one random art to every known chat.",
+      "file_type": "rationale",
+      "source_file": "bot.py",
+      "source_location": "L685",
+      "_origin": "ast"
+    },
+    {
+      "id": "bot_data",
+      "label": "bot_data.py",
+      "file_type": "code",
+      "source_file": "bot_data.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "railway",
+      "label": "railway.json",
+      "file_type": "code",
+      "source_file": "railway.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "railway_schema",
+      "label": "$schema",
+      "file_type": "code",
+      "source_file": "railway.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "railway_build",
+      "label": "build",
+      "file_type": "code",
+      "source_file": "railway.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "railway_build_builder",
+      "label": "builder",
+      "file_type": "code",
+      "source_file": "railway.json",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "railway_deploy",
+      "label": "deploy",
+      "file_type": "code",
+      "source_file": "railway.json",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "railway_deploy_startcommand",
+      "label": "startCommand",
+      "file_type": "code",
+      "source_file": "railway.json",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "railway_deploy_healthcheckpath",
+      "label": "healthcheckPath",
+      "file_type": "code",
+      "source_file": "railway.json",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "railway_deploy_healthchecktimeout",
+      "label": "healthcheckTimeout",
+      "file_type": "code",
+      "source_file": "railway.json",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "railway_deploy_restartpolicytype",
+      "label": "restartPolicyType",
+      "file_type": "code",
+      "source_file": "railway.json",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "railway_deploy_restartpolicymaxretries",
+      "label": "restartPolicyMaxRetries",
+      "file_type": "code",
+      "source_file": "railway.json",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "shared",
+      "label": "shared.py",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_default_logger",
+      "label": "default_logger()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L22",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_log_msg",
+      "label": "log_msg()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L24",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_default_tag_handler",
+      "label": "default_tag_handler()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L26",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_send_tags",
+      "label": "send_tags()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L28",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_default_emit",
+      "label": "default_emit()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L32",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_socketio_emit",
+      "label": "socketio_emit()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L34",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_load_gallery",
+      "label": "load_gallery()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L38",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_save_gallery",
+      "label": "save_gallery()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L48",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_add_to_gallery",
+      "label": "add_to_gallery()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L53",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_write_image_metadata",
+      "label": "write_image_metadata()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L62",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_load_history",
+      "label": "load_history()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L88",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_save_history",
+      "label": "save_history()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L97",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_basedownloader",
+      "label": "BaseDownloader",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L107",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_basedownloader_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L108",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_basedownloader_setup_session",
+      "label": "._setup_session()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L135",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_basedownloader_log",
+      "label": ".log()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L150",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_basedownloader_enqueue_download",
+      "label": ".enqueue_download()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L152",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_basedownloader_async_download_file",
+      "label": "._async_download_file()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L169",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_basedownloader_download_worker",
+      "label": "._download_worker()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L227",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "shared_basedownloader_run_async_loop",
+      "label": ".run_async_loop()",
+      "file_type": "code",
+      "source_file": "shared.py",
+      "source_location": "L234",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_init",
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "workers/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_danbooru",
+      "label": "danbooru.py",
+      "file_type": "code",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_danbooru_danbooruworker",
+      "label": "DanbooruWorker",
+      "file_type": "code",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L5",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_danbooru_danbooruworker_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L6",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_danbooru_danbooruworker_scraper_task",
+      "label": ".scraper_task()",
+      "file_type": "code",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L32",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_danbooru_danbooruworker_run",
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L122",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_danbooru_worker_danbooru",
+      "label": "worker_danbooru()",
+      "file_type": "code",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L126",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_eshuushuu",
+      "label": "eshuushuu.py",
+      "file_type": "code",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_eshuushuu_eshuushuuworker",
+      "label": "EShuushuuWorker",
+      "file_type": "code",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L4",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_eshuushuu_eshuushuuworker_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L5",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_eshuushuu_eshuushuuworker_resolve_tag_id",
+      "label": "._resolve_tag_id()",
+      "file_type": "code",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L29",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_eshuushuu_eshuushuuworker_resolve_user_id",
+      "label": "._resolve_user_id()",
+      "file_type": "code",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L54",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_eshuushuu_eshuushuuworker_scraper_task",
+      "label": ".scraper_task()",
+      "file_type": "code",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L76",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_eshuushuu_eshuushuuworker_g",
+      "label": "._g()",
+      "file_type": "code",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L209",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_eshuushuu_eshuushuuworker_run",
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L213",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_eshuushuu_worker_eshuushuu",
+      "label": "worker_eshuushuu()",
+      "file_type": "code",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L217",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_eshuushuu_rationale_30",
+      "label": "Resolve tag name → numeric tag_id via local DB, fallback to API.",
+      "file_type": "rationale",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L30",
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_eshuushuu_rationale_55",
+      "label": "Look up username in eshuushuu_users.json → numeric user_id.",
+      "file_type": "rationale",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L55",
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_nekosia",
+      "label": "nekosia.py",
+      "file_type": "code",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_nekosia_nekosiaworker",
+      "label": "NekosiaWorker",
+      "file_type": "code",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L7",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_nekosia_nekosiaworker_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L8",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_nekosia_nekosiaworker_get_image",
+      "label": ".get_image()",
+      "file_type": "code",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L25",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_nekosia_nekosiaworker_update_nekosia_database",
+      "label": ".update_nekosia_database()",
+      "file_type": "code",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L62",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_nekosia_nekosiaworker_load_database",
+      "label": ".load_database()",
+      "file_type": "code",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L75",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_nekosia_nekosiaworker_scraper_task",
+      "label": ".scraper_task()",
+      "file_type": "code",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L81",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_nekosia_nekosiaworker_run",
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L110",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_nekosia_worker_nekosia",
+      "label": "worker_nekosia()",
+      "file_type": "code",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L115",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_safebooru",
+      "label": "safebooru.py",
+      "file_type": "code",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_safebooru_safebooruworker",
+      "label": "SafebooruWorker",
+      "file_type": "code",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L5",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_safebooru_safebooruworker_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L6",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_safebooru_safebooruworker_scraper_task",
+      "label": ".scraper_task()",
+      "file_type": "code",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L16",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_safebooru_safebooruworker_run",
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L115",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_safebooru_worker_safebooru",
+      "label": "worker_safebooru()",
+      "file_type": "code",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L119",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_yande",
+      "label": "yande.py",
+      "file_type": "code",
+      "source_file": "workers/yande.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_yande_yandeworker",
+      "label": "YandeWorker",
+      "file_type": "code",
+      "source_file": "workers/yande.py",
+      "source_location": "L5",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_yande_yandeworker_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "workers/yande.py",
+      "source_location": "L6",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_yande_yandeworker_scraper_task",
+      "label": ".scraper_task()",
+      "file_type": "code",
+      "source_file": "workers/yande.py",
+      "source_location": "L23",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_yande_yandeworker_run",
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "workers/yande.py",
+      "source_location": "L115",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_yande_worker_yande",
+      "label": "worker_yande()",
+      "file_type": "code",
+      "source_file": "workers/yande.py",
+      "source_location": "L119",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_zerochan",
+      "label": "zerochan.py",
+      "file_type": "code",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_zerochan_derive_img_url",
+      "label": "_derive_img_url()",
+      "file_type": "code",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L5",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_zerochan_zerochanworker",
+      "label": "ZerochanWorker",
+      "file_type": "code",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L18",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_zerochan_zerochanworker_init",
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L19",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_zerochan_zerochanworker_scraper_task",
+      "label": ".scraper_task()",
+      "file_type": "code",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L35",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_zerochan_zerochanworker_run",
+      "label": ".run()",
+      "file_type": "code",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L107",
+      "_callable": true,
+      "_origin": "ast"
+    },
+    {
+      "id": "workers_zerochan_worker_zerochan",
+      "label": "worker_zerochan()",
+      "file_type": "code",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L111",
+      "_callable": true,
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "bot",
+      "target": "asyncio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "html",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "importlib",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "threading",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "dotenv",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "shared",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_data",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "aiogram",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "aiogram_client_session_aiohttp",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "aiogram_filters",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "aiogram_types",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_load_users",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_save_users",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_user_pref",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_set_user_pref",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_store",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_get",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_kb",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_btn",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L94",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_branch_keyboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_member_keyboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_available_sources",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L128",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_source_keyboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L133",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_tag_sort_key",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L147",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_member_tags",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L157",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_tag_keyboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L163",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_count_keyboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L179",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_confirm_keyboard",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L190",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_cmd_menu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L198",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_menu",
+      "target": "message",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L198",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_cmd_start",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L201",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_start",
+      "target": "message",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L201",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_cmd_members",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L204",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_members",
+      "target": "message",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L204",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_cmd_tags",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L215",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_tags",
+      "target": "message",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L215",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_cmd_sources",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L232",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_sources",
+      "target": "message",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L232",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_cmd_fetch",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L240",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_fetch",
+      "target": "message",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L240",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_fetch",
+      "target": "bot",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L240",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_cmd_mode",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L302",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_mode",
+      "target": "message",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L302",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_cmd_random",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L318",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_random",
+      "target": "message",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L318",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_random",
+      "target": "bot",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L318",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_run_worker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L326",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_caption",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L333",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_ordinal",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L339",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_is_image",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L343",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_use_doc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L346",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_send_file",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L352",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_send_group",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L389",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_fetch_and_send",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L421",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_fetch_and_send",
+      "target": "bot",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L421",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_on_menu_click",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L495",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_menu_click",
+      "target": "callbackquery",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L495",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_menu_click",
+      "target": "bot",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L495",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_groups_only",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L609",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_on_message",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L621",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_message",
+      "target": "message",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L621",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_message",
+      "target": "bot",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L621",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_on_chat_member",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L649",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_chat_member",
+      "target": "chatmemberupdated",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L649",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_chat_member",
+      "target": "bot",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L649",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_pick_random_art",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L658",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_send_random_art",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L673",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_send_random_art",
+      "target": "bot",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L673",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_random_art_scheduler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L684",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_random_art_scheduler",
+      "target": "bot",
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L684",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_serve_health",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L698",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot",
+      "target": "bot_main",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L710",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_user_pref",
+      "target": "bot_load_users",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_set_user_pref",
+      "target": "bot_load_users",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_set_user_pref",
+      "target": "bot_save_users",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_branch_keyboard",
+      "target": "bot_btn",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_branch_keyboard",
+      "target": "bot_store",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L109",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_branch_keyboard",
+      "target": "bot_kb",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L112",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_member_keyboard",
+      "target": "bot_btn",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L118",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_member_keyboard",
+      "target": "bot_store",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L118",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_member_keyboard",
+      "target": "bot_kb",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L126",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_source_keyboard",
+      "target": "bot_available_sources",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L134",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_source_keyboard",
+      "target": "bot_btn",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L137",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_source_keyboard",
+      "target": "bot_store",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L137",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_source_keyboard",
+      "target": "bot_kb",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L145",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_member_tags",
+      "target": "bot_tag_sort_key",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L160",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_tag_keyboard",
+      "target": "bot_member_tags",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L164",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_tag_keyboard",
+      "target": "bot_btn",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L167",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_tag_keyboard",
+      "target": "bot_store",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L167",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_tag_keyboard",
+      "target": "bot_kb",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L175",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_count_keyboard",
+      "target": "bot_btn",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L182",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_count_keyboard",
+      "target": "bot_store",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L182",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_count_keyboard",
+      "target": "bot_user_pref",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L184",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_count_keyboard",
+      "target": "bot_kb",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L188",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_confirm_keyboard",
+      "target": "bot_kb",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L192",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_confirm_keyboard",
+      "target": "bot_btn",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L193",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_confirm_keyboard",
+      "target": "bot_store",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L193",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_menu",
+      "target": "bot_branch_keyboard",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L199",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_members",
+      "target": "bot_member_keyboard",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L213",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_tags",
+      "target": "bot_member_tags",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L227",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_fetch",
+      "target": "bot_member_tags",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L259",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_fetch",
+      "target": "bot_fetch_and_send",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L300",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_mode",
+      "target": "bot_set_user_pref",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L307",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_mode",
+      "target": "bot_user_pref",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L313",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_cmd_random",
+      "target": "bot_send_random_art",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L320",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_send_file",
+      "target": "bot_caption",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L357",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_send_file",
+      "target": "bot_use_doc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L358",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_send_group",
+      "target": "bot_use_doc",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L393",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_send_group",
+      "target": "bot_ordinal",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L398",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_send_group",
+      "target": "bot_send_file",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L414",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_fetch_and_send",
+      "target": "bot_user_pref",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L423",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_fetch_and_send",
+      "target": "bot_run_worker",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "bot.py",
+      "source_location": "L477",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_menu_click",
+      "target": "bot_get",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L503",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_menu_click",
+      "target": "bot_member_keyboard",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L524",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_menu_click",
+      "target": "bot_branch_keyboard",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L527",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_menu_click",
+      "target": "bot_source_keyboard",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L536",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_menu_click",
+      "target": "bot_tag_keyboard",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L539",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_menu_click",
+      "target": "bot_count_keyboard",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L544",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_menu_click",
+      "target": "bot_available_sources",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L549",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_menu_click",
+      "target": "bot_user_pref",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L583",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_menu_click",
+      "target": "bot_set_user_pref",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L584",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_menu_click",
+      "target": "bot_confirm_keyboard",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L593",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_menu_click",
+      "target": "bot_fetch_and_send",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L600",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_menu_click",
+      "target": "bot_send_random_art",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L604",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_message",
+      "target": "bot_fetch_and_send",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L639",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_message",
+      "target": "bot_branch_keyboard",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L643",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_on_chat_member",
+      "target": "bot_send_random_art",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L654",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_send_random_art",
+      "target": "bot_pick_random_art",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L675",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_send_random_art",
+      "target": "bot_user_pref",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L679",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_send_random_art",
+      "target": "bot_fetch_and_send",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L680",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_random_art_scheduler",
+      "target": "bot_send_random_art",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L692",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot_serve_health",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L716",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L724",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot_cmd_start",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "bot.py",
+      "source_location": "L739",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot_cmd_menu",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "bot.py",
+      "source_location": "L740",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot_cmd_members",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "bot.py",
+      "source_location": "L741",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot_cmd_tags",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "bot.py",
+      "source_location": "L742",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot_cmd_sources",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "bot.py",
+      "source_location": "L743",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot_cmd_fetch",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "bot.py",
+      "source_location": "L744",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot_cmd_mode",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "bot.py",
+      "source_location": "L745",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot_cmd_random",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "bot.py",
+      "source_location": "L746",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot_groups_only",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "bot.py",
+      "source_location": "L747",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot_on_menu_click",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "bot.py",
+      "source_location": "L749",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot_on_message",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "bot.py",
+      "source_location": "L750",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot_on_chat_member",
+      "relation": "indirect_call",
+      "context": "argument",
+      "confidence": "INFERRED",
+      "source_file": "bot.py",
+      "source_location": "L751",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_main",
+      "target": "bot_random_art_scheduler",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L755",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_rationale_241",
+      "target": "bot_cmd_fetch",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L241",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_rationale_353",
+      "target": "bot_send_file",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L353",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_rationale_390",
+      "target": "bot_send_group",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L390",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_rationale_610",
+      "target": "bot_groups_only",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L610",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_rationale_650",
+      "target": "bot_on_chat_member",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L650",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_rationale_659",
+      "target": "bot_pick_random_art",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L659",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_rationale_674",
+      "target": "bot_send_random_art",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L674",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "bot_rationale_685",
+      "target": "bot_random_art_scheduler",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "bot.py",
+      "source_location": "L685",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "railway",
+      "target": "railway_schema",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "railway.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "railway",
+      "target": "railway_build",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "railway.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "railway_build",
+      "target": "railway_build_builder",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "railway.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "railway",
+      "target": "railway_deploy",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "railway.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "railway_deploy",
+      "target": "railway_deploy_startcommand",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "railway.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "railway_deploy",
+      "target": "railway_deploy_healthcheckpath",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "railway.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "railway_deploy",
+      "target": "railway_deploy_healthchecktimeout",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "railway.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "railway_deploy",
+      "target": "railway_deploy_restartpolicytype",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "railway.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "railway_deploy",
+      "target": "railway_deploy_restartpolicymaxretries",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "railway.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "threading",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "time",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "requests",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "asyncio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "hashlib",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "urllib3",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "pil",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_default_logger",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_log_msg",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_default_tag_handler",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_send_tags",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_default_emit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_socketio_emit",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_load_gallery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_save_gallery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_add_to_gallery",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_write_image_metadata",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_load_history",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L88",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_save_history",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_basedownloader",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader",
+      "target": "shared_basedownloader_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader",
+      "target": "shared_basedownloader_setup_session",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L135",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader",
+      "target": "shared_basedownloader_log",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader",
+      "target": "shared_basedownloader_enqueue_download",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L152",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader",
+      "target": "shared_basedownloader_async_download_file",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L169",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader",
+      "target": "shared_basedownloader_download_worker",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L227",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader",
+      "target": "shared_basedownloader_run_async_loop",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L234",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_add_to_gallery",
+      "target": "shared_load_gallery",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_add_to_gallery",
+      "target": "shared_save_gallery",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader_init",
+      "target": "shared_load_history",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L125",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader_init",
+      "target": "shared_basedownloader_setup_session",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L128",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader_log",
+      "target": "shared_log_msg",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader_async_download_file",
+      "target": "shared_save_history",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L202",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader_async_download_file",
+      "target": "shared_basedownloader_log",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L205",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader_async_download_file",
+      "target": "shared_add_to_gallery",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L207",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader_async_download_file",
+      "target": "shared_write_image_metadata",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L208",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader_async_download_file",
+      "target": "shared_send_tags",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L216",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader_download_worker",
+      "target": "shared_basedownloader_async_download_file",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L231",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader_run_async_loop",
+      "target": "shared_basedownloader_log",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L237",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared_basedownloader_run_async_loop",
+      "target": "shared_basedownloader_download_worker",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "shared.py",
+      "source_location": "L249",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_default_logger",
+      "relation": "indirect_call",
+      "context": "assignment",
+      "confidence": "INFERRED",
+      "source_file": "shared.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_default_tag_handler",
+      "relation": "indirect_call",
+      "context": "assignment",
+      "confidence": "INFERRED",
+      "source_file": "shared.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "shared",
+      "target": "shared_default_emit",
+      "relation": "indirect_call",
+      "context": "assignment",
+      "confidence": "INFERRED",
+      "source_file": "shared.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_init",
+      "target": "workers_init",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/__init__.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_danbooru",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_danbooru",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_danbooru",
+      "target": "asyncio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_danbooru",
+      "target": "shared",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_danbooru",
+      "target": "workers_danbooru_danbooruworker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_danbooru_danbooruworker",
+      "target": "shared_basedownloader",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_danbooru_danbooruworker",
+      "target": "workers_danbooru_danbooruworker_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_danbooru_danbooruworker",
+      "target": "workers_danbooru_danbooruworker_scraper_task",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_danbooru_danbooruworker",
+      "target": "workers_danbooru_danbooruworker_run",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L122",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_danbooru",
+      "target": "workers_danbooru_worker_danbooru",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L126",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_danbooru_worker_danbooru",
+      "target": "workers_danbooru_danbooruworker",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_danbooru_worker_danbooru",
+      "target": "workers_danbooru_danbooruworker_run",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L128",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu",
+      "target": "asyncio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu",
+      "target": "shared",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu",
+      "target": "workers_eshuushuu_eshuushuuworker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_eshuushuuworker",
+      "target": "shared_basedownloader",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_eshuushuuworker",
+      "target": "workers_eshuushuu_eshuushuuworker_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_eshuushuuworker",
+      "target": "workers_eshuushuu_eshuushuuworker_resolve_tag_id",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_eshuushuuworker",
+      "target": "workers_eshuushuu_eshuushuuworker_resolve_user_id",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_eshuushuuworker",
+      "target": "workers_eshuushuu_eshuushuuworker_scraper_task",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_eshuushuuworker",
+      "target": "workers_eshuushuu_eshuushuuworker_g",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L209",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_eshuushuuworker",
+      "target": "workers_eshuushuu_eshuushuuworker_run",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L213",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu",
+      "target": "workers_eshuushuu_worker_eshuushuu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L217",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_eshuushuuworker_init",
+      "target": "workers_eshuushuu_eshuushuuworker_resolve_user_id",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_eshuushuuworker_init",
+      "target": "workers_eshuushuu_eshuushuuworker_resolve_tag_id",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_eshuushuuworker_scraper_task",
+      "target": "workers_eshuushuu_eshuushuuworker_g",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L155",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_worker_eshuushuu",
+      "target": "workers_eshuushuu_eshuushuuworker_run",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L218",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_worker_eshuushuu",
+      "target": "workers_eshuushuu_eshuushuuworker",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L218",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_rationale_30",
+      "target": "workers_eshuushuu_eshuushuuworker_resolve_tag_id",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_rationale_55",
+      "target": "workers_eshuushuu_eshuushuuworker_resolve_user_id",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia",
+      "target": "shared",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia",
+      "target": "json",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia",
+      "target": "asyncio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia",
+      "target": "workers_nekosia_nekosiaworker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia_nekosiaworker",
+      "target": "shared_basedownloader",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia_nekosiaworker",
+      "target": "workers_nekosia_nekosiaworker_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia_nekosiaworker",
+      "target": "workers_nekosia_nekosiaworker_get_image",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia_nekosiaworker",
+      "target": "workers_nekosia_nekosiaworker_update_nekosia_database",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia_nekosiaworker",
+      "target": "workers_nekosia_nekosiaworker_load_database",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia_nekosiaworker",
+      "target": "workers_nekosia_nekosiaworker_scraper_task",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia_nekosiaworker",
+      "target": "workers_nekosia_nekosiaworker_run",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L110",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia",
+      "target": "workers_nekosia_worker_nekosia",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia_worker_nekosia",
+      "target": "workers_nekosia_nekosiaworker_run",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia_worker_nekosia",
+      "target": "workers_nekosia_nekosiaworker",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_safebooru",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_safebooru",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_safebooru",
+      "target": "asyncio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_safebooru",
+      "target": "shared",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_safebooru",
+      "target": "workers_safebooru_safebooruworker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_safebooru_safebooruworker",
+      "target": "shared_basedownloader",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_safebooru_safebooruworker",
+      "target": "workers_safebooru_safebooruworker_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_safebooru_safebooruworker",
+      "target": "workers_safebooru_safebooruworker_scraper_task",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_safebooru_safebooruworker",
+      "target": "workers_safebooru_safebooruworker_run",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_safebooru",
+      "target": "workers_safebooru_worker_safebooru",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_safebooru_worker_safebooru",
+      "target": "workers_safebooru_safebooruworker",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L120",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_safebooru_worker_safebooru",
+      "target": "workers_safebooru_safebooruworker_run",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L121",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_yande",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/yande.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_yande",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/yande.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_yande",
+      "target": "asyncio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/yande.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_yande",
+      "target": "shared",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/yande.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_yande",
+      "target": "workers_yande_yandeworker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/yande.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_yande_yandeworker",
+      "target": "shared_basedownloader",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/yande.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_yande_yandeworker",
+      "target": "workers_yande_yandeworker_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/yande.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_yande_yandeworker",
+      "target": "workers_yande_yandeworker_scraper_task",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/yande.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_yande_yandeworker",
+      "target": "workers_yande_yandeworker_run",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/yande.py",
+      "source_location": "L115",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_yande",
+      "target": "workers_yande_worker_yande",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/yande.py",
+      "source_location": "L119",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_yande_worker_yande",
+      "target": "workers_yande_yandeworker",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/yande.py",
+      "source_location": "L120",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_yande_worker_yande",
+      "target": "workers_yande_yandeworker_run",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/yande.py",
+      "source_location": "L121",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan",
+      "target": "os",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan",
+      "target": "re",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan",
+      "target": "urllib_parse",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan",
+      "target": "asyncio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan",
+      "target": "shared",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan",
+      "target": "workers_zerochan_derive_img_url",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan",
+      "target": "workers_zerochan_zerochanworker",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan_zerochanworker",
+      "target": "shared_basedownloader",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan_zerochanworker",
+      "target": "workers_zerochan_zerochanworker_init",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan_zerochanworker",
+      "target": "workers_zerochan_zerochanworker_scraper_task",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan_zerochanworker",
+      "target": "workers_zerochan_zerochanworker_run",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan",
+      "target": "workers_zerochan_worker_zerochan",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan_zerochanworker_scraper_task",
+      "target": "workers_zerochan_derive_img_url",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan_worker_zerochan",
+      "target": "workers_zerochan_zerochanworker",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L112",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan_worker_zerochan",
+      "target": "workers_zerochan_zerochanworker_run",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_danbooru",
+      "target": "shared_basedownloader",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu",
+      "target": "shared_basedownloader",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L2",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia",
+      "target": "shared_basedownloader",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_safebooru",
+      "target": "shared_basedownloader",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_yande",
+      "target": "shared_basedownloader",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/yande.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan",
+      "target": "shared_basedownloader",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_danbooru_danbooruworker",
+      "target": "shared_basedownloader",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "workers/danbooru.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_eshuushuu_eshuushuuworker",
+      "target": "shared_basedownloader",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "workers/eshuushuu.py",
+      "source_location": "L2",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_nekosia_nekosiaworker",
+      "target": "shared_basedownloader",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "workers/nekosia.py",
+      "source_location": "L1",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_safebooru_safebooruworker",
+      "target": "shared_basedownloader",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "workers/safebooru.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_yande_yandeworker",
+      "target": "shared_basedownloader",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "workers/yande.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "_origin": "ast"
+    },
+    {
+      "source": "workers_zerochan_zerochanworker",
+      "target": "shared_basedownloader",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "workers/zerochan.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "_origin": "ast"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

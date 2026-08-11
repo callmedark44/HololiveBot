@@ -1,0 +1,3 @@
+/home/hanekawa/RemGodCatcher/HololiveBot/hololive_member_tags.md
+/home/hanekawa/RemGodCatcher/HololiveBot/requirements.txt
+/home/hanekawa/RemGodCatcher/HololiveBot/runtime.txt
