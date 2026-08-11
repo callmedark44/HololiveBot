@@ -11,7 +11,7 @@ from PIL import Image, PngImagePlugin
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MASTER_FOLDER = os.path.normpath(os.path.join(BASE_DIR, "Rem God"))
+MASTER_FOLDER = os.path.normpath(os.path.join(os.getenv("DATA_DIR", BASE_DIR), "Rem God"))
 HISTORY_LOCK = threading.Lock()
 GALLERY_LOCK = threading.RLock()
 STOP_EVENTS = {}
@@ -33,7 +33,7 @@ def default_emit(event, data): pass
 emit_callback = default_emit
 def socketio_emit(event, data): emit_callback(event, data)
 
-GALLERY_FILE = os.path.join(BASE_DIR, "database", "gallery.json")
+GALLERY_FILE = os.path.join(os.getenv("DATA_DIR", BASE_DIR), "database", "gallery.json")
 
 def load_gallery():
     with GALLERY_LOCK:

@@ -14,8 +14,9 @@ from aiogram.types import BotCommand, FSInputFile, InputMediaDocument, InputMedi
 TOKEN = os.getenv("BOT_TOKEN", "")
 PORT = int(os.getenv("PORT", "8080"))
 _BOT_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_FILE = os.path.join(_BOT_DIR, "bot_users.json")
+DB_FILE = os.path.join(os.getenv("DATA_DIR", _BOT_DIR), "bot_users.json")
 os.makedirs(os.path.join(_BOT_DIR, "database"), exist_ok=True)
+os.makedirs(os.path.dirname(DB_FILE), exist_ok=True)
 
 DEFAULT_AMOUNT = 5
 _APP_LOOP = None
